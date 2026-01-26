@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>D&D Character Sheet</title>
+</head>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="js/data/skills.js"></script>
+<script src="js/data/actions.js"></script>
+<script src="js/data/species.js"></script>
+<script src="js/data/classes.js"></script>
+<script src="js/data/data.js"></script>
+<script src="js/data/armors.js"></script>
+<script src="js/data/shields.js"></script>
+<script src="js/data/spells.js"></script>
+<script src="js/data/description.js"></script>
+<script src="js/func.js"></script>
+<script src="js/declare.js" defer></script>
+<script src="js/update.js" defer></script>
+<script src="js/event.js" defer></script>
+<script src="js/initElements.js" defer></script>
+<script src="js/saveLocalStorage.js" defer></script>
+
+<body>
+  <div class="container">
+    <!-- col 1 -->
+    <div class="col fixed">
+      <h3>D&D Character Sheet</h3>
+      <div class="section" id="general-section" style="grid-template-columns: auto 1fr 1fr">
+        <label>Tên</label><input type="text" id="character_name" style="grid-column: 2/span 2;">
+        <!-- <label>Species</label><select id="character_species" style="grid-column: 2/span 2;"></select> -->
+        <!-- <label>Background</label><input type="text" id="character_background" style="grid-column: 2/span 2;"> -->
+        <label>Cấp/Điểm TT</label><input type="text" id="character_level" style="text-align: center;"
+          data-computed="true" disabled><input type="text" id="character_prof_bonus" data-computed="true" disabled>
+        <label>XP</label><input type="text" id="character_xp"><input type="text" id="character_next_xp_level"
+          data-computed="true" disabled>
+        <label>Lớp <button class="button-info" id="class_info" name="class_info">i</button></label><select
+          id="character_class" style="grid-column: 2/span 2;"></select>
+      </div>
+
+      <div class="title">Thuộc Tính</div>
+      <div class="section" id="abilities-section" style="grid-template-columns: auto 35px 35px auto auto 35px;">
+        <label title="Sức Mạnh">STR</label>
+        <input type="number" id="as_str">
+        <input type="text" id="as_str_mod" data-computed="true" disabled>
+        <label>Kháng Cự</label>
+        <input type="checkbox" id="save_str">
+        <input type="text" id="save_str_mod" data-computed="true" disabled>
+        <label title="Linh Hoạt">DEX</label>
+        <input type="number" id="as_dex">
+        <input type="text" id="as_dex_mod" data-computed="true" disabled>
+        <label>Kháng Cự</label>
+        <input type="checkbox" id="save_dex">
+        <input type="text" id="save_dex_mod" data-computed="true" disabled>
+        <label title="Thể Chất">CON</label>
+        <input type="number" id="as_con">
+        <input type="text" id="as_con_mod" data-computed="true" disabled>
+        <label>Kháng Cự</label>
+        <input type="checkbox" id="save_con">
+        <input type="text" id="save_con_mod" data-computed="true" disabled>
+        <label title="Trí Tuệ">INT</label>
+        <input type="number" id="as_int">
+        <input type="text" id="as_int_mod" data-computed="true" disabled>
+        <label>Kháng Cự</label>
+        <input type="checkbox" id="save_int">
+        <input type="text" id="save_int_mod" data-computed="true" disabled>
+        <label title="Khôn Ngoan">WIS</label>
+        <input type="number" id="as_wis">
+        <input type="text" id="as_wis_mod" data-computed="true" disabled>
+        <label>Kháng Cự</label>
+        <input type="checkbox" id="save_wis">
+        <input type="text" id="save_wis_mod" data-computed="true" disabled>
+        <label title="Khí Chất">CHA</label>
+        <input type="number" id="as_cha">
+        <input type="text" id="as_cha_mod" data-computed="true" disabled>
+        <label>Kháng Cự</label>
+        <input type="checkbox" id="save_cha">
+        <input type="text" id="save_cha_mod" data-computed="true" disabled>
+      </div>
+
+      <div class="title">Kỹ Năng</div>
+      <div class="section" id="skills-section" style="grid-template-columns: 1fr 1fr auto auto 35px;"></div>
+    </div>
+
+    <!-- col-2 -->
+    <div class="col fixed">
+      <h3>Thông Tin Cơ Bản</h3>
+      <div class="title">Máu</div>
+      <div class="section" id="hit-points-section" style="grid-template-columns: 1fr 1fr 1fr;">
+        <label style="text-align: center;">Tối Đa</label>
+        <label style="text-align: center;">Hiện Tại</label>
+        <label style="text-align: center;">Tạm Thời</label>
+        <input type="number" id="hp_max" data-computed="true" disabled>
+        <input type="number" id="hp_current">
+        <input type="number" id="hp_temp">
+      </div>
+
+      <div class="title">Xúc Xắc Máu</div>
+      <div class="section" id="hit-points-section" style="grid-template-columns: auto 1fr 1fr 1fr 1fr;">
+        <label></label>
+        <label style="text-align: center;">D6</label>
+        <label style="text-align: center;">D8</label>
+        <label style="text-align: center;">D10</label>
+        <label style="text-align: center;">D12</label>
+        <label>Tổng Cộng</label>
+        <input type="number" id="hd_ttl_6" data-computed="true" disabled>
+        <input type="number" id="hd_ttl_8" data-computed="true" disabled>
+        <input type="number" id="hd_ttl_10" data-computed="true" disabled>
+        <input type="number" id="hd_ttl_12" data-computed="true" disabled>
+        <label>Đã Dùng</label>
+        <input type="number" id="hd_used_6">
+        <input type="number" id="hd_used_8">
+        <input type="number" id="hd_used_10">
+        <input type="number" id="hd_used_12">
+      </div>
+
+      <div class="title">Từ Chối Tử Thần (<c-1>Hấp Hối</c-1>)</div>
+      <div class="section" id="death-saves-section" style="grid-template-columns: auto 20px 20px 20px 1fr">
+        <label>Thành Công</label>
+        <input type="checkbox" id="death_saves_success_1">
+        <input type="checkbox" id="death_saves_success_2">
+        <input type="checkbox" id="death_saves_success_3">
+        <label></label>
+        <label>Thất Bại</label>
+        <input type="checkbox" id="death_saves_fail_1">
+        <input type="checkbox" id="death_saves_fail_2">
+        <input type="checkbox" id="death_saves_fail_3">
+        <label></label>
+      </div>
+
+      <div class="title">Chỉ Số Chung</div>
+      <div class="section" id="basic-section" style="grid-template-columns: auto auto auto;">
+        <label style="text-align: center;">Khởi Tranh</label>
+        <label style="text-align: center;">Tốc Độ</label>
+        <!-- <label style="text-align: center;">P. Perception</label> -->
+        <label style="text-align: center;">Phòng Thủ</label>
+        <input style="text-align: center;" type="text" id="initiative_mod" data-computed="true" disabled>
+        <input style="text-align: center;" type="text" id="character_speed" data-computed="true" disabled>
+        <!-- <input style="text-align: center;" type="number" id="passive_perception" data-computed="true" disabled> -->
+        <input style="text-align: center;" type="number" id="armor_class" data-computed="true" disabled>
+      </div>
+      <div class="title">Thông Tin Trang bị</div>
+      <div class="section" id="body-slots-section" style="grid-template-columns: auto 1fr auto;">
+        <label>Tay Thuận</label>
+        <input type="text" id="body_slots_main_hand" disabled><button name="item_unequip"
+          data-body-slot="body_slots_main_hand">U</button>
+        <label>Tay Trái</label>
+        <input type="text" id="body_slots_off_hand" disabled><button name="item_unequip"
+          data-body-slot="body_slots_off_hand">U</button>
+        <label>Ngực</label>
+        <input type="text" id="body_slots_chest" disabled><button name="item_unequip"
+          data-body-slot="body_slots_chest">U</button>
+      </div>
+      <div class="title">Tấn Công Vật Lý</div>
+      <div class="section" id="attack-section" style="grid-template-columns: auto 1fr 1fr 1fr;">
+        <label>Thông Thạo Vũ Khí</label>
+        <input type="checkbox" id="weapon_prof"><label></label><label></label>
+        <label>Tung Cận Chiến</label>
+        <input type="text" id="melee_attack_roll_mod" data-computed="true" disabled>
+        <label>ST</label>
+        <input type="text" id="melee_attack_damage_mod" data-computed="true" disabled>
+        <label>Tung Tầm Xa</label>
+        <input type="text" id="ranged_attack_roll_mod" data-computed="true" disabled>
+        <label>ST</label>
+        <input type="text" id="ranged_attack_damage_mod" data-computed="true" disabled>
+      </div>
+      <div id="spellcasting-area">
+        <div class="title">Thi Triển Phép Thuật</div>
+        <div class="section" id="spellcasting-section" style="grid-template-columns: auto 1fr;">
+          <label>Thuộc Tính Phép Thuật</label>
+          <input type="text" id="spellcasting_ability" data-computed="true" disabled>
+          <label>Tung Tấn Công Phép Thuật</label>
+          <input type="text" id="spell_attack_roll_mod" data-computed="true" disabled>
+          <label>Độ Khó Kháng Cự</label>
+          <input type="number" id="spell_save_dc" data-computed="true" disabled>
+        </div>
+        <div class="title">Rãnh Phép</div>
+        <div class="section" id="spell-slots-section" style="grid-template-columns: auto 20px 20px 20px 20px 1fr;">
+        </div>
+      </div>
+    </div>
+
+    <!-- col-3 -->
+    <div class="col fixed">
+      <h3>Thao Tác</h3>
+      <div class="title">⚪ Giác Quan</div>
+      <div class="flex-container" id="senses-section" style="grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr"></div>
+      <div class="title">🟡 Đặc Trưng</div>
+      <div class="section" id="traits-section" style="grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr"></div>
+      <div class="title">🟩 Hành Động</div>
+      <div class="section" id="actions-section" style="grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr"></div>
+      <div class="title">🔶 Hành Động Phụ</div>
+      <div class="section" id="bonus-actions-section" style="grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr"></div>
+      <div class="title">🔻 Phản Ứng</div>
+      <div class="section" id="reactions-section" style="grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr"></div>
+    </div>
+
+    <!-- col-4 -->
+    <div class="col fixed">
+      <h3>Kho Chứa</h3>
+      <div class="title" name="show_more" data-item-type="Vũ Khí">Vũ Khí</div>
+      <div class="section" id="weapons-section" style="grid-template-columns:auto 1fr auto"></div>
+      <div class="title" name="show_more" data-item-type="Armor">Armor</div>
+      <div class="section" id="armors-section" style="grid-template-columns:auto 1fr auto"></div>
+      <div class="title" name="show_more" data-item-type="Shield">Shield</div>
+      <div class="section" id="shields-section" style="grid-template-columns:auto 1fr auto"></div>
+      <div class="title" name="show_more" data-item-type="Spell">Phép Thuật</div>
+      <div class="section" id="spells-section" style="grid-template-columns:auto 1fr auto;"></div>
+    </div>
+
+    <!-- col-5 -->
+    <div class="col fixed">
+      <h3>Notes</h3>
+      <textarea id="notes"></textarea>
+
+    </div>
+
+    <!-- col-6 -->
+    <div class="col flex">
+      <!-- <h3>Description</h3> -->
+      <div class="section" id="desc_name" style="grid-template-columns: 1fr"></div>
+      <div class="section" id="desc_from" style="grid-template-columns: 1fr"></div>
+      <div class="section" id="desc_image" style="grid-template-columns: 1fr;"></div>
+      <div class="section" id="desc_content" style="grid-template-columns: 1fr"></div>
+      <div class="section" id="desc_class_core" style="grid-template-columns: auto 1fr;"></div>
+      <div class="section" id="desc_class_feature" style="grid-template-columns: auto 1fr;"></div>
+      <div class="section" id="desc_item" style="grid-template-columns:auto 1fr;"></div>
+      <div id="desc_item_list"></div>
+    </div>
+
+  </div>
+  <div id="toast"></div>
+</body>
+
+</html>
