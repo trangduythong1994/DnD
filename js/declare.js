@@ -1,8 +1,7 @@
-const max_level = 3;
-const max_spelllevel = 4;
+const max_level = 6;
+const max_spelllevel = 6;
 const AS = ["str", "dex", "con", "int", "wis", "cha"];
 const data_xp = [0, 0, 300, 900, 2700, 6500, 14000, 23000, 34000, 48000, 64000, 85000, 100000];
-const LANG = "lang_vi";
 
 const as_str = $id("as_str");
 const as_dex = $id("as_dex");
@@ -19,6 +18,7 @@ const desc_class_core = $id('desc_class_core');
 const desc_class_feature = $id('desc_class_feature');
 const desc_item = $id('desc_item');
 const desc_item_list = $id('desc_item_list');
+const desc_item_list_name = $id('desc_item_list_name');
 
 const weapons_section = $id('weapons-section');
 const armors_section = $id('armors-section');
@@ -46,9 +46,13 @@ const body_slots_chest = $id("body_slots_chest");
 
 const spellcasting_area = $id("spellcasting-area");
 const spellcasting_ability = $id("spellcasting_ability");
+const spell_attack_roll_mod = $id("spell_attack_roll_mod");
+const spell_save_dc = $id("spell_save_dc");
 
-const senses_section = $id("senses-section");
-const traits_section = $id("traits-section");
 const actions_section = $id("actions-section");
 const bonus_actions_section = $id("bonus-actions-section");
 const reactions_section = $id("reactions-section");
+
+const contextMenu = $id('custom-context-menu');
+
+const data = [...data_weapons, ...data_armors, ...data_spells, ...data_classes, ...data_actions];

@@ -1,0 +1,24 @@
+Bảng Màu Đặc Trưng Sát Thương D&D 5.5e (AI Prompt)
+Dưới đây là hệ màu chuẩn để tối ưu hóa nhận diện Icon theo loại sát thương:
+
+• Acid (Axit): Emerald Green + Sulfur Yellow. (Xanh lá đậm, vàng chanh, hiệu ứng ăn mòn).
+
+• Cold (Lạnh): Frost Blue + Arctic White + Cyan. (Xanh băng giá, trắng tuyết, tinh thể sắc nhọn).
+
+• Fire (Lửa): Crimson Red + Amber Orange + White-hot. (Đỏ rực, cam hổ phách, lõi trắng nóng chảy).
+
+• Force (Lực): Arcane Sapphire + Cosmic Indigo + Magenta. (Xanh dương đậm, tím huyền bí, năng lượng thuần khiết).
+
+• Lightning (Lôi): Electric Cyan + Stark White + Violet Sparks. (Xanh lơ sáng, tia chớp trắng, tia điện tím).
+
+• Necrotic (Hoại tử): Shadow Black + Withered Purple + Sickly Olive. (Đen bóng tối, tím than, xanh olive héo úa).
+
+• Poison (Độc): Toxic Lime + Venomous Deep Purple. (Xanh lá mạ rực rỡ, tím độc, dạng chất lỏng/khí).
+
+• Psychic (Tâm linh): Ethereal Pink + Shocking Magenta + Deep Violet. (Hồng neon, đỏ tía, tím đậm, sóng não).
+
+• Radiant (Quang năng): Divine Gold + Celestial White + Solar Yellow. (Vàng kim, trắng thánh khiết, hào quang rạng rỡ).
+
+• Thunder (Âm thanh): Deep Teal + Silver Vibration + Sky Blue. (Xanh mòng két, rung động bạc, sóng xung kích).
+
+• Physical (Vật lý): Polished Steel + Flint Grey + Kinetic White. (Thép sáng, xám đá, vệt chém sắc lẹm).

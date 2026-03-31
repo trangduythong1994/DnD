@@ -1,35 +1,40 @@
 document.body.addEventListener('click', function (e) {
     if (!e.target) return;
-    switch (e.target.getAttribute("name")) {
+    contextMenu.style.display = 'none';
+    const targetNode = e.target.closest('[name]');
+    const targetName = targetNode ? targetNode.getAttribute("name") : null;
+    switch (targetName) {
         case "class_info":
             showClassInfo();
             break;
         case "action":
-            clickAction(e.target);
+            clickAction(targetNode);
             break;
         case "show_more":
-            showItemList(e.target);
+            showItemList(targetNode);
             break;
         case "item":
-            showItem(e.target);
+            showItem(targetNode);
             break;
         case "item_add":
-            addItem(e.target);
+            addItem(targetNode);
             break;
         case "item_delete":
-            deleteItem(e.target);
+            deleteItem(targetNode);
             break;
         case "item_equip":
-            equipItem(e.target);
+            equipItem(targetNode);
             break;
         case "item_unequip":
-            unequipItem(e.target);
+            unequipItem(targetNode);
             break;
     }
-    switch (e.target.tagName) {
-        case "C-1":
-            showDescription(e.target);
-            break;
+
+    const customTagNode = e.target.closest('c-1');
+    if (customTagNode) {
+        showDescription(customTagNode);
+    } else if (e.target.tagName.toUpperCase() === "C-1") {
+        showDescription(e.target);
     }
 });
 
@@ -49,14 +54,6 @@ document.body.addEventListener('input', function (e) {
             break;
         case "character_xp":
             updateLevel();
-            updateSaveMod();
-            updateSkill();
-            loadSpellSlots();
-            updateSpellcastingArea();
-            updateHitDice();
-            updateMaxHP();
-            updateAttack();
-            updateAction();
             break;
     }
 });
@@ -78,5 +75,38 @@ document.body.addEventListener('change', function (e) {
         case "weapon_prof":
             updateAttack();
             break;
+    }
+});
+
+document.addEventListener('contextmenu', function (e) {
+    if (e.target.closest('.inventory-item')) {
+        e.preventDefault();
+        const itemTarget = e.target.closest('.inventory-item');
+        const itemId = itemTarget.getAttribute('data-item-id');
+        const itemType = itemTarget.getAttribute('data-item-type');
+        let menuItems = '';
+        if (itemType === 'Weapon') {
+            menuItems += `<li name="item_equip" data-item-id="${itemId}" data-item-type="${itemType}" data-body-slot="body_slots_main_hand">Equip to Main Hand</li>`;
+            menuItems += `<li name="item_equip" data-item-id="${itemId}" data-item-type="${itemType}" data-body-slot="body_slots_off_hand">Equip to Off Hand</li>`;
+        } else if (itemType === 'Armor') {
+            menuItems += `<li name="item_equip" data-item-id="${itemId}" data-item-type="${itemType}" data-body-slot="body_slots_chest">Equip to Chest</li>`;
+        }
+        menuItems += `<li name="item_delete" data-item-id="${itemId}" data-item-type="${itemType}" style="color: #ff6b6b;">Remove this item</li>`;
+        contextMenu.innerHTML = menuItems;
+        contextMenu.style.top = `${e.pageY}px`;
+        contextMenu.style.left = `${e.pageX}px`;
+        contextMenu.style.display = 'block';
+    } else if (e.target.closest('.item-list-interaction')) {
+        e.preventDefault();
+        const itemTarget = e.target.closest('.item-list-interaction');
+        const itemId = itemTarget.getAttribute('data-item-id');
+        let menuItems = '';
+        menuItems += `<li name="item_add" data-item-id="${itemId}" style="color: #ffdc6b;">Add this item</li>`;
+        contextMenu.innerHTML = menuItems;
+        contextMenu.style.top = `${e.pageY}px`;
+        contextMenu.style.left = `${e.pageX}px`;
+        contextMenu.style.display = 'block';
+    } else {
+        contextMenu.style.display = 'none';
     }
 });

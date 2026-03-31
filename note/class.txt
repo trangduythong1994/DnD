@@ -1,0 +1,158 @@
+1. Barbarian (Kẻ man rợ)
+
+Màu chủ đạo Class: Đỏ máu (Crimson), Nâu đất (Rust), Cam rực (Fierce Orange). Sự giận dữ và sức mạnh nguyên thủy.
+
+Path of the Berserker: Đỏ sẫm (Blood Red) và Đen tuyền. Cảm giác cuồng nộ tột độ.
+
+Path of the Wild Heart (thay thế Totem Warrior): Xanh lá rừng (Forest Green) và Nâu da thú. Hơi thở của dã thú.
+
+Path of the World Tree (Mới): Xanh lục bảo (Emerald), Nâu gỗ tàn (Ash Wood), và Vàng rực của rễ cây phát sáng.
+.
+Path of the Zealot: Đỏ thắm (Crimson) đan xen với Ánh sáng trắng thần thánh (Radiant White). Cơn thịnh nộ từ thần linh.
+
+2. Bard (Thi sĩ)
+
+Màu chủ đạo Class: Tím hoa cà (Magenta), Vàng chói (Gold), Hồng neon. Sự hoa mỹ, quyến rũ và phép thuật huyễn hoặc
+
+College of Dance (Mới): Hồng rực (Vivid Pink) và Xanh mòng két (Teal). Sự uyển chuyển, nhịp điệu rực rỡ.
+
+College of Glamour: Tím hoàng gia (Royal Purple), Vàng lấp lánh và Bụi tiên xanh lá (Fey Green).
+
+College of Lore: Xanh chàm (Indigo), Bạc (Silver) và màu Giấy da cổ (Parchment). Sự uyên bác.
+
+College of Valor: Đỏ tươi (Bright Red) và Vàng đồng (Brass). Khúc ca khải hoàn của chiến binh.
+
+3. Cleric (Giáo sĩ)
+
+Màu chủ đạo Class: Vàng ánh kim (Radiant Gold), Trắng tinh khiết (Pure White), Xanh dương nhạt. Ánh sáng thiêng liêng.
+
+Life Domain: Vàng ấm (Warm Gold) và Trắng sáng. (Như hình bạn đã tạo).
+
+Light Domain: Cam rực (Blazing Orange), Vàng chanh (Yellow) và Trắng chói lóa. Sức nóng của mặt trời.
+
+Trickery Domain: Tím ảo ảnh (Illusion Purple) và Xanh ngọc lục bảo (Emerald Green). Sự lừa lọc, bóng tối pha chút ma thuật.
+
+War Domain: Xám thép (Steel Gray), Bạc và Đỏ máu. Ánh sáng thiêng phản chiếu trên giáp trụ đẫm máu.
+
+4. Druid (Tu sĩ thiên nhiên)
+
+Màu chủ đạo Class: Xanh lá đa dạng (Greens), Nâu gỗ (Bark Brown), Vàng mùa thu. Sức sống của tự nhiên.
+
+Circle of the Land: Xanh ngọc lục bảo (Emerald) và Đất son (Ochre). Phép thuật mọc lên từ đất đá.
+
+Circle of the Moon: Bạc ánh trăng (Lunar Silver) và Xanh màn đêm (Midnight Blue). Sự hoang dã dưới ánh trăng.
+
+Circle of the Sea (Mới): Xanh nước biển (Aquamarine), Bọt biển trắng (Seafoam) và Xanh ngọc. Sự phẫn nộ của đại dương.
+
+Circle of the Stars: Xanh chàm thẳm (Deep Indigo) và Vàng rực của vì sao (Starlight Yellow). Hình học vũ trụ.
+
+5️⃣ Fighter
+Background: Steel Gray
+Glow: Pale Steel / Cold Silver
+Primary Elements: Worn Silver, Steel Gray, Leather Brown
+
+Battle Master: Thép đánh bóng (Polished Steel) và Đỏ sẫm (Crimson). Tính chiến thuật và kỷ luật.
+
+Champion: Bạc sáng (Bright Silver) và Xanh dương hoàng gia (Royal Blue). Sức mạnh thể chất thuần túy.
+
+Eldritch Knight: Sắt xỉn màu (Iron) kết hợp với Tím ma thuật (Arcane Violet) và Lục nhạt.
+
+Psi Warrior: Bạch kim (Platinum) rạn nứt với ánh sáng Năng lượng tâm linh (Psionic Pink/Cyan).
+
+6. Monk (Võ sư)
+
+Màu chủ đạo Class: Vàng nghệ (Saffron), Xanh ngọc bích (Jade), Cam hoàng hôn. Sự tĩnh tâm và khí (Ki).
+
+Warrior of Mercy: Trắng ngà (Bone White) kết hợp Tím độc/Xanh lục ốm yếu (Toxic Green). Sinh và tử.
+
+Warrior of Shadow: Đen mực (Inky Black), Xám khói và Tím than. Ẩn mình trong bóng tối.
+
+Warrior of the Elements: Tứ sắc bùng nổ (Đỏ lửa, Xanh biển, Trắng gió, Nâu đất).
+
+Warrior of the Open Hand: Vàng kim (Gold) và Ánh sáng xanh lam (Aura Blue). Sự cân bằng tuyệt đối.
+
+7. Paladin (Hiệp sĩ thánh chiến)
+
+Màu chủ đạo Class: Vàng kim loại chói lọi (Brilliant Gold), Xanh dương tươm tất (Royal Blue), Trắng rạng rỡ. Sự chính trực.
+
+Oath of Devotion: Vàng rực như mặt trời (Sun Gold) và Trắng. Biểu tượng kinh điển nhất.
+
+Oath of Glory: Đồng đỏ (Bronze) và Đỏ tươi (Triumphant Red). Hào quang của người anh hùng Olympic.
+
+Oath of the Ancients: Xanh rêu (Mossy Green), Vàng nhạt bóng râm, và ánh sáng tinh linh (Fey Light).
+
+Oath of Vengeance: Đen đá vỏ chai (Obsidian), Trắng lạnh lẽo và Đỏ máu gỉ. Bóng tối của công lý.
+
+8. Ranger (Thợ săn)
+
+Màu chủ đạo Class: Xanh rêu (Moss Green), Nâu xỉn (Muted Brown), Vàng lá úa. Sự ngụy trang và sinh tồn.
+
+Beast Master: Nâu đất ẩm (Earth Brown) và Xanh rừng sâu (Hunter Green).
+
+Fey Wanderer: Tím ánh hồng (Fey Twilight) và Cam mùa thu. Nét đẹp ma mị, nguy hiểm.
+
+Gloom Stalker: Đen tuyền (Pitch Black) và Xanh nấm phát sáng (Underdark Phosphorescent Blue). Xuyên thấu màn đêm.
+
+Hunter: Xám đá (Stone Gray) và Xanh ngụy trang. Ánh thép chớp nhoáng trong bụi rậm.
+
+9️⃣ Rogue
+Background: Charcoal Black
+Glow: Rich Crimson-Burgundy
+Primary Elements: Charcoal, Dark Gray, Muted Silver accents, Burgundy
+Dark overall, but sharp highlights
+Strong edge highlights and controlled contrast to ensure readability on dark backgrounds.
+
+Arcane Trickster: Bóng tối điểm xuyết Tím ma thuật (Mage Hand Purple) và Xanh neon lừa thị giác.
+
+Assassin: Đen kịt và Xanh lá nọc độc (Venom Green) hoặc Đỏ máu sẫm. Một hit đoạt mạng.
+
+Soulknife: Bóng tối kết hợp với Hồng cánh sen/Xanh lơ tâm linh (Psionic Pink/Light Blue). Sắc bén, vô hình.
+
+🔸 Thief
+Background: Charcoal Black (subtle worn leather + dark mechanical texture)
+Glow: Deep Burgundy (rất kiểm soát, nhỏ, sắc) + subtle Tarnished Bronze secondary highlights
+Primary Elements: Charcoal, Dark Gray, Worn Leather Brown, Tarnished Bronze, Muted Silver accents, Deep Burgundy (rất hạn chế, chỉ focal point)
+Lighting: Low visibility, stealth-focused, Deep Burgundy dùng làm precision highlight (không phải glow lớn), Bronze & Silver dùng để define vật liệu và cạnh
+Contrast: Dark overall, nhưng focal point có contrast rất cao, Strong edge highlights + controlled micro-lighting để giữ readability
+A worn, grounded evolution of Rogue—combining precise Burgundy focal strikes with aged leather and tarnished metal for a more physical, calculated mastery.
+Highlight Identity: Focus vào worn leather + tarnished bronze tools, nhấn mạnh cảm giác thực dụng, cũ, thao tác vật lý chính xác – không ma thuật
+
+10. Sorcerer (Pháp sư bẩm sinh)
+
+Màu chủ đạo Class: Đỏ Ruby, Tím Thạch anh (Amethyst), Xanh vỡ vụn. Ma thuật hỗn loạn, nguyên thủy, tràn trề từ cơ thể.
+
+Aberrant Sorcery: Tím Hư không (Void Purple), Đỏ tươi nhầy nhụa và Xanh dạ quang dị thường. Sự can thiệp của thực thể ngoài không gian.
+
+Clockwork Sorcery: Vàng đồng nguyên chất (Brass/Copper), Vàng sáng rực như bánh răng. Tính trật tự tuyệt đối.
+
+Draconic Sorcery: Màu rực rỡ của vảy rồng (Đỏ Lửa chói, Xanh Băng sắc lạnh, hoặc Vàng Sét rực).
+
+Wild Magic: Cầu vồng hỗn loạn (Prismatic), Hồng neon chói lóa pha Xanh lục. Không thể kiểm soát.
+
+11. Warlock (Phù thủy khế ước)
+
+Màu chủ đạo Class: Xanh lá u ám (Eldritch Green), Tím than (Deep Violet), Đen. Sức mạnh hắc ám, vay mượn.
+
+Archfey Patron: Tím pha Hồng hoa mười giờ (Feywild Magenta) và Lục lam. Đẹp đẽ nhưng điên rồ.
+
+Celestial Patron: Trắng chói lóa (Blinding White) và Vàng cháy (Burning Gold). Thánh thiện nhưng tàn nhẫn.
+
+Fiend Patron: Cam địa ngục (Hellfire Orange), Đỏ gạch và Đen tro than. Lửa và diêm sinh.
+
+Great Old One Patron: Xanh lục bệnh tật (Far Realm Green) và Đen tuyền. Tri thức cấm kỵ khiến con người phát điên.
+
+1️⃣2️⃣ Wizard
+Background: Deep Blue
+Glow: Arcane Purple
+Primary Elements: Starlight Gold, Arcane Purple, Deep Blue
+
+Abjurer: Xanh lơ (Forcefield Cyan) và Trắng trong suốt. Các lá chắn và rào cản năng lượng.
+
+Diviner: Bạc huyền bí (Mystic Silver), Xanh nhạt và trắng sáng của con mắt thứ ba. Nhìn thấu tương lai.
+
+🔸 Evoker Subclass
+Background: Deep Blue
+Glow: Arcane Flame (Bright Orange / Amber)
+Primary Elements: Starlight Gold + Deep Blue + Arcane Flame accents
+
+Illusionist: Tím lung linh (Shimmering Violet), Xanh ngọc và các lăng kính đa sắc. Sự biến ảo khôn lường.

@@ -2,7 +2,9 @@ body {
     font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
-    background: rgb(27 27 27);
+    height: 100vh;
+    /* overflow: hidden; */
+    background: #000000;
     color: rgb(210 210 210);
     font-size: small;
     box-sizing: border-box;
@@ -17,8 +19,9 @@ select {
 }
 
 p {
-    margin-block-start: 6px;
+    margin-block-start: 5px;
     margin-block-end: 0px;
+    text-indent: 1.5em;
 }
 
 p-1 {
@@ -44,7 +47,6 @@ input[type="number"] {
     padding: 0px;
     border: 1px solid #aaa;
     min-width: 0px;
-    /* box-sizing: border-box; */
     text-align: center;
 }
 
@@ -60,56 +62,45 @@ input[type="number"]::-webkit-outer-spin-button {
     margin: 0;
 }
 
-textarea {
-    resize: vertical;
-    min-height: 500px;
-    min-width: 246px;
-    border: none;
-}
-
 h3 {
     margin: 0px;
     padding: 5px;
     background-color: rgb(255 160 60);
     color: #ffffff;
+    box-sizing: border-box;
 }
 
-img {
-    max-width: 100px;
-    margin: auto;
+#desc_image {
+    min-height: 250px;
 }
 
-img.icon {
-    max-height: 18px;
-    /* background: linear-gradient(rgba(72, 72, 72, 0%), rgba(72, 72, 72, 12.5%));
-    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5); */
-    border: solid 1px rgb(72, 72, 72);
+#desc_image>img {
+    max-height: 250px;
 }
 
-.action_img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    display: block;
-    /* background: radial-gradient(rgba(72, 72, 72, 0%), rgba(72, 72, 72, 0.125)); */
+.icon-img {
+    min-height: 57px;
+    max-height: 57px;
     box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
-    border: solid 1px rgb(72, 72, 72);
+    border: solid 1px #aaa;
+    outline: solid 1px rgb(72, 72, 72);
     cursor: pointer;
+    display: block;
+    box-sizing: border-box;
 }
 
 .container {
     display: flex;
     flex-wrap: wrap;
-    height: 100vh;
+    height: 100%;
 }
 
 .col {
     border: 1px solid #aaa;
-    /* padding: 10px; */
     align-content: start;
-    overflow-y: auto;
-    margin: 4px;
-    background-color: rgb(35 35 35);
+    background-color: #000000;
+    box-sizing: border-box;
+    height: 100%;
 }
 
 .fixed {
@@ -119,15 +110,12 @@ img.icon {
 .flex {
     flex: 1;
     min-width: 250px;
-    /* max-width: 530px; */
 }
 
 .section {
     text-align: right;
-    align-items: center;
     display: grid;
-    gap: 1px;
-    padding: 0px 5px;
+    padding: 5px 5px 0px 5px;
 }
 
 button {
@@ -142,40 +130,6 @@ button:hover {
 
 .button-info {
     border-radius: 50%;
-}
-
-.tooltip {
-    position: relative;
-    cursor: help;
-    z-index: 9999;
-}
-
-.tooltip::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: 125%;
-    left: 0%;
-    z-index: 9999;
-
-    background: rgba(0, 0, 0, 0.9);
-    color: white;
-    width: max-content;
-    max-width: 200px;
-    padding: 5px 10px;
-    border-radius: 5px;
-    text-align: justify;
-    white-space: normal;
-    overflow-wrap: break-word;
-    text-indent: 0em;
-    margin-block-start: 0px;
-    margin-block-end: 0px;
-
-    opacity: 0;
-    pointer-events: none;
-}
-
-.tooltip:hover::after {
-    opacity: 1;
 }
 
 #desc_name {
@@ -207,32 +161,18 @@ button:hover {
     border-bottom: 1px dotted #aaa;
 }
 
-.item_header {
+#desc_item_list_name {
+    font-size: large;
     text-align: left;
-    border-bottom: 1px dotted #aaa;
-    font-weight: bold;
-}
-
-.item_name {
-    text-align: left;
-    /* border-bottom: 1px dotted #aaa; */
     color: rgb(255 160 60);
-}
-
-.item_name:hover {
-    cursor: pointer;
-}
-
-.item {
-    text-align: left;
+    padding-bottom: 5px;
 }
 
 .flex-container {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    gap: 1px;
     padding: 0px 5px;
+    margin-top: 5px;    
 }
 
 .title {
@@ -294,4 +234,48 @@ td {
     border: 1px solid #333;
     padding: 8px 12px;
     text-align: center;
+}
+
+.context-menu {
+    display: none;
+    /* Ẩn đi chờ khi nào click mới hiện */
+    position: absolute;
+    z-index: 1000;
+    background-color: #333;
+    color: white;
+    list-style: none;
+    padding: 5px 0;
+    margin: 0;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.9);
+    min-width: 120px;
+}
+
+.context-menu li {
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.context-menu li:hover {
+    background-color: #555;
+}
+
+.inventory-item {
+    position: relative;
+    display: inline-block;
+}
+
+.inventory-item>.qty {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    padding: 1px 1px;
+    font-size: 14px;
+}
+
+#desc_item_list {
+    overflow-y: auto;
 }

@@ -1,128 +1,128 @@
 const data_skills = [
   {
-    name: "skill_acrobatics",
-    d_name: "Acrobatics",
-    v_name: "Nhào Lộn",
+    id: "skill_acrobatics",
+    name: "Acrobatics",
     as_skill: "dex",
-    d_as_skill: "(DEX)"
+    d_as_skill: "DEX",
+    description: `Stay on your feet in a tricky situation, or perform an acrobatic stunt.`
   },
   {
-    name: "skill_animal_handling",
-    d_name: "Animal Handling",
-    v_name: "Thuần Hóa",
+    id: "skill_animal_handling",
+    name: "Animal Handling",
     as_skill: "wis",
-    d_as_skill: "(WIS)"
+    d_as_skill: "WIS",
+    description: `Calm or train an animal, or get an animal to behave in a certain way.`
   },
   {
-    name: "skill_arcana",
-    d_name: "Arcana",
-    v_name: "Huyền Bí",
+    id: "skill_arcana",
+    name: "Arcana",
     as_skill: "int",
-    d_as_skill: "(INT)"
+    d_as_skill: "INT",
+    description: `Recall lore about spells, magic items, and the planes of existence.`
   },
   {
-    name: "skill_athletics",
-    d_name: "Athletics",
-    v_name: "Thể Lực",
+    id: "skill_athletics",
+    name: "Athletics",
     as_skill: "str",
-    d_as_skill: "(STR)"
+    d_as_skill: "STR",
+    description: `Jump farther than normal, stay afloat in rough water, or break something.`
   },
   {
-    name: "skill_deception",
-    d_name: "Deception",
-    v_name: "Lừa Dối",
+    id: "skill_deception",
+    name: "Deception",
     as_skill: "cha",
-    d_as_skill: "(CHA)"
+    d_as_skill: "CHA",
+    description: `Tell a convincing lie, or wear a disguise convincingly.`
   },
   {
-    name: "skill_history",
-    d_name: "History",
-    v_name: "Lịch Sử",
+    id: "skill_history",
+    name: "History",
     as_skill: "int",
-    d_as_skill: "(INT)"
+    d_as_skill: "INT",
+    description: `Recall lore about historical events, people, nations, and cultures.`
   },
   {
-    name: "skill_insight",
-    d_name: "Insight",
-    v_name: "Nhìn Thấu",
+    id: "skill_insight",
+    name: "Insight",
     as_skill: "wis",
-    d_as_skill: "(WIS)"
+    d_as_skill: "WIS",
+    description: `Discern a person's mood and intentions.`
   },
   {
-    name: "skill_intimidation",
-    d_name: "Intimidation",
-    v_name: "Đe Dọa",
+    id: "skill_intimidation",
+    name: "Intimidation",
     as_skill: "cha",
-    d_as_skill: "(CHA)"
+    d_as_skill: "CHA",
+    description: `Awe or threaten someone into doing what you want.`
   },
   {
-    name: "skill_investigation",
-    d_name: "Investigation",
-    v_name: "Điều Tra",
+    id: "skill_investigation",
+    name: "Investigation",
     as_skill: "int",
-    d_as_skill: "(INT)"
+    d_as_skill: "INT",
+    description: `Find obscure information in books, or deduce how something works.`
   },
   {
-    name: "skill_medicine",
-    d_name: "Medicine",
-    v_name: "Y Thuật",
+    id: "skill_medicine",
+    name: "Medicine",
     as_skill: "wis",
-    d_as_skill: "(WIS)"
+    d_as_skill: "WIS",
+    description: `Diagnose an illness, or determine what killed the recently slain.`
   },
   {
-    name: "skill_nature",
-    d_name: "Nature",
-    v_name: "Thiên Nhiên",
+    id: "skill_nature",
+    name: "Nature",
     as_skill: "int",
-    d_as_skill: "(INT)"
+    d_as_skill: "INT",
+    description: `Recall lore about terrain, plants, animals, and weather.`
   },
   {
-    name: "skill_perception",
-    d_name: "Perception",
-    v_name: "Quan Sát",
+    id: "skill_perception",
+    name: "Perception",
     as_skill: "wis",
-    d_as_skill: "(WIS)"
+    d_as_skill: "WIS",
+    description: `Using a combination of senses, notice something that's easy to miss.`
   },
   {
-    name: "skill_performance",
-    d_name: "Performance",
-    v_name: "Trình Diễn",
+    id: "skill_performance",
+    name: "Performance",
     as_skill: "cha",
-    d_as_skill: "(CHA)"
+    d_as_skill: "CHA",
+    description: `Act, tell a story, perform music, or dance.`
   },
   {
-    name: "skill_persuasion",
-    d_name: "Persuasion",
-    v_name: "Thuyết Phục",
+    id: "skill_persuasion",
+    name: "Persuasion",
     as_skill: "cha",
-    d_as_skill: "(CHA)"
+    d_as_skill: "CHA",
+    description: `Honestly and graciously convince someone of something.`
   },
   {
-    name: "skill_religion",
-    d_name: "Religion",
-    v_name: "Tôn Giáo",
+    id: "skill_religion",
+    name: "Religion",
     as_skill: "int",
-    d_as_skill: "(INT)"
+    d_as_skill: "INT",
+    description: `Recall lore about gods, religious rituals, and holy symbols.`
   },
   {
-    name: "skill_sleight_of_hand",
-    d_name: "Sleight of Hand",
-    v_name: "Khéo Léo",
+    id: "skill_sleight_of_hand",
+    name: "Sleight of Hand",
     as_skill: "dex",
-    d_as_skill: "(DEX)"
+    d_as_skill: "DEX",
+    description: `Pick a pocket, conceal a handheld object, or perform legerdemain.`
   },
   {
-    name: "skill_stealth",
-    d_name: "Stealth",
-    v_name: "Lén Lút",
+    id: "skill_stealth",
+    name: "Stealth",
     as_skill: "dex",
-    d_as_skill: "(DEX)"
+    d_as_skill: "DEX",
+    description: `Escape notice by moving quietly and hiding behind things.`
   },
   {
-    name: "skill_survival",
-    d_name: "Survival",
-    v_name: "Sinh Tồn",
+    id: "skill_survival",
+    name: "Survival",
     as_skill: "wis",
-    d_as_skill: "(WIS)"
+    d_as_skill: "WIS",
+    description: `Follow tracks, forage, find a trail, or avoid natural hazards.`
   }
 ];

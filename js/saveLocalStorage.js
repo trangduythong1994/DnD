@@ -24,10 +24,8 @@ document.addEventListener("DOMContentLoaded", () => {
   customElements.define("p-i", piElement);
   initElements();
   loadData();
-  updateInventory("Weapon");
-  updateInventory("Armor");
-  updateInventory("Shield");
-  updateInventory("Spell");
+  updateBodySlots();
+  updateInventory();
   updateArmorClass();
   updateAttack();
   updateAction();

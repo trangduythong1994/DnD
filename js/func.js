@@ -66,61 +66,61 @@ function multiSort(arr, keys, customOrders = {}) {
 }
 
 function lengthSort(arr) {
-    const collator = new Intl.Collator('vi', { sensitivity: 'base' }); 
-    return arr.sort((a, b) => {
-        if (a.key.length !== b.key.length) {
-            return b.key.length - a.key.length;
-        }
-        return collator.compare(a, b);
-    });
+  const collator = new Intl.Collator('vi', { sensitivity: 'base' });
+  return arr.sort((a, b) => {
+    if (a.key.length !== b.key.length) {
+      return b.key.length - a.key.length;
+    }
+    return collator.compare(a, b);
+  });
 }
 
 let toastTimeout;
 
 function showToast(message, duration = 3000) {
-    const toast = document.getElementById('toast');
+  const toast = document.getElementById('toast');
 
-    // Nếu toast đang hiện, ẩn ngay lập tức
-    if (toast.style.display === 'block') {
-        clearTimeout(toastTimeout);
-        toast.style.display = 'none';
-        toast.style.opacity = '0';
-    }
+  // Nếu toast đang hiện, ẩn ngay lập tức
+  if (toast.style.display === 'block') {
+    clearTimeout(toastTimeout);
+    toast.style.display = 'none';
+    toast.style.opacity = '0';
+  }
 
-    // Hiển thị toast mới
-    toast.innerHTML = message;
-    toast.style.display = 'block';
-    toast.style.transform = 'translateX(-50%) translateY(-10px)';
-    requestAnimationFrame(() => {
-        toast.style.opacity = '1';
-        toast.style.transform = 'translateX(-50%) translateY(0)';
-    });
+  // Hiển thị toast mới
+  toast.innerHTML = message;
+  toast.style.display = 'block';
+  toast.style.transform = 'translateX(-50%) translateY(-10px)';
+  requestAnimationFrame(() => {
+    toast.style.opacity = '1';
+    toast.style.transform = 'translateX(-50%) translateY(0)';
+  });
 
-    let isHovering = false;
+  let isHovering = false;
 
-    // Hover để giữ lại
-    toast.onmouseover = () => {
-        isHovering = true;
-        clearTimeout(toastTimeout);
-    };
+  // Hover để giữ lại
+  toast.onmouseover = () => {
+    isHovering = true;
+    clearTimeout(toastTimeout);
+  };
 
-    // Rời chuột để tiếp tục đếm ngược
-    toast.onmouseout = () => {
-        isHovering = false;
-        startHideTimer();
-    };
-
-    function startHideTimer() {
-        toastTimeout = setTimeout(() => {
-            if (!isHovering) {
-                toast.style.opacity = '0';
-                toast.style.transform = 'translateX(-50%) translateY(-10px)';
-                setTimeout(() => {
-                    toast.style.display = 'none';
-                }, 400); // khớp với transition
-            }
-        }, duration);
-    }
-
+  // Rời chuột để tiếp tục đếm ngược
+  toast.onmouseout = () => {
+    isHovering = false;
     startHideTimer();
+  };
+
+  function startHideTimer() {
+    toastTimeout = setTimeout(() => {
+      if (!isHovering) {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateX(-50%) translateY(-10px)';
+        setTimeout(() => {
+          toast.style.display = 'none';
+        }, 400); // khớp với transition
+      }
+    }, duration);
+  }
+
+  startHideTimer();
 }
