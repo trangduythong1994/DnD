@@ -1,7 +1,17 @@
 function initElements() {
     initSkills();
+    initSpecies();
     initClasses();
     resetDesc();
+}
+
+function initSpecies() {
+    data.filter(e => e.type == "Species").forEach(e => {
+        const opt = document.createElement("option");
+        opt.value = e.id;
+        opt.textContent = e.name;
+        document.getElementById("character_species").appendChild(opt);
+    });
 }
 
 function initClasses() {

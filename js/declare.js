@@ -44,7 +44,6 @@ const body_slots_main_hand = $id("body_slots_main_hand");
 const body_slots_off_hand = $id("body_slots_off_hand");
 const body_slots_chest = $id("body_slots_chest");
 
-const spellcasting_area = $id("spellcasting-area");
 const spellcasting_ability = $id("spellcasting_ability");
 const spell_attack_roll_mod = $id("spell_attack_roll_mod");
 const spell_save_dc = $id("spell_save_dc");
@@ -55,4 +54,26 @@ const reactions_section = $id("reactions-section");
 
 const contextMenu = $id('custom-context-menu');
 
-const data = [...data_weapons, ...data_armors, ...data_spells, ...data_classes, ...data_actions];
+const data = [ ...data_weapons
+    , ...data_armors
+    , ...data_spells
+    , ...data_classes
+    , ...data_species
+    , ...data_actions];
+
+const slotPerLevel = [
+    [0, 0, 0, 0, 0, 0, 0]
+    , [1, 2, 0, 0, 0, 0, 0]
+    , [2, 3, 0, 0, 0, 0, 0]
+    , [3, 4, 2, 0, 0, 0, 0]
+    , [4, 4, 3, 0, 0, 0, 0]
+    , [5, 4, 3, 2, 0, 0, 0]
+    , [6, 4, 3, 3, 0, 0, 0]
+    , [7, 4, 3, 3, 1, 0, 0]
+    , [8, 4, 3, 3, 2, 0, 0]
+    , [9, 4, 3, 3, 3, 1, 0]
+    , [10, 4, 3, 3, 3, 2, 0]
+    , [11, 4, 3, 3, 3, 2, 1]
+    , [12, 4, 3, 3, 3, 2, 1]
+];
+const maxSpellLevelPerLevel = [0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6]

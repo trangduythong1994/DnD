@@ -49,7 +49,6 @@ document.body.addEventListener('input', function (e) {
             updateInitiative();
             updateArmorClass();
             updateSpellcastingArea();
-            updateMaxHP();
             updateAttack();
             break;
         case "character_xp":
@@ -66,7 +65,6 @@ document.body.addEventListener('change', function (e) {
             updateSpellcastingArea();
             showClassInfo();
             updateHitDice();
-            updateMaxHP();
             updateAction();
             break;
         case "save_str": case "save_dex": case "save_con": case "save_int": case "save_wis": case "save_cha":
@@ -89,7 +87,12 @@ document.addEventListener('contextmenu', function (e) {
             menuItems += `<li name="item_equip" data-item-id="${itemId}" data-item-type="${itemType}" data-body-slot="body_slots_main_hand">Equip to Main Hand</li>`;
             menuItems += `<li name="item_equip" data-item-id="${itemId}" data-item-type="${itemType}" data-body-slot="body_slots_off_hand">Equip to Off Hand</li>`;
         } else if (itemType === 'Armor') {
-            menuItems += `<li name="item_equip" data-item-id="${itemId}" data-item-type="${itemType}" data-body-slot="body_slots_chest">Equip to Chest</li>`;
+            const itemCategory = data.find(e => e.id == itemId).category;
+            if (itemCategory == "Shield") {
+                menuItems += `<li name="item_equip" data-item-id="${itemId}" data-item-type="${itemType}" data-body-slot="body_slots_off_hand">Equip to Off Hand</li>`;
+            } else {
+                menuItems += `<li name="item_equip" data-item-id="${itemId}" data-item-type="${itemType}" data-body-slot="body_slots_chest">Equip to Chest</li>`;
+            }
         }
         menuItems += `<li name="item_delete" data-item-id="${itemId}" data-item-type="${itemType}" style="color: #ff6b6b;">Remove this item</li>`;
         contextMenu.innerHTML = menuItems;
@@ -102,6 +105,16 @@ document.addEventListener('contextmenu', function (e) {
         const itemId = itemTarget.getAttribute('data-item-id');
         let menuItems = '';
         menuItems += `<li name="item_add" data-item-id="${itemId}" style="color: #ffdc6b;">Add this item</li>`;
+        contextMenu.innerHTML = menuItems;
+        contextMenu.style.top = `${e.pageY}px`;
+        contextMenu.style.left = `${e.pageX}px`;
+        contextMenu.style.display = 'block';
+    } else if (e.target.closest('.body-slot')) {
+        e.preventDefault();
+        const itemTarget = e.target.closest('.body-slot');
+        const id = itemTarget.getAttribute('id');
+        let menuItems = '';
+        menuItems += `<li name="item_unequip" data-body-slot="${id}" style="color: #ff6b6b;">Unequip</li>`;
         contextMenu.innerHTML = menuItems;
         contextMenu.style.top = `${e.pageY}px`;
         contextMenu.style.left = `${e.pageX}px`;

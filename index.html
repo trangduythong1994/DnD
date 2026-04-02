@@ -6,6 +6,8 @@
   <title>D&D Character Sheet</title>
 </head>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css" />
 <link rel="stylesheet" href="style.css">
 <script src="https://unpkg.com/@popperjs/core@2"></script>
@@ -13,13 +15,16 @@
 <script src="js/data/skills.js"></script>
 <script src="js/data/actions.js"></script>
 
-<script src="js/data/features/cleric.js"></script>
-<script src="js/data/features/fighter.js"></script>
-<script src="js/data/features/rogue.js"></script>
-<script src="js/data/features/wizard.js"></script>
 
-<script src="js/data/species.js"></script>
-<script src="js/data/classes.js"></script>
+<script src="js/data/classes/cleric.js"></script>
+<script src="js/data/classes/fighter.js"></script>
+<script src="js/data/classes/rogue.js"></script>
+<script src="js/data/classes/wizard.js"></script>
+<script src="js/data/classes/classes.js"></script>
+
+<script src="js/data/species/human.js"></script>
+<script src="js/data/species/species.js"></script>
+
 <script src="js/data/weapons.js"></script>
 <script src="js/data/armors.js"></script>
 <script src="js/data/spells.js"></script>
@@ -38,8 +43,8 @@
       <h3>D&D Character Sheet</h3>
       <div class="section" id="general-section" style="grid-template-columns: auto 1fr 1fr">
         <label>Name</label><input type="text" id="character_name" style="grid-column: 2/span 2;">
-        <!-- <label>Species</label><select id="character_species" style="grid-column: 2/span 2;"></select> -->
-        <!-- <label>Background</label><input type="text" id="character_background" style="grid-column: 2/span 2;"> -->
+        <label>Background</label><select type="text" id="character_background" style="grid-column: 2/span 2;"></select>
+        <label>Species</label><select id="character_species" style="grid-column: 2/span 2;"></select>
         <label>LV/Prof. Bonus</label><input type="number" id="character_level" style="text-align: center;"
           data-computed="true" disabled><input type="text" id="character_prof_bonus" data-computed="true" disabled>
         <label>XP</label><input type="text" id="character_xp"><input type="text" id="character_next_xp_level"
@@ -100,7 +105,7 @@
         <label style="text-align: center;">Maximum</label>
         <label style="text-align: center;">Current</label>
         <label style="text-align: center;">Temporary</label>
-        <input type="number" id="hp_max" data-computed="true" disabled>
+        <input type="number" id="hp_max">
         <input type="number" id="hp_current">
         <input type="number" id="hp_temp">
       </div>
@@ -150,16 +155,13 @@
         <input style="text-align: center;" type="number" id="armor_class" data-computed="true" disabled>
       </div>
       <div class="title">Equipment</div>
-      <div class="section" id="body-slots-section" style="grid-template-columns: auto 1fr auto;">
+      <div class="section" id="body-slots-section" style="grid-template-columns: auto 1fr;">
         <label>Main Hand</label>
-        <input type="text" name="item" id="body_slots_main_hand" readonly><button name="item_unequip"
-          data-body-slot="body_slots_main_hand">U</button>
+        <input type="text" class="body-slot" name="item" id="body_slots_main_hand" readonly>
         <label>Off Hand</label>
-        <input type="text" name="item" id="body_slots_off_hand" readonly><button name="item_unequip"
-          data-body-slot="body_slots_off_hand">U</button>
+        <input type="text" class="body-slot" name="item" id="body_slots_off_hand" readonly>
         <label>Chest</label>
-        <input type="text" name="item" id="body_slots_chest" readonly><button name="item_unequip"
-          data-body-slot="body_slots_chest">U</button>
+        <input type="text" class="body-slot" name="item" id="body_slots_chest" readonly>
       </div>
       <div class="title">Attacking</div>
       <div class="section" id="attack-section" style="grid-template-columns: auto 1fr 1fr 1fr;">
@@ -174,7 +176,7 @@
         <label>Damage</label>
         <input type="text" id="ranged_attack_damage_mod" data-computed="true" disabled>
       </div>
-      <div id="spellcasting-area">
+      <div class="spellcasting-area">
         <div class="title">Spellcasting</div>
         <div class="section" id="spellcasting-section" style="grid-template-columns: auto 1fr;">
           <label>Spellcasting Ability</label>
@@ -199,8 +201,13 @@
     <div class="col fixed">
       <h3>Feature</h3>
       <div id="features_general"></div>
+      <div class="title">Senses</div>
       <div id="features_senses"></div>
+      <div class="title">Feats</div>
+      <div id="features_feats"></div>
+      <div class="title">Species Features</div>
       <div class="flex-container" id="features_species"></div>
+      <div class="title">Class Features</div>
       <div class="flex-container" id="features_class"></div>
       <div class="title">🟩 Action</div>
       <div class="flex-container" id="actions-section"></div>
@@ -213,12 +220,29 @@
     <!-- col-4 -->
     <div class="col fixed">
       <h3>Inventory</h3>
+      <div class="title">Coins</div>
+      <div class="section" id="hit-points-section" style="grid-template-columns: 1fr 1fr 1fr 1fr">
+        <label style="text-align: center;">PP</label>
+        <label style="text-align: center;">GP</label>
+        <label style="text-align: center;">SP</label>
+        <label style="text-align: center;">CP</label>
+        <input type="number" id="ttl_pp">
+        <input type="number" id="ttl_gp">
+        <input type="number" id="ttl_sp">
+        <input type="number" id="ttl_cp">
+      </div>
       <div class="title" name="show_more" data-item-type="Weapon">Weapons</div>
       <div class="flex-container" id="weapons-section"></div>
       <div class="title" name="show_more" data-item-type="Armor">Armors</div>
       <div class="flex-container" id="armors-section"></div>
-      <div class="title" name="show_more" data-item-type="Spell">Prepared Spells</div>
-      <div class="flex-container" id="spells-section"></div>
+      <div class="title" name="show_more" data-item-type="Armor">Tools</div>
+      <div class="flex-container" id="tools-section"></div>
+      <div class="spellcasting-area">
+        <div class="title" name="show_more" data-item-type="Spell">Spellbook</div>
+        <div class="flex-container" id="spellbook-section"></div>
+        <div class="title" name="show_more" data-item-type="Spell">Prepared Spells</div>
+        <div class="flex-container" id="spells-section"></div>
+      </div>
     </div>
 
     <!-- col-5 -->

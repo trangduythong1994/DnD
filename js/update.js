@@ -9,6 +9,7 @@ function resetDesc() {
 
 function showClassInfo() {
     resetDesc();
+    desc_content.style.display = "";
     desc_class_core.style.display = "";
     desc_class_feature.style.display = "";
     const class_selected = document.getElementById('character_class').value;
@@ -17,7 +18,6 @@ function showClassInfo() {
     desc_from.innerHTML = 'Class';
 
     let class_content = '';
-    // let desc_class_core_content = '';
     let table_attr = ["Primary Ability", "Hit Point Die", "Saving Throw Proficiencies", "Skill Proficiencies", "Weapon Proficiencies", "Armor Training", "Starting Equipment"];
     table_attr.forEach(attr => {
         class_content += '<label class="desc_content_header">' + attr + '</label>';
@@ -39,6 +39,7 @@ function showClassInfo() {
             }
         }
     });
+    desc_content.innerHTML = item.description_text;
     desc_class_core.innerHTML = class_content;
     desc_class_feature.innerHTML = feature_content;
     desc_image.innerHTML = `<img src="img/class/${item.id}.jpg" onerror="this.src='img/Failed Image.png'">`;
@@ -61,7 +62,6 @@ function updateLevel() {
     loadSpellSlots();
     updateSpellcastingArea();
     updateHitDice();
-    updateMaxHP();
     updateAttack();
     updateAction();
 }
@@ -69,21 +69,6 @@ function updateLevel() {
 function loadSpellSlots() {
     const section = document.getElementById('spell-slots-section');
     const level = document.getElementById('character_level').value;
-    const slotPerLevel = [
-        [0, 0, 0, 0, 0, 0, 0]
-        , [1, 2, 0, 0, 0, 0, 0]
-        , [2, 3, 0, 0, 0, 0, 0]
-        , [3, 4, 2, 0, 0, 0, 0]
-        , [4, 4, 3, 0, 0, 0, 0]
-        , [5, 4, 3, 2, 0, 0, 0]
-        , [6, 4, 3, 3, 0, 0, 0]
-        , [7, 4, 3, 3, 1, 0, 0]
-        , [8, 4, 3, 3, 2, 0, 0]
-        , [9, 4, 3, 3, 3, 1, 0]
-        , [10, 4, 3, 3, 3, 2, 0]
-        , [11, 4, 3, 3, 3, 2, 1]
-        , [12, 4, 3, 3, 3, 2, 1]
-    ];
     let content = '';
     for (let ss = 1; ss <= max_spelllevel; ss++) {
         if (slotPerLevel[level][ss] > 0) {
@@ -176,13 +161,13 @@ function updateArmorClass() {
 }
 
 function updateSpellcastingArea() {
-    spellcasting_area.style.display = "none";
+    document.querySelectorAll(".spellcasting-area").forEach(e => e.style.display = "none");
     const feature = data.find(e => e.id == $id("character_class").value);
     for (let i = 0; i <= character_level.value; i++) {
         if (feature?.level?.[i]) {
             const f = feature?.level?.[i];
             if (f.spellcasting_ability) {
-                spellcasting_area.style.display = "";
+                document.querySelectorAll(".spellcasting-area").forEach(e => { e.style.display = "";});
                 spellcasting_ability.value = feature.spellcasting_ability;
                 spell_attack_roll_mod.value = formatModifier(parseInt(character_prof_bonus.value) + parseInt($id("as_" + f.spellcasting_ability + "_mod").value));
                 spell_save_dc.value = 8 + parseInt(character_prof_bonus.value) + parseInt($id("as_" + f.spellcasting_ability + "_mod").value);
@@ -198,22 +183,14 @@ function updateSpellcastingArea() {
 }
 
 function updateHitDice() {
+    [6, 8, 10, 12].forEach(e => $id("hd_ttl_" + e).value = "");
     const feature = data.find(e => e.id == $id("character_class").value);
     if (feature?.level?.[0]) {
-        $id("character_hd").value = feature?.level?.[0].hit_dice;
+        $id("character_hd").value = feature.level[0].hit_dice;
         const hd_ttl = $id("hd_ttl_" + $id("character_hd").value);
         const character_level = $id("character_level");
         hd_ttl.value = character_level.value;
     }
-}
-
-function updateMaxHP() {
-    let hp = 0;
-    hp = parseInt($id("character_hd").value) + parseInt($id("as_con_mod").value); //level 1
-    if (character_level.value > 1) {
-        hp += (character_level.value - 1) * (1 + parseInt($id("character_hd").value) / 2 + parseInt($id("as_con_mod").value));
-    }
-    $id("hp_max").value = hp;
 }
 
 function showItemList(target) {
@@ -228,12 +205,21 @@ function showItemList(target) {
     desc_item_list_name.innerHTML = `${type} List`;
     let content = ``;
     data.filter(e => e.type == type).forEach(obj => {
-        if (obj.type != "Spell" || (obj.classes.indexOf($id("character_class").value) > -1 && obj.level <= $id("character_level").value)) {
-        content += `
+        if (obj.type != "Spell") {
+            content += `
                 <span name="item" class="item-list-interaction" data-item-id="${obj.id}">
                     <img class="icon-img" src="img/${obj.type}/${obj.id}.jpg" onerror="this.src='img/Failed Image.png'">
                 </span>`;
+        } else {
+            if (obj.classes.indexOf($id("character_class").value) > -1 && obj.level <= maxSpellLevelPerLevel[$id("character_level").value]) {
+                content += `
+                    <span name="item" class="item-list-interaction" data-item-id="${obj.id}">
+                        <img class="icon-img" src="img/${obj.type}/${obj.id}.jpg" onerror="this.src='img/Failed Image.png'">
+                        <span class="lvl spell-lv${obj.level}">${obj.level}</span>
+                    </span>`;
+            }
         }
+
     });
     desc_item_list.innerHTML = content;
 }
@@ -346,10 +332,16 @@ function updateInventory() {
         const content = data.filter(x => x.type === type && inventoryMap[x.id])
             .map(e => {
                 const item = inventoryMap[e.id];
+                let attr = ``;
+                if (type == "Spell") {
+                    attr += `<span class="lvl spell-lv${e.level}">${e.level}</span>`;
+                } else {
+                    attr += `<span class="qty">${item.qty}</span>`;
+                }
                 return `
                 <span class="inventory-item" name="item" data-item-id="${e.id}" data-item-type="${e.type}" style="cursor: pointer;">
                     <img class="icon-img" src="img/${e.type}/${e.id}.jpg" onerror="this.src='img/Failed Image.png'">
-                    <span class="qty">${item.qty}</span>
+                    ${attr}${attr}
                 </span>`;
             }).join('');
         const section = $id(`${type?.toLowerCase()}s-section`);
@@ -415,12 +407,34 @@ function updateAction() {
     });
     reactions_section.innerHTML = content_reaction;
 
-    if ($id("character_class").value == "class_cleric" && parseInt($id("character_level").value) >= 2) {
+    if ($id("character_class").value == "class_cleric") {
         features_general += `
             <div class="section" style="grid-template-columns: auto 1fr 1fr;">
                 <label>Channel Divinity</label>
                 <input type="text" id="channel_divinity" disabled>
                 <input type="text" id="channel_divinity_used">
+            </div>`;
+    }
+    if ($id("character_class").value == "class_rogue") {
+        features_general += `
+            <div class="section" style="grid-template-columns: auto 1fr">
+                <label>Sneak Attack</label>
+                <input type="text" id="sneak_attack" disabled>
+            </div>`;
+    }
+    if ($id("character_class").value == "class_fighter") {
+        features_general += `
+            <div class="section" style="grid-template-columns: auto 1fr 1fr">
+                <label>Second Wind</label>
+                <input type="text" id="second_wind" disabled>
+                <input type="text" id="second_wind_used">
+                <label>Action Surge</label>
+                <input type="text" id="action_surge" disabled>
+                <input type="text" id="action_surge_used">
+            </div>
+            <div class="section" style="grid-template-columns: auto 1fr">
+                <label>Weapon Mastery</label>
+                <input type="text" id="weapon_mastery" disabled >
             </div>`;
     }
     data.filter(e => e.type == "Feature").sort((a, b) => (a.conditions.level - b.conditions.level)).forEach(e => {
@@ -437,6 +451,18 @@ function updateAction() {
             const f = feature?.level?.[i];
             if (f.channel_divinity) {
                 $id("channel_divinity").value = f.channel_divinity;
+            }
+            if (f.sneak_attack) {
+                $id("sneak_attack").value = f.sneak_attack;
+            }
+            if (f.second_wind) {
+                $id("second_wind").value = f.second_wind;
+            }
+            if (f.action_surge) {
+                $id("action_surge").value = f.action_surge;
+            }
+            if (f.weapon_mastery) {
+                $id("weapon_mastery").value = f.weapon_mastery;
             }
         }
     }

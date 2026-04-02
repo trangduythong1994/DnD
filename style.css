@@ -1,5 +1,6 @@
 body {
     font-family: 'Open Sans', sans-serif;
+    /* font-family: 'EB Garamond', serif; */
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -172,7 +173,7 @@ button:hover {
     display: flex;
     flex-wrap: wrap;
     padding: 0px 5px;
-    margin-top: 5px;    
+    margin-top: 5px;
 }
 
 .title {
@@ -261,21 +262,116 @@ td {
     background-color: #555;
 }
 
+.item-list-interaction {
+    position: relative;
+    display: inline-block;
+}
+
 .inventory-item {
     position: relative;
     display: inline-block;
 }
 
-.inventory-item>.qty {
+.inventory-item>.qty,
+.item-list-interaction>.qty {
     position: absolute;
-    bottom: 0px;
-    right: 0px;
+    bottom: 1px;
+    right: 1px;
+    width: 20px;
+    height: 20px;
     background-color: rgba(0, 0, 0, 0.2);
     color: white;
-    padding: 1px 1px;
+    border: 1px solid rgba(255, 255, 255, 1);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
     font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inventory-item>.lvl,
+.item-list-interaction>.lvl {
+    position: absolute;
+    bottom: 1px;
+    right: 1px;
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #desc_item_list {
     overflow-y: auto;
+}
+
+/* Cantrip */
+.spell-lv0 {
+    background: #D0D6DD;
+    color: #000;
+}
+
+/* Lv1 */
+.spell-lv1 {
+    background: #22C55E;
+    /* xanh sáng hơn */
+    color: #fff;
+}
+
+/* Lv2 */
+.spell-lv2 {
+    background: #EAB308;
+    /* vàng đậm hơn */
+    color: #000;
+}
+
+/* Lv3 */
+.spell-lv3 {
+    background: #F97316;
+    /* cam rực */
+    color: #fff;
+}
+
+/* Lv4 */
+.spell-lv4 {
+    background: #EF4444;
+    color: #fff;
+}
+
+/* Lv5 */
+.spell-lv5 {
+    background: #DC2626;
+    color: #fff;
+}
+
+/* Lv6 */
+.spell-lv6 {
+    background: #A855F7;
+    /* tím sáng hơn */
+    color: #fff;
+}
+
+/* Lv7 */
+.spell-lv7 {
+    background: #6366F1;
+    /* indigo sáng */
+    color: #fff;
+}
+
+/* Lv8 */
+.spell-lv8 {
+    background: #4F46E5;
+    /* đỡ tối hơn bản cũ */
+    color: #fff;
+}
+
+/* Lv9 */
+.spell-lv9 {
+    background: linear-gradient(45deg, #FFD700, #FFF176);
+    color: #000;
+    box-shadow: 0 0 12px rgba(255, 215, 0, 0.9);
 }
