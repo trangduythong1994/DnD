@@ -15,6 +15,7 @@
 <script src="js/data/skills.js"></script>
 <script src="js/data/actions.js"></script>
 
+<script src="js/data/backgrounds/backgrounds.js"></script>
 
 <script src="js/data/classes/cleric.js"></script>
 <script src="js/data/classes/fighter.js"></script>
@@ -22,7 +23,10 @@
 <script src="js/data/classes/wizard.js"></script>
 <script src="js/data/classes/classes.js"></script>
 
+<script src="js/data/species/dwarf.js"></script>
+<script src="js/data/species/halfling.js"></script>
 <script src="js/data/species/human.js"></script>
+<script src="js/data/species/elf.js"></script>
 <script src="js/data/species/species.js"></script>
 
 <script src="js/data/weapons.js"></script>
@@ -43,8 +47,8 @@
       <h3>D&D Character Sheet</h3>
       <div class="section" id="general-section" style="grid-template-columns: auto 1fr 1fr">
         <label>Name</label><input type="text" id="character_name" style="grid-column: 2/span 2;">
-        <label>Background</label><select type="text" id="character_background" style="grid-column: 2/span 2;"></select>
-        <label>Species</label><select id="character_species" style="grid-column: 2/span 2;"></select>
+        <label>Background <button class="button-info" id="background_info" name="background_info">i</button></label><select type="text" id="character_background" style="grid-column: 2/span 2;"></select>
+        <label>Species <button class="button-info" id="species_info" name="species_info">i</button></label><select id="character_species" style="grid-column: 2/span 2;"></select>
         <label>LV/Prof. Bonus</label><input type="number" id="character_level" style="text-align: center;"
           data-computed="true" disabled><input type="text" id="character_prof_bonus" data-computed="true" disabled>
         <label>XP</label><input type="text" id="character_xp"><input type="text" id="character_next_xp_level"
@@ -130,12 +134,11 @@
       </div>
 
       <div class="title">Death Save</div>
-      <div class="section" id="death-saves-section" style="grid-template-columns: auto 20px 20px 20px 1fr">
+      <div class="section" id="death-saves-section" style="grid-template-columns: auto 20px 20px 20px auto 20px 20px 20px">
         <label>Success</label>
         <input type="checkbox" id="death_saves_success_1">
         <input type="checkbox" id="death_saves_success_2">
         <input type="checkbox" id="death_saves_success_3">
-        <label></label>
         <label>Failure</label>
         <input type="checkbox" id="death_saves_fail_1">
         <input type="checkbox" id="death_saves_fail_2">
@@ -201,8 +204,8 @@
     <div class="col fixed">
       <h3>Feature</h3>
       <div id="features_general"></div>
-      <div class="title">Senses</div>
-      <div id="features_senses"></div>
+      <!-- <div class="title">Senses</div>
+      <div id="features_senses"></div> -->
       <div class="title">Feats</div>
       <div id="features_feats"></div>
       <div class="title">Species Features</div>
@@ -266,7 +269,6 @@
         </div>
       </div>
       <div class="section" id="desc_class_core" style="grid-template-columns: auto 1fr;"></div>
-      <div class="section" id="desc_class_feature" style="grid-template-columns: auto 1fr;"></div>
       <div class="section" id="desc_item_list_name" style="grid-template-columns: 1fr"></div>
       <div class="flex-container" id="desc_item_list"></div>
     </div>

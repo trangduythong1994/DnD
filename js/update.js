@@ -1,47 +1,74 @@
 function resetDesc() {
     desc_content.style.display = "none";
     desc_class_core.style.display = "none";
-    desc_class_feature.style.display = "none";
     desc_item_list_name.style.display = "none";
     desc_item.style.display = "none";
     desc_item_list.style.display = "none";
+}
+
+function showBackgroundInfo() {
+    resetDesc();
+    desc_content.style.display = "";
+    desc_class_core.style.display = "";
+    const background_selected = document.getElementById('character_background').value;
+    if (!background_selected) return;
+    let item = data.find(obj => obj.id == background_selected);
+    desc_name.innerHTML = item?.name;
+    desc_from.innerHTML = item?.type;
+    let class_content = '';
+    for (const [key, value] of Object.entries(item.description)) {
+        let displayValue = Array.isArray(value) ? value.join(', ') : value;
+
+        class_content += '<label class="desc_content_header">' + key + '</label>';
+        class_content += '<span class="desc_content_body">' + displayValue + '</span>';
+    }
+    desc_content.innerHTML = item.description_text;
+    desc_class_core.innerHTML = class_content;
+    desc_image.innerHTML = `<img src="img/background/${item.id}.jpg" onerror="this.src='img/Failed Image.png'">`;
+}
+
+function showSpeciesInfo() {
+    resetDesc();
+    desc_content.style.display = "";
+    desc_class_core.style.display = "";
+    const species_selected = document.getElementById('character_species').value;
+    if (!species_selected) return;
+    let item = data.find(obj => obj.id == species_selected);
+    desc_name.innerHTML = item?.name;
+    desc_from.innerHTML = item?.type;
+    let class_content = '';
+    for (const [key, value] of Object.entries(item.description)) {
+        let displayValue = Array.isArray(value) ? value.join(', ') : value;
+
+        class_content += '<label class="desc_content_header">' + key + '</label>';
+        class_content += '<span class="desc_content_body">' + displayValue + '</span>';
+    }
+    desc_content.innerHTML = item.description_text;
+    desc_class_core.innerHTML = class_content;
+    desc_image.innerHTML = `<img src="img/species/${item.id}.jpg" onerror="this.src='img/Failed Image.png'">`;
 }
 
 function showClassInfo() {
     resetDesc();
     desc_content.style.display = "";
     desc_class_core.style.display = "";
-    desc_class_feature.style.display = "";
     const class_selected = document.getElementById('character_class').value;
+    if (!class_selected) return;
     let item = data.find(obj => obj.id == class_selected);
     desc_name.innerHTML = item?.name;
     desc_from.innerHTML = 'Class';
 
     let class_content = '';
-    let table_attr = ["Primary Ability", "Hit Point Die", "Saving Throw Proficiencies", "Skill Proficiencies", "Weapon Proficiencies", "Armor Training", "Starting Equipment"];
-    table_attr.forEach(attr => {
-        class_content += '<label class="desc_content_header">' + attr + '</label>';
-        if (Array.isArray(item[attr])) {
-            class_content += '<span class="desc_content_body"">' + item.description[attr].join(", ") + '</span>';
-        } else {
-            class_content += '<span class="desc_content_body">' + item.description[attr] + '</span>';
+    for (const [key, value] of Object.entries(item.description)) {
+        let displayValue = Array.isArray(value) ? value.join(', ') : value;
+        if (key.indexOf("Level") < 0 || key.replace("Level ", "") <= max_level) {
+            class_content += '<label class="desc_content_header">' + key + '</label>';
+            class_content += '<span class="desc_content_body">' + displayValue + '</span>';
         }
-    });
+    }
     let feature_content = '<label style="text-align: left; font-weight: bold; margin-top: 4px; border-bottom: 1px solid #aaa; grid-column: 1/span 2;">Feature Table</label>';
-    table_attr = ["Level 1", "Level 2", "Level 3", "Level 4", "Level 5", "Level 6", "Level 7", "Level 8", "Level 9", "Level 10", "Level 11", "Level 12", "Level 13", "Level 14", "Level 15", "Level 16", "Level 17", "Level 18", "Level 19", "Level 20"];
-    table_attr.forEach(attr => {
-        if (attr.replace("Level ", "") <= max_level) {
-            feature_content += '<label class="desc_content_header">' + attr + '</label>';
-            if (Array.isArray(item.description[attr])) {
-                feature_content += '<span class="desc_content_body"">' + item.description[attr].join(", ") + '</span>';
-            } else {
-                feature_content += '<span class="desc_content_body">' + item.description[attr] + '</span>';
-            }
-        }
-    });
     desc_content.innerHTML = item.description_text;
     desc_class_core.innerHTML = class_content;
-    desc_class_feature.innerHTML = feature_content;
     desc_image.innerHTML = `<img src="img/class/${item.id}.jpg" onerror="this.src='img/Failed Image.png'">`;
 }
 
@@ -167,7 +194,7 @@ function updateSpellcastingArea() {
         if (feature?.level?.[i]) {
             const f = feature?.level?.[i];
             if (f.spellcasting_ability) {
-                document.querySelectorAll(".spellcasting-area").forEach(e => { e.style.display = "";});
+                document.querySelectorAll(".spellcasting-area").forEach(e => { e.style.display = ""; });
                 spellcasting_ability.value = feature.spellcasting_ability;
                 spell_attack_roll_mod.value = formatModifier(parseInt(character_prof_bonus.value) + parseInt($id("as_" + f.spellcasting_ability + "_mod").value));
                 spell_save_dc.value = 8 + parseInt(character_prof_bonus.value) + parseInt($id("as_" + f.spellcasting_ability + "_mod").value);
@@ -388,7 +415,7 @@ function updateAttack() {
 }
 
 function updateAction() {
-    let content = "", content_action = "", content_bonus_action = "", content_reaction = "", features_general = "", features_class = "";
+    let content = "", content_action = "", content_bonus_action = "", content_reaction = "", features_species = "", features_general = "", features_class = "";
     data.filter(e => e.type == "Action").forEach(e => {
         content = `<img name="action" class="icon-img" data-id="${e.id}" src="img/action/${e.id}.jpg" onerror="this.src='img/Failed Image.png'">`;
         content_action += content;
@@ -438,11 +465,18 @@ function updateAction() {
             </div>`;
     }
     data.filter(e => e.type == "Feature").sort((a, b) => (a.conditions.level - b.conditions.level)).forEach(e => {
-        if ($id("character_class").value == e.conditions.class && parseInt($id("character_level").value) >= parseInt(e.conditions.level)) {
+        if ($id("character_species").value == e.conditions.species && parseInt($id("character_level").value) >= parseInt(e.conditions.level ? e.conditions.level : 0)) {
+            content = `<img name="action" class="icon-img" data-id="${e.id}" src="img/species/${e.id}.jpg" onerror="this.src='img/Failed Image.png'">`;
+            features_species += content;
+        }
+    });
+    data.filter(e => e.type == "Feature").sort((a, b) => (a.conditions.level - b.conditions.level)).forEach(e => {
+        if ($id("character_class").value == e.conditions.class && parseInt($id("character_level").value) >= parseInt(e.conditions.level ? e.conditions.level : 0)) {
             content = `<img name="action" class="icon-img" data-id="${e.id}" src="img/feature/${e.id}.jpg" onerror="this.src='img/Failed Image.png'">`;
             features_class += content;
         }
     });
+    $id('features_species').innerHTML = features_species;
     $id('features_general').innerHTML = features_general;
     $id('features_class').innerHTML = features_class;
     const feature = data.find(e => e.id == $id("character_class").value);

@@ -1,5 +1,5 @@
-const max_level = 6;
-const max_spelllevel = 6;
+const max_level = 2;
+const max_spelllevel = 1;
 const AS = ["str", "dex", "con", "int", "wis", "cha"];
 const data_xp = [0, 0, 300, 900, 2700, 6500, 14000, 23000, 34000, 48000, 64000, 85000, 100000];
 
@@ -57,6 +57,7 @@ const contextMenu = $id('custom-context-menu');
 const data = [ ...data_weapons
     , ...data_armors
     , ...data_spells
+    , ...data_backgrounds
     , ...data_classes
     , ...data_species
     , ...data_actions];

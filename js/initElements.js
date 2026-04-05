@@ -1,8 +1,18 @@
 function initElements() {
     initSkills();
+    initBackground();
     initSpecies();
     initClasses();
     resetDesc();
+}
+
+function initBackground() {
+    data.filter(e => e.type == "Background").forEach(e => {
+        const opt = document.createElement("option");
+        opt.value = e.id;
+        opt.textContent = e.name;
+        document.getElementById("character_background").appendChild(opt);
+    });
 }
 
 function initSpecies() {

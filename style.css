@@ -76,6 +76,7 @@ h3 {
 }
 
 #desc_image>img {
+    min-height: 250px;
     max-height: 250px;
 }
 
@@ -130,6 +131,7 @@ button:hover {
 }
 
 .button-info {
+    width: 20px;
     border-radius: 50%;
 }
 
