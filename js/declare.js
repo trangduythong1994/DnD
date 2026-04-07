@@ -54,8 +54,9 @@ const reactions_section = $id("reactions-section");
 
 const contextMenu = $id('custom-context-menu');
 
-const data = [ ...data_weapons
-    , ...data_armors
+const data_equipments = [...data_weapons, ...data_armors, ...data_tools, ...data_gears];
+const data = [ 
+    ...data_equipments
     , ...data_spells
     , ...data_backgrounds
     , ...data_classes

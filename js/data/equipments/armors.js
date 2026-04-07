@@ -11,6 +11,7 @@ const data_armors = [
     stealth: "Disadvantage",
     weight: "8 lb.",
     cost: "5 GP"
+    , locked: true
   },
   {
     id: "armor_common_leather_armor",
@@ -23,6 +24,7 @@ const data_armors = [
     stealth: "—",
     weight: "10 lb.",
     cost: "10 GP"
+    , locked: true
   },
   {
     id: "armor_common_studded_leather_armor",
@@ -35,6 +37,7 @@ const data_armors = [
     stealth: "—",
     weight: "13 lb.",
     cost: "45 GP"
+    // , locked: true
   },
 
   // --- MEDIUM ---
@@ -49,6 +52,7 @@ const data_armors = [
     stealth: "—",
     weight: "12 lb.",
     cost: "10 GP"
+    , locked: true
   },
   {
     id: "armor_common_chain_shirt",
@@ -61,6 +65,7 @@ const data_armors = [
     stealth: "—",
     weight: "20 lb.",
     cost: "50 GP"
+    // , locked: true
   },
   {
     id: "armor_common_scale_mail",
@@ -73,6 +78,7 @@ const data_armors = [
     stealth: "Disadvantage",
     weight: "45 lb.",
     cost: "50 GP"
+    , locked: true
   },
   {
     id: "armor_common_breastplate",
@@ -85,6 +91,7 @@ const data_armors = [
     stealth: "—",
     weight: "20 lb.",
     cost: "400 GP"
+    , locked: true
   },
   {
     id: "armor_common_half_plate_armor",
@@ -97,6 +104,7 @@ const data_armors = [
     stealth: "Disadvantage",
     weight: "40 lb.",
     cost: "750 GP"
+    , locked: true
   },
 
   // --- HEAVY ---
@@ -111,6 +119,7 @@ const data_armors = [
     stealth: "Disadvantage",
     weight: "40 lb.",
     cost: "30 GP"
+    , locked: true
   },
   {
     id: "armor_common_chain_mail",
@@ -123,6 +132,7 @@ const data_armors = [
     stealth: "Disadvantage",
     weight: "55 lb.",
     cost: "75 GP"
+    // , locked: true
   },
   {
     id: "armor_common_splint_armor",
@@ -135,6 +145,7 @@ const data_armors = [
     stealth: "Disadvantage",
     weight: "60 lb.",
     cost: "200 GP"
+    , locked: true
   },
   {
     id: "armor_common_plate_armor",
@@ -147,6 +158,7 @@ const data_armors = [
     stealth: "Disadvantage",
     weight: "65 lb.",
     cost: "1,500 GP"
+    , locked: true
   },
 
   // --- SHIELD ---
@@ -161,5 +173,6 @@ const data_armors = [
     stealth: "—",
     weight: "6 lb.",
     cost: "10 GP"
+    // , locked: true
   }
 ];

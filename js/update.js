@@ -6,70 +6,28 @@ function resetDesc() {
     desc_item_list.style.display = "none";
 }
 
-function showBackgroundInfo() {
+function showInfo(id) {
     resetDesc();
     desc_content.style.display = "";
     desc_class_core.style.display = "";
-    const background_selected = document.getElementById('character_background').value;
-    if (!background_selected) return;
-    let item = data.find(obj => obj.id == background_selected);
-    desc_name.innerHTML = item?.name;
-    desc_from.innerHTML = item?.type;
-    let class_content = '';
-    for (const [key, value] of Object.entries(item.description)) {
-        let displayValue = Array.isArray(value) ? value.join(', ') : value;
+    const selected = document.getElementById(id).value;
+    if (!selected) return;
+    let item = data.find(obj => obj.id == selected);
+    if (!item) return;
+    desc_name.innerHTML = item.name;
+    desc_from.innerHTML = item.type;
 
-        class_content += '<label class="desc_content_header">' + key + '</label>';
-        class_content += '<span class="desc_content_body">' + displayValue + '</span>';
-    }
-    desc_content.innerHTML = item.description_text;
-    desc_class_core.innerHTML = class_content;
-    desc_image.innerHTML = `<img src="img/background/${item.id}.jpg" onerror="this.src='img/Failed Image.png'">`;
-}
-
-function showSpeciesInfo() {
-    resetDesc();
-    desc_content.style.display = "";
-    desc_class_core.style.display = "";
-    const species_selected = document.getElementById('character_species').value;
-    if (!species_selected) return;
-    let item = data.find(obj => obj.id == species_selected);
-    desc_name.innerHTML = item?.name;
-    desc_from.innerHTML = item?.type;
-    let class_content = '';
-    for (const [key, value] of Object.entries(item.description)) {
-        let displayValue = Array.isArray(value) ? value.join(', ') : value;
-
-        class_content += '<label class="desc_content_header">' + key + '</label>';
-        class_content += '<span class="desc_content_body">' + displayValue + '</span>';
-    }
-    desc_content.innerHTML = item.description_text;
-    desc_class_core.innerHTML = class_content;
-    desc_image.innerHTML = `<img src="img/species/${item.id}.jpg" onerror="this.src='img/Failed Image.png'">`;
-}
-
-function showClassInfo() {
-    resetDesc();
-    desc_content.style.display = "";
-    desc_class_core.style.display = "";
-    const class_selected = document.getElementById('character_class').value;
-    if (!class_selected) return;
-    let item = data.find(obj => obj.id == class_selected);
-    desc_name.innerHTML = item?.name;
-    desc_from.innerHTML = 'Class';
-
-    let class_content = '';
+    let content = '';
     for (const [key, value] of Object.entries(item.description)) {
         let displayValue = Array.isArray(value) ? value.join(', ') : value;
         if (key.indexOf("Level") < 0 || key.replace("Level ", "") <= max_level) {
-            class_content += '<label class="desc_content_header">' + key + '</label>';
-            class_content += '<span class="desc_content_body">' + displayValue + '</span>';
+            content += '<label class="desc_content_header">' + key + '</label>';
+            content += '<span class="desc_content_body">' + displayValue + '</span>';
         }
     }
-    let feature_content = '<label style="text-align: left; font-weight: bold; margin-top: 4px; border-bottom: 1px solid #aaa; grid-column: 1/span 2;">Feature Table</label>';
     desc_content.innerHTML = item.description_text;
-    desc_class_core.innerHTML = class_content;
-    desc_image.innerHTML = `<img src="img/class/${item.id}.jpg" onerror="this.src='img/Failed Image.png'">`;
+    desc_class_core.innerHTML = content;
+    desc_image.innerHTML = `<img src="img/${item.type.toLowerCase()}/${item.id}.jpg" onerror="this.src='img/Failed Image.png'">`;
 }
 
 function updateLevel() {
@@ -231,17 +189,17 @@ function showItemList(target) {
     if (!type) return;
     desc_item_list_name.innerHTML = `${type} List`;
     let content = ``;
-    data.filter(e => e.type == type).forEach(obj => {
+    data.filter(e => e.type == type && !e.locked).sort((a, b) => a.id.localeCompare(b.id)).forEach(obj => {
         if (obj.type != "Spell") {
             content += `
                 <span name="item" class="item-list-interaction" data-item-id="${obj.id}">
-                    <img class="icon-img" src="img/${obj.type}/${obj.id}.jpg" onerror="this.src='img/Failed Image.png'">
+                    <img class="icon-img" src="img/${obj.type.toLowerCase()}/${obj.id}.jpg" onerror="this.src='img/Failed Image.png'">
                 </span>`;
         } else {
             if (obj.classes.indexOf($id("character_class").value) > -1 && obj.level <= maxSpellLevelPerLevel[$id("character_level").value]) {
                 content += `
                     <span name="item" class="item-list-interaction" data-item-id="${obj.id}">
-                        <img class="icon-img" src="img/${obj.type}/${obj.id}.jpg" onerror="this.src='img/Failed Image.png'">
+                        <img class="icon-img" src="img/${obj.type.toLowerCase()}/${obj.id}.jpg" onerror="this.src='img/Failed Image.png'">
                         <span class="lvl spell-lv${obj.level}">${obj.level}</span>
                     </span>`;
             }
@@ -272,16 +230,28 @@ function showItem(target) {
     }
     desc_name.innerHTML = `${item.name}`;
     desc_from.innerHTML = `${item.type}`;
-    table_attr.forEach(attr => {
-        content += '<label class="desc_content_header">' + attr + '</label>';
-        if (Array.isArray(item[attr])) {
-            content += '<span class="desc_content_body">' + item[attr.toLowerCase().replace(' ', '_')].join(", ") + '</span>';
-        } else {
-            content += '<span class="desc_content_body">' + item[attr.toLowerCase().replace(' ', '_')] + '</span>';
+    if (item.type == "Tool" || item.type == "Gear") {
+        for (const [key, value] of Object.entries(item.description)) {
+            let displayValue = Array.isArray(value) ? value.join(', ') : value;
+            if (key.indexOf("Level") < 0 || key.replace("Level ", "") <= max_level) {
+                content += '<label class="desc_content_header">' + key + '</label>';
+                content += '<span class="desc_content_body">' + displayValue + '</span>';
+            }
         }
-    });
+    } else {
+        table_attr.forEach(attr => {
+            content += '<label class="desc_content_header">' + attr + '</label>';
+            if (Array.isArray(item[attr])) {
+                content += '<span class="desc_content_body">' + item[attr.toLowerCase().replace(' ', '_')].join(", ") + '</span>';
+            } else {
+                content += '<span class="desc_content_body">' + item[attr.toLowerCase().replace(' ', '_')] + '</span>';
+            }
+        });
+    }
+
+
     desc_item.innerHTML = content;
-    desc_image.innerHTML = `<img src="img/${item.type}/${item.id}.jpg" onerror="this.src='img/Failed Image.png'">`;
+    desc_image.innerHTML = `<img src="img/${item.type.toLowerCase()}/${item.id}.jpg" onerror="this.src='img/Failed Image.png'">`;
     updateContentByLevel();
     showItemList(target);
 }
@@ -292,16 +262,11 @@ function addItem(target) {
     let items = JSON.parse(localStorage.getItem(`inventory_${type}`)) || [];
     let existing = items.find(item => item.id == id);
     if (existing) {
-        existing.qty += 1;
-    } else {
-        switch (type) {
-            case "Weapon": case "Armor": case "Shield": case "Spell":
-                items.push({ id: id, qty: 1 });
-                break;
-            default:
-                items.push({ id: id, qty: 1 });
-                break;
+        if (type != 'Spell') {
+            existing.qty += 1;
         }
+    } else {
+        items.push({ id: id, qty: 1 });
     }
     localStorage.setItem(`inventory_${type}`, JSON.stringify(items));
     updateInventory();
@@ -353,7 +318,7 @@ function updateBodySlots() {
 }
 
 function updateInventory() {
-    ["Weapon", "Armor", "Spell"].forEach(type => {
+    ["Weapon", "Armor", "Tool", "Gear", "Spell"].forEach(type => {
         const savedInventory = JSON.parse(localStorage.getItem(`inventory_${type}`)) || [];
         const inventoryMap = savedInventory.reduce((acc, curr) => { acc[curr.id] = curr; return acc; }, {});
         const content = data.filter(x => x.type === type && inventoryMap[x.id])
@@ -367,7 +332,7 @@ function updateInventory() {
                 }
                 return `
                 <span class="inventory-item" name="item" data-item-id="${e.id}" data-item-type="${e.type}" style="cursor: pointer;">
-                    <img class="icon-img" src="img/${e.type}/${e.id}.jpg" onerror="this.src='img/Failed Image.png'">
+                    <img class="icon-img" src="img/${e.type.toLowerCase()}/${e.id}.jpg" onerror="this.src='img/Failed Image.png'">
                     ${attr}${attr}
                 </span>`;
             }).join('');
@@ -394,7 +359,7 @@ function clickAction(e) {
     desc_from.innerHTML = `${item.type}`;
     let description = item.description;
     desc_content.innerHTML = `${description}`;
-    desc_image.innerHTML = `<img src="img/${item.type}/${item.id}.jpg" onerror="this.src='img/Failed Image.png'">`;
+    desc_image.innerHTML = `<img src="img/${item.type.toLowerCase()}/${item.id}.jpg" onerror="this.src='img/Failed Image.png'">`;
     updateContentByLevel();
 }
 

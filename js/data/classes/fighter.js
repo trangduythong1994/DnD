@@ -66,7 +66,7 @@ const data_classes_fighter = [
             , "Skill Proficiencies": "Choose 2: Acrobatics, Animal Handling, Athletics, History, Insight, Intimidation, Persuasion, Perception, or Survival"
             , "Weapon Proficiencies": "Simple and Martial weapons"
             , "Armor Training": "Light, Medium, and Heavy armor and Shields"
-            , "Starting Equipment": "Choose A, B or C: (A) Chain Mail, Greatsword, Flail, 8 Javelins, Dungeoneer's Pack, and 4 GP; (B) Studded Leather Armor, Scimitar, Shortsword, Longbow, 20 Arrows, Quiver, Dungeonneer's Pack, and 11 GP; or (C) 155 GP"
+            , "Starting Equipment": "155 GP"
             , "Level 1": ["Fighting Style", "Second Wind", "Weapon Mastery"]
             , "Level 2": ["Action Surge (1)", "Tactical Mind"]
             , "Level 3": ["Improved Critical", "Remarkable Athlete"]

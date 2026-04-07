@@ -9,7 +9,7 @@ const data_backgrounds = [
             , "Feat": "Magic Initiate (Cleric)"
             , "Skill Proficiencies": "Insight and Religion"
             , "Tool Proficiency": "Calligrapher’s Supplies"
-            , "Equipment": "Choose A or B: (A) Calligrapher’s Supplies, Book (prayers), Holy Symbol, Parchment (10 sheets), Robe, 8 GP; or (B) 50 GP"
+            , "Equipment": "50 GP"
         }
     }
     , {
@@ -22,7 +22,7 @@ const data_backgrounds = [
             , "Feat": "Alert"
             , "Skill Proficiencies": "Sleight of Hand and Stealth"
             , "Tool Proficiency": "Thieves’ Tools"
-            , "Equipment": "Choose A or B: (A) 2 Daggers, Thieves’ Tools, Crowbar, 2 Pouches, Traveler’s Clothes, 16 GP; or (B) 50 GP"
+            , "Equipment": "50 GP"
         }
     }
     , {
@@ -35,7 +35,7 @@ const data_backgrounds = [
             , "Feat": "Magic Initiate (Wizard)"
             , "Skill Proficiencies": "Arcana and History"
             , "Tool Proficiency": "Calligrapher’s Supplies"
-            , "Equipment": "Choose A or B: (A) Quarterstaff, Calligrapher’s Supplies, Book (history), Parchment (8 sheets), Robe, 8 GP; or (B) 50 GP"
+            , "Equipment": "50 GP"
         }
     }
     , {
@@ -48,7 +48,7 @@ const data_backgrounds = [
             , "Feat": "Savage Attacker"
             , "Skill Proficiencies": "Athletics and Intimidation"
             , "Tool Proficiency": "Choose one kind of Gaming Set"
-            , "Equipment": "Choose A or B: (A) Spear, Shortbow, 20 Arrows, Gaming Set (same as above), Healer’s Kit, Quiver, Traveler’s Clothes, 14 GP; or (B) 50 GP"
+            , "Equipment": "50 GP"
         }
     }
 ];

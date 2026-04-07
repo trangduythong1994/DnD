@@ -29,8 +29,10 @@
 <script src="js/data/species/elf.js"></script>
 <script src="js/data/species/species.js"></script>
 
-<script src="js/data/weapons.js"></script>
-<script src="js/data/armors.js"></script>
+<script src="js/data/equipments/weapons.js"></script>
+<script src="js/data/equipments/armors.js"></script>
+<script src="js/data/equipments/tools.js"></script>
+<script src="js/data/equipments/gears.js"></script>
 <script src="js/data/spells.js"></script>
 <script src="js/data/description.js"></script>
 <script src="js/func.js"></script>
@@ -47,13 +49,16 @@
       <h3>D&D Character Sheet</h3>
       <div class="section" id="general-section" style="grid-template-columns: auto 1fr 1fr">
         <label>Name</label><input type="text" id="character_name" style="grid-column: 2/span 2;">
-        <label>Background <button class="button-info" id="background_info" name="background_info">i</button></label><select type="text" id="character_background" style="grid-column: 2/span 2;"></select>
-        <label>Species <button class="button-info" id="species_info" name="species_info">i</button></label><select id="character_species" style="grid-column: 2/span 2;"></select>
+        <label>Background <button class="button-info" id="background_info"
+            name="character_background">i</button></label><select type="text" id="character_background"
+          style="grid-column: 2/span 2;"></select>
+        <label>Species <button class="button-info" id="species_info" name="character_species">i</button></label><select
+          id="character_species" style="grid-column: 2/span 2;"></select>
         <label>LV/Prof. Bonus</label><input type="number" id="character_level" style="text-align: center;"
           data-computed="true" disabled><input type="text" id="character_prof_bonus" data-computed="true" disabled>
         <label>XP</label><input type="text" id="character_xp"><input type="text" id="character_next_xp_level"
           data-computed="true" disabled>
-        <label>Class <button class="button-info" id="class_info" name="class_info">i</button></label><select
+        <label>Class <button class="button-info" id="class_info" name="character_class">i</button></label><select
           id="character_class" style="grid-column: 2/span 2;"></select>
       </div>
 
@@ -134,7 +139,8 @@
       </div>
 
       <div class="title">Death Save</div>
-      <div class="section" id="death-saves-section" style="grid-template-columns: auto 20px 20px 20px auto 20px 20px 20px">
+      <div class="section" id="death-saves-section"
+        style="grid-template-columns: auto 20px 20px 20px auto 20px 20px 20px">
         <label>Success</label>
         <input type="checkbox" id="death_saves_success_1">
         <input type="checkbox" id="death_saves_success_2">
@@ -238,8 +244,10 @@
       <div class="flex-container" id="weapons-section"></div>
       <div class="title" name="show_more" data-item-type="Armor">Armors</div>
       <div class="flex-container" id="armors-section"></div>
-      <div class="title" name="show_more" data-item-type="Armor">Tools</div>
+      <div class="title" name="show_more" data-item-type="Tool">Tools</div>
       <div class="flex-container" id="tools-section"></div>
+      <div class="title" name="show_more" data-item-type="Gear">Adventure Gears</div>
+      <div class="flex-container" id="gears-section"></div>
       <div class="spellcasting-area">
         <div class="title" name="show_more" data-item-type="Spell">Spellbook</div>
         <div class="flex-container" id="spellbook-section"></div>
@@ -252,6 +260,16 @@
     <div class="col fixed">
       <div style="height: 100%; display: flex; flex-direction: column;">
         <h3 style="flex: 0 0 2%;">Notes</h3>
+        <div class="title">Weapon Proficiencies</div>
+        <textarea id="notes_prof_wp"
+          style="field-sizing: content; border: none; box-sizing: border-box; width: 100%; resize: none;"></textarea>
+        <div class="title">Armor & Shield Proficiencies</div>
+        <textarea id="notes_prof_ans"
+          style="field-sizing: content; border: none; box-sizing: border-box; width: 100%; resize: none;"></textarea>
+        <div class="title">Tool Proficiencies</div>
+        <textarea id="notes_prof_tool"
+          style="field-sizing: content; border: none; box-sizing: border-box; width: 100%; resize: none;"></textarea>
+        <div class="title">Others</div>
         <textarea id="notes"
           style="flex: 1; border: none; box-sizing: border-box; width: 100%; resize: none;"></textarea>
       </div>

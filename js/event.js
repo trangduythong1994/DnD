@@ -4,14 +4,10 @@ document.body.addEventListener('click', function (e) {
     const targetNode = e.target.closest('[name]');
     const targetName = targetNode ? targetNode.getAttribute("name") : null;
     switch (targetName) {
-        case "background_info":
-            showBackgroundInfo();
-            break;
-        case "species_info":
-            showSpeciesInfo();
-            break;
-        case "class_info":
-            showClassInfo();
+        case "character_background":
+        case "character_species":
+        case "character_class":
+            showInfo(targetName);
             break;
         case "action":
             clickAction(targetNode);
@@ -68,20 +64,10 @@ document.body.addEventListener('change', function (e) {
     const id = e.target.getAttribute("id");
     switch (id) {
         case "character_background":
-            // updateSpellcastingArea();
-            showBackgroundInfo();
-            // updateHitDice();
-            updateAction();
-            break;
         case "character_species":
-            // updateSpellcastingArea();
-            showSpeciesInfo();
-            // updateHitDice();
-            updateAction();
-            break;
         case "character_class":
             updateSpellcastingArea();
-            showClassInfo();
+            showInfo(id);
             updateHitDice();
             updateAction();
             break;

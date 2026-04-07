@@ -123,7 +123,7 @@ const data_classes_cleric = [
             , "Skill Proficiencies": "Choose 2: History, Insight, Medicine, Persuasion, or Religion"
             , "Weapon Proficiencies": "Simple weapons"
             , "Armor Training": "Light and Medium armor and Shields"
-            , "Starting Equipment": "Choose A or B: (A) Chain Shirt, Shield, Mace, Holy Symbol, Priest’s Pack, and 7 GP; or (B) 110 GP"
+            , "Starting Equipment": "110 GP"
             , "Level 1": ["Spellcasting", "Divine Order"]
             , "Level 2": ["Channel Divinity"]
             , "Level 3": ["Disciple of Life", "Life Domain Spells", "Preserve Life"]

@@ -11,6 +11,7 @@ const data_weapons = [
     mastery: "Slow",
     weight: "2 lb.",
     cost: "1 SP"
+    , locked: true
   },
   {
     id: "weapon_common_dagger",
@@ -23,6 +24,7 @@ const data_weapons = [
     mastery: "Nick",
     weight: "1 lb.",
     cost: "2 GP"
+    // , locked: true
   },
   {
     id: "weapon_common_greatclub",
@@ -35,6 +37,7 @@ const data_weapons = [
     mastery: "Push",
     weight: "10 lb.",
     cost: "2 SP"
+    , locked: true
   },
   {
     id: "weapon_common_handaxe",
@@ -47,6 +50,7 @@ const data_weapons = [
     mastery: "Vex",
     weight: "2 lb.",
     cost: "5 GP"
+    , locked: true
   },
   {
     id: "weapon_common_javelin",
@@ -59,6 +63,7 @@ const data_weapons = [
     mastery: "Slow",
     weight: "2 lb.",
     cost: "5 SP"
+    // , locked: true
   },
   {
     id: "weapon_common_light_hammer",
@@ -71,6 +76,7 @@ const data_weapons = [
     mastery: "Nick",
     weight: "2 lb.",
     cost: "2 GP"
+    , locked: true
   },
   {
     id: "weapon_common_mace",
@@ -83,6 +89,7 @@ const data_weapons = [
     mastery: "Sap",
     weight: "4 lb.",
     cost: "5 GP"
+    // , locked: true
   },
   {
     id: "weapon_common_quarterstaff",
@@ -95,6 +102,7 @@ const data_weapons = [
     mastery: "Topple",
     weight: "4 lb.",
     cost: "2 SP"
+    // , locked: true
   },
   {
     id: "weapon_common_sickle",
@@ -107,6 +115,7 @@ const data_weapons = [
     mastery: "Nick",
     weight: "2 lb.",
     cost: "1 GP"
+    , locked: true
   },
   {
     id: "weapon_common_spear",
@@ -119,6 +128,7 @@ const data_weapons = [
     mastery: "Sap",
     weight: "3 lb.",
     cost: "1 GP"
+    // , locked: true
   },
 
   // --- SIMPLE RANGED ---
@@ -133,6 +143,7 @@ const data_weapons = [
     mastery: "Vex",
     weight: "1/4 lb.",
     cost: "5 CP"
+    , locked: true
   },
   {
     id: "weapon_common_light_crossbow",
@@ -145,6 +156,7 @@ const data_weapons = [
     mastery: "Slow",
     weight: "5 lb.",
     cost: "25 GP"
+    , locked: true
   },
   {
     id: "weapon_common_shortbow",
@@ -157,6 +169,7 @@ const data_weapons = [
     mastery: "Vex",
     weight: "2 lb.",
     cost: "25 GP"
+    // , locked: true
   },
   {
     id: "weapon_common_sling",
@@ -169,6 +182,7 @@ const data_weapons = [
     mastery: "Slow",
     weight: "0 lb.",
     cost: "1 SP"
+    , locked: true
   },
 
   // --- MARTIAL MELEE ---
@@ -183,6 +197,7 @@ const data_weapons = [
     mastery: "Topple",
     weight: "4 lb.",
     cost: "10 GP"
+    , locked: true
   },
   {
     id: "weapon_common_flail",
@@ -195,6 +210,7 @@ const data_weapons = [
     mastery: "Sap",
     weight: "2 lb.",
     cost: "10 GP"
+    // , locked: true
   },
   {
     id: "weapon_common_glaive",
@@ -207,6 +223,7 @@ const data_weapons = [
     mastery: "Graze",
     weight: "6 lb.",
     cost: "20 GP"
+    , locked: true
   },
   {
     id: "weapon_common_greataxe",
@@ -219,6 +236,7 @@ const data_weapons = [
     mastery: "Cleave",
     weight: "7 lb.",
     cost: "30 GP"
+    , locked: true
   },
   {
     id: "weapon_common_greatsword",
@@ -231,6 +249,7 @@ const data_weapons = [
     mastery: "Graze",
     weight: "6 lb.",
     cost: "50 GP"
+    // , locked: true
   },
   {
     id: "weapon_common_halberd",
@@ -243,6 +262,7 @@ const data_weapons = [
     mastery: "Cleave",
     weight: "6 lb.",
     cost: "20 GP"
+    , locked: true
   },
   {
     id: "weapon_common_lance",
@@ -255,6 +275,7 @@ const data_weapons = [
     mastery: "Topple",
     weight: "6 lb.",
     cost: "10 GP"
+    , locked: true
   },
   {
     id: "weapon_common_longsword",
@@ -267,6 +288,7 @@ const data_weapons = [
     mastery: "Sap",
     weight: "3 lb.",
     cost: "15 GP"
+    , locked: true
   },
   {
     id: "weapon_common_maul",
@@ -279,6 +301,7 @@ const data_weapons = [
     mastery: "Topple",
     weight: "10 lb.",
     cost: "10 GP"
+    , locked: true
   },
   {
     id: "weapon_common_morningstar",
@@ -291,6 +314,7 @@ const data_weapons = [
     mastery: "Sap",
     weight: "4 lb.",
     cost: "15 GP"
+    , locked: true
   },
   {
     id: "weapon_common_pike",
@@ -303,6 +327,7 @@ const data_weapons = [
     mastery: "Push",
     weight: "18 lb.",
     cost: "5 GP"
+    , locked: true
   },
   {
     id: "weapon_common_rapier",
@@ -315,6 +340,7 @@ const data_weapons = [
     mastery: "Vex",
     weight: "2 lb.",
     cost: "25 GP"
+    , locked: true
   },
   {
     id: "weapon_common_scimitar",
@@ -327,6 +353,7 @@ const data_weapons = [
     mastery: "Nick",
     weight: "3 lb.",
     cost: "25 GP"
+    // , locked: true
   },
   {
     id: "weapon_common_shortsword",
@@ -339,6 +366,7 @@ const data_weapons = [
     mastery: "Vex",
     weight: "2 lb.",
     cost: "10 GP"
+    // , locked: true
   },
   {
     id: "weapon_common_trident",
@@ -351,6 +379,7 @@ const data_weapons = [
     mastery: "Topple",
     weight: "4 lb.",
     cost: "5 GP"
+    , locked: true
   },
   {
     id: "weapon_common_warhammer",
@@ -363,6 +392,7 @@ const data_weapons = [
     mastery: "Push",
     weight: "5 lb.",
     cost: "15 GP"
+    , locked: true
   },
   {
     id: "weapon_common_war_pick",
@@ -375,6 +405,7 @@ const data_weapons = [
     mastery: "Sap",
     weight: "2 lb.",
     cost: "5 GP"
+    , locked: true
   },
   {
     id: "weapon_common_whip",
@@ -387,6 +418,7 @@ const data_weapons = [
     mastery: "Slow",
     weight: "3 lb.",
     cost: "2 GP"
+    , locked: true
   },
 
   // --- MARTIAL RANGED ---
@@ -401,6 +433,7 @@ const data_weapons = [
     mastery: "Vex",
     weight: "1 lb.",
     cost: "10 GP"
+    , locked: true
   },
   {
     id: "weapon_common_hand_crossbow",
@@ -413,6 +446,7 @@ const data_weapons = [
     mastery: "Vex",
     weight: "3 lb.",
     cost: "75 GP"
+    , locked: true
   },
   {
     id: "weapon_common_heavy_crossbow",
@@ -425,6 +459,7 @@ const data_weapons = [
     mastery: "Push",
     weight: "18 lb.",
     cost: "50 GP"
+    , locked: true
   },
   {
     id: "weapon_common_longbow",
@@ -437,6 +472,7 @@ const data_weapons = [
     mastery: "Slow",
     weight: "2 lb.",
     cost: "50 GP"
+    // , locked: true
   },
   {
     id: "weapon_common_musket",
@@ -449,6 +485,7 @@ const data_weapons = [
     mastery: "Slow",
     weight: "10 lb.",
     cost: "500 GP"
+    , locked: true
   },
   {
     id: "weapon_common_pistol",
@@ -461,5 +498,6 @@ const data_weapons = [
     mastery: "Vex",
     weight: "3 lb.",
     cost: "250 GP"
+    , locked: true
   }
 ];
