@@ -431,13 +431,13 @@ function updateAction() {
     }
     data.filter(e => e.type == "Feature").sort((a, b) => (a.conditions.level - b.conditions.level)).forEach(e => {
         if ($id("character_species").value == e.conditions.species && parseInt($id("character_level").value) >= parseInt(e.conditions.level ? e.conditions.level : 0)) {
-            content = `<img name="action" class="icon-img" data-id="${e.id}" src="img/species/${e.id}.jpg" onerror="this.src='img/Failed Image.png'">`;
+            content = `<img name="action" class="icon-img" data-id="${e.id}" src="img/${e.type.toLowerCase()}/${e.id}.jpg" onerror="this.src='img/Failed Image.png'">`;
             features_species += content;
         }
     });
     data.filter(e => e.type == "Feature").sort((a, b) => (a.conditions.level - b.conditions.level)).forEach(e => {
         if ($id("character_class").value == e.conditions.class && parseInt($id("character_level").value) >= parseInt(e.conditions.level ? e.conditions.level : 0)) {
-            content = `<img name="action" class="icon-img" data-id="${e.id}" src="img/feature/${e.id}.jpg" onerror="this.src='img/Failed Image.png'">`;
+            content = `<img name="action" class="icon-img" data-id="${e.id}" src="img/${e.type.toLowerCase()}/${e.id}.jpg" onerror="this.src='img/Failed Image.png'">`;
             features_class += content;
         }
     });

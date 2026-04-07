@@ -40,7 +40,7 @@ const data_classes_rogue = [
             , "Weapon Proficiencies": "Simple weapons and Martial weapons that have the Finesse or Light property"
             , "Tool Proficiencies": "Thieves’ Tools"
             , "Armor Training": "Light armor"
-            , "Starting Equipment": "Choose A or B: (A) Leather Armor, 2 Daggers, Shortsword, Shortbow, 20 Arrows, Quiver, Thieves’ Tools, Burglar’s Pack, and 8 GP; or (B) 100 GP"
+            , "Starting Equipment": "100 GP"
             , "Level 1": ["Expertise", "Sneak Attack", "Thieves’ Cant", "Weapon Mastery"]
             , "Level 2": ["Cunning Action"]
             , "Level 3": ["Steady Aim", "Fast Hands", "Second-Story Work"]

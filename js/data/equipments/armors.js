@@ -24,7 +24,7 @@ const data_armors = [
     stealth: "—",
     weight: "10 lb.",
     cost: "10 GP"
-    , locked: true
+    // , locked: true
   },
   {
     id: "armor_common_studded_leather_armor",

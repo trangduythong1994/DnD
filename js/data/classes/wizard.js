@@ -38,7 +38,7 @@ const data_classes_wizard = [
             , "Skill Proficiencies": "Choose 2: Arcana, History, Insight, Investigation, Medicine, Nature or Religion"
             , "Weapon Proficiencies": "Simple weapons"
             , "Armor Training": "None"
-            , "Starting Equipment": "Choose A or B: (A) 2 Daggers, Arcane Focus (Quarterstaff), Robe, Spellbook, Scholar’s Pack, and 5 GP; or (B) 55 GP"
+            , "Starting Equipment": "55 GP, and Spellbook"
             , "Level 1": ["Spellcasting", "Ritual Adept", "Arcane Recovery"]
             , "Level 2": ["Scholar"]
             , "Level 3": ["Evocation Savant", "Potent Cantrip"]
@@ -70,7 +70,7 @@ const data_classes_wizard = [
         , name: "Wizard Spellcasting"
         , description: `As a student of arcane magic, you have learned to cast spells.
         <p><b>Cantrips.</b> You know three Wizards cantrips of your choice. Light, Mage Hand, and Ray of Frost are recommended. Whenever you finish a Long Rest, you can replace one of your cantrips from this feature with another Wizard cantrip of your choice.
-        <br><span data-level="4">When you reach Wizard levels 4 </span><span data-level="10">and 10</span>, you learn another Wizard cantrip of your choice, as shown in the Cantrips column of the Wizard Features table.
+        <br><span data-level="4">When you reach Wizard levels 4 <span data-level="10">and 10</span>, you learn another Wizard cantrip of your choice, as shown in the Cantrips column of the Wizard Features table.</span>
         <p><b>Spellbook.</b> Your wizardly apprenticeship culminated in the creation of a unique book: your spellbook. It is a Tiny object that weighs 3 pounds, contains 100 pages, and can be read only by you or someone casting Identify. You determine the book’s appearance and materials, such as a gilt-edged tome or a collection of vellum bound with twine.
         <br>The book contains the level 1+ spells you know. It starts with six level 1 Wizard spells of your choice. Detect Magic, Feather Fall, Mage Armor, Magic Missile, Sleep, and Thunderwave are recommended.
         <br>Whenever you gain a Wizard level after 1, add two Wizard spells of your choice to your spellbook. Each of these spells must be of a level for which you have spell slots, as shown on the Wizard Features table. The spells are the culmination of arcane research you do regularly.
@@ -80,14 +80,7 @@ const data_classes_wizard = [
         <br>If another Wizard feature gives spells that you always have prepared, those spells don’t count against the number of spells you can prepare with this feature, but those spells otherwise count as Wizard spells for you.
         <p><b>Changing Your Prepared Spells.</b> Whenever you finish a Long Rest, you can change your list of prepared spells, replacing any of the spells there with spells from your spellbook.
         <p><b>Spellcasting Ability.</b> Intelligence is your spellcasting ability for your Wizard spells.
-        <p><b>Spellcasting Focus.</b> You can use an Arcane Focus or your spellbook as a Spellcasting Focus for your Wizard spells.
-        <blockquote style="margin: 10px 0; padding: 10px; background-color: #f9f9f9; border-left: 4px solid #ccc;">
-            <b>EXPANDING AND REPLACING A SPELLBOOK</b>
-            <p>The spells you add to your spellbook as you gain levels reflect your ongoing magical research, but you might find other spells during your adventures that you can add to the book. You could discover a Wizard spell on a Spell Scroll, for example, and then copy it into your spellbook.</p>
-            <p><b>Copying a Spell into the Book.</b> When you find a level 1+ Wizard spell, you can copy it into your spellbook if it’s of a level you can prepare and if you have time to copy it. For each level of the spell, the transcription takes 2 hours and costs 50 GP. Afterward you can prepare the spell like the other spells in your spellbook.</p>
-            <p><b>Copying the Book.</b> You can copy a spell from your spellbook into another book. This is like copying a new spell into your spellbook but faster, since you already know how to cast the spell. You need spend only 1 hour and 10 GP for each level of the copied spell.</p>
-            <p>If you lose your spellbook, you can use the same procedure to transcribe the Wizard spells that you have prepared into a new spellbook. Filling out the remainder of the new book requires you to find new spells to do so. For this reason, many wizards keep a backup spellbook.</p>
-        </blockquote>`
+        <p><b>Spellcasting Focus.</b> You can use an Arcane Focus or your spellbook as a Spellcasting Focus for your Wizard spells.`
     }
     , {
         id: "feature_class_wizard_ritual_adept"

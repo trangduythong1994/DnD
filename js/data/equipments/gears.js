@@ -129,7 +129,7 @@ const data_gears = [
             , "Weight": "4 lb."
             , "Cost": "5 GP"
         }
-        , locked: true
+        // , locked: true
     }
     , {
         id: "gear_arcane_focus_wand"
@@ -162,7 +162,7 @@ const data_gears = [
             , "Weight": "2 lb."
             , "Cost": "1 GP"
         }
-        , locked: true
+        // , locked: true
     }
     , {
         id: "gear_barrel"
@@ -195,7 +195,7 @@ const data_gears = [
             , "Weight": "7 lb."
             , "Cost": "1 GP"
         }
-        , locked: true
+        // , locked: true
     }
     , {
         id: "gear_bell"
@@ -338,7 +338,7 @@ const data_gears = [
             , "Weight": "-"
             , "Cost": "1 CP"
         }
-        , locked: true
+        // , locked: true
     }
     , {
         id: "gear_case"
@@ -591,7 +591,7 @@ const data_gears = [
             , "Weight": "3 lb."
             , "Cost": "5 GP"
         }
-        , locked: true
+        // , locked: true
     }
     , {
         id: "gear_holy_symbol_amulet"
@@ -657,7 +657,7 @@ const data_gears = [
             , "Weight": "-"
             , "Cost": "10 GP"
         }
-        , locked: true
+        // , locked: true
     }
     , {
         id: "gear_ink_pen"
@@ -668,7 +668,7 @@ const data_gears = [
             , "Weight": "-"
             , "Cost": "2 CP"
         }
-        , locked: true
+        // , locked: true
     }
     , {
         id: "gear_jug"
@@ -701,18 +701,29 @@ const data_gears = [
             , "Weight": "1 lb."
             , "Cost": "5 SP"
         }
+        // , locked: true
+    }
+, {
+        id: "gear_lantern_bullseye"
+        , type: "Gear"
+        , name: "Lantern, Bullseye"
+        , description: {
+            "Description": "A Bullseye Lantern burns Oil as fuel to cast Bright Light in a 60-foot Cone and Dim Light for an additional 60 feet."
+            , "Weight": "2 lb."
+            , "Cost": "10 GP"
+        }
         , locked: true
     }
     , {
-        id: "gear_lantern"
+        id: "gear_lantern_hooded"
         , type: "Gear"
-        , name: "Lantern"
+        , name: "Lantern, Hooded"
         , description: {
-            "Description": "Lanterns burn Oil as fuel to cast light.\n\n| Variant | Weight | Cost | Description |\n|---|---|---|---|\n| Bullseye | 2 lb. | 10 GP | A Bullseye Lantern burns Oil as fuel to cast Bright Light in a 60-foot Cone and Dim Light for an additional 60 feet. |\n| Hooded | 2 lb. | 5 GP | A Hooded Lantern burns Oil as fuel to cast Bright Light in a 30-foot radius and Dim Light for an additional 30 feet. As a Bonus Action, you can lower the hood, reducing the light to Dim Light in a 5-foot radius, or raise it again. |"
-            , "Weight": "Varies"
-            , "Cost": "Varies"
+            "Description": "A Hooded Lantern burns Oil as fuel to cast Bright Light in a 30-foot radius and Dim Light for an additional 30 feet. As a Bonus Action, you can lower the hood, reducing the light to Dim Light in a 5-foot radius, or raise it again."
+            , "Weight": "2 lb."
+            , "Cost": "5 GP"
         }
-        , locked: true
+        // , locked: true
     }
     , {
         id: "gear_lock"
@@ -891,7 +902,7 @@ const data_gears = [
             , "Weight": "1/2 lb."
             , "Cost": "50 GP"
         }
-        , locked: true
+        // , locked: true
     }
     , {
         id: "gear_pouch"
@@ -968,7 +979,7 @@ const data_gears = [
             , "Weight": "5 lb."
             , "Cost": "1 GP"
         }
-        , locked: true
+        // , locked: true
     }
     , {
         id: "gear_sack"
@@ -1013,6 +1024,20 @@ const data_gears = [
             , "Cost": "5 CP"
         }
         , locked: true
+    }
+    , {
+        id: "gear_spellbook"
+        , type: "Gear"
+        , name: "Spellbook"
+        , description: {
+            "Description": `A leather-bound tome with 100 vellum pages. Essential for Wizards to record and cast spells (serves as an Arcane Focus). Completely useless mechanically to non-Wizards, except as a valuable trade good or very expensive kindling.
+            <p><b>EXPANDING AND REPLACING A SPELLBOOK</b> The spells you add to your spellbook as you gain levels reflect your ongoing magical research, but you might find other spells during your adventures that you can add to the book. You could discover a Wizard spell on a Spell Scroll, for example, and then copy it into your spellbook.</p>
+            <p><b><i>Copying a Spell into the Book.</i></b> When you find a level 1+ Wizard spell, you can copy it into your spellbook if it’s of a level you can prepare and if you have time to copy it. For each level of the spell, the transcription takes 2 hours and costs 50 GP. Afterward you can prepare the spell like the other spells in your spellbook.</p><p><b><i>Copying the Book.</i></b> You can copy a spell from your spellbook into another book. This is like copying a new spell into your spellbook but faster, since you already know how to cast the spell. You need spend only 1 hour and 10 GP for each level of the copied spell.</p>
+            <p>If you lose your spellbook, you can use the same procedure to transcribe the Wizard spells that you have prepared into a new spellbook. Filling out the remainder of the new book requires you to find new spells to do so. For this reason, many wizards keep a backup spellbook.</p>`
+            , "Weight": "3 lb."
+            , "Cost": "50 GP"
+        }
+        // , locked: true
     }
     , {
         id: "gear_spell_scroll_cantrip"
@@ -1133,7 +1158,7 @@ const data_gears = [
             , "Weight": "5 lb. (full)"
             , "Cost": "2 SP"
         }
-        , locked: true
+        // , locked: true
     }
     // , {
     //     id: "gear_winter_camouflage"
