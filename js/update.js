@@ -230,7 +230,7 @@ function showItem(target) {
     }
     desc_name.innerHTML = `${item.name}`;
     desc_from.innerHTML = `${item.type}`;
-    if (item.type == "Tool" || item.type == "Gear") {
+    if (item.type == "Tool" || item.type == "Gear" || item.type == "Feat") {
         for (const [key, value] of Object.entries(item.description)) {
             let displayValue = Array.isArray(value) ? value.join(', ') : value;
             if (key.indexOf("Level") < 0 || key.replace("Level ", "") <= max_level) {
@@ -318,7 +318,7 @@ function updateBodySlots() {
 }
 
 function updateInventory() {
-    ["Weapon", "Armor", "Tool", "Gear", "Spell"].forEach(type => {
+    ["Weapon", "Armor", "Tool", "Gear", "Spell", "Feat"].forEach(type => {
         const savedInventory = JSON.parse(localStorage.getItem(`inventory_${type}`)) || [];
         const inventoryMap = savedInventory.reduce((acc, curr) => { acc[curr.id] = curr; return acc; }, {});
         const content = data.filter(x => x.type === type && inventoryMap[x.id])

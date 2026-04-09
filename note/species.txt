@@ -1,0 +1,57 @@
+[RESET CONTEXT: Ignore all previous images and concepts. Start with a completely fresh seed] A high-end, extremely readable RPG species trait icon for a D&D 5.5e (2024) [SPECIES_NAME] trait: [TRAIT_NAME]. Aspect ratio 1:1, perfectly centered composition. 
+The background is a perfectly flat, monolithic, seamless, uniform surface of [SPECIES_MATERIAL_TEXTURE] extending infinitely off-canvas, heavily shadowed into a deep twilight void. Crucially, this texture fills the entire 1:1 canvas with NO bevels, NO edges, NO frames, NO borders, and NO separation between an "inner" and "outer" area. 
+Carved deep into this dark background as a high-contrast, deep bas-relief, filling [70-80]% of the canvas, is [CORE_BODY_PART]. The shape language is entirely [SPECIES_SHAPE_LANGUAGE]. 
+Emitting directly from the [CORE_BODY_PART] is [VISUAL_EFFECT/ENERGY_FLOW]. This effect does not subtly glow; it emits a powerful, concentrated, piercing, high-intensity pulse of brilliant [SPECIES_COLORS] light that blasts forward, violently cutting through the surrounding shadow. The carving itself casts deep, defined shadows to emphasize sculpted depth. 
+Absolutely NO full face, NO full body, NO soft or blended lines, NO action-based spell effects, NO text, NO runes, NO letters. Masterpiece, crisp digital painting, vivid game asset, completely borderless, frameless, no UI borders. Dark fantasy minimalist UI style with intense contrast. [SPECIES_NAME] Species Palette: High-intensity [SPECIES_COLORS], against the shadowed [SPECIES_MATERIAL_TEXTURE] background.
+Thử dùng cái form này viết prompt cho tôi đi.
+Species: Elf
+Feature: Dark Vision
+
+🧬 SPECIES COLOR & LIGHT SYSTEM (Refined)
+🧝 Elf
+Hue: Icy Blue → Pale Violet (clean, controlled)
+Material: Polished obsidian / smooth dark stone
+Light: Piercing, focused, directional (beam / arc / clean flow)
+Feel: Precision, awareness, arcane clarity
+🧔 Dwarf
+Hue: Warm Amber → Burnt Gold (dense, pressurized)
+Material: Rough stone / metal veins
+Light: Internal pressure glow (rỉ ra từ khe nứt, không lan)
+Feel: Mass, endurance, grounded power
+🧟 Orc
+Hue: Desaturated Green + Dark Red undertone
+Material: Cracked bone / scarred hide / rough surface
+Light: Irregular pulse, dirty glow, unstable emission
+Feel: Brutal, chaotic, raw force
+👤 Human
+Hue: Neutral Steel Gray + faint warm highlight
+Material: Worn metal / practical surface
+Light: Minimal, controlled edge highlight only
+Feel: Balance, adaptability, baseline intelligence
+😈 Tiefling
+Hue: Deep Crimson → Ember Orange
+Material: Charred stone / infernal texture
+Light: Internal burn, contained flame glow
+Feel: Contained infernal energy, not explosive
+👼 Aasimar
+Hue: Soft White → Pale Gold
+Material: Smooth luminous surface (stone-like but refined)
+Light: Radiant outward, halo-like but controlled
+Feel: Pure, divine, elevated — but not blinding
+🐉 Dragonborn
+Hue: Scaled by lineage (Red / Blue / Gold / etc.)
+Material: Scaled metallic surface
+Light: Breath-like directional emission (pressure → release)
+Feel: Controlled elemental force
+🧌 Gnome
+Hue: Soft Teal + Warm Orange accent (low saturation)
+Material: Polished wood + small mechanical elements
+Light: Flicker pulses, tiny bursts, playful spark
+Behavior: Light không ổn định nhưng không chaotic
+Feel: Clever, curious, inventive
+🦶 Halfling
+Hue: Warm Earth Tones (Muted Brown + Soft Gold + Moss hint)
+Material: Soft leather / natural textures
+Light: Very subtle glow, gần như không có, chỉ warmth
+Behavior: Light gần như “thở”, cực nhẹ
+Feel: Comfort, resilience, quiet strength

@@ -34,6 +34,7 @@
 <script src="js/data/equipments/tools.js"></script>
 <script src="js/data/equipments/gears.js"></script>
 <script src="js/data/spells.js"></script>
+<script src="js/data/feats.js"></script>
 <script src="js/data/description.js"></script>
 <script src="js/func.js"></script>
 <script src="js/declare.js" defer></script>
@@ -212,8 +213,8 @@
       <div id="features_general"></div>
       <!-- <div class="title">Senses</div>
       <div id="features_senses"></div> -->
-      <div class="title">Feats</div>
-      <div id="features_feats"></div>
+      <div class="title">Feats <span name="show_more" class="show-more" data-item-type="Feat">List</span></div>
+      <div class="flex-container" id="feats-section"></div>
       <div class="title">Species Features</div>
       <div class="flex-container" id="features_species"></div>
       <div class="title">Class Features</div>
@@ -240,18 +241,18 @@
         <input type="number" id="ttl_sp">
         <input type="number" id="ttl_cp">
       </div>
-      <div class="title" name="show_more" data-item-type="Weapon">Weapons</div>
+      <div class="title">Weapons <span name="show_more" class="show-more" data-item-type="Weapon">List</span></div>
       <div class="flex-container" id="weapons-section"></div>
-      <div class="title" name="show_more" data-item-type="Armor">Armors</div>
+      <div class="title">Armors <span name="show_more" class="show-more" data-item-type="Armor">List</span></div>
       <div class="flex-container" id="armors-section"></div>
-      <div class="title" name="show_more" data-item-type="Tool">Tools</div>
+      <div class="title">Tools <span name="show_more" class="show-more" data-item-type="Tool">List</span></div>
       <div class="flex-container" id="tools-section"></div>
-      <div class="title" name="show_more" data-item-type="Gear">Adventure Gears</div>
+      <div class="title">Adventure Gears <span name="show_more" class="show-more" data-item-type="Gear">List</span></div>
       <div class="flex-container" id="gears-section"></div>
       <div class="spellcasting-area">
-        <div class="title" name="show_more" data-item-type="Spell">Spellbook</div>
+        <div class="title">Spellbook <span name="show_more" class="show-more" data-item-type="Spell">List</span></div>
         <div class="flex-container" id="spellbook-section"></div>
-        <div class="title" name="show_more" data-item-type="Spell">Prepared Spells</div>
+        <div class="title">Prepared Spells <span name="show_more" class="show-more" data-item-type="Spell">List</span></div>
         <div class="flex-container" id="spells-section"></div>
       </div>
     </div>

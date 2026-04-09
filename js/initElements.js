@@ -7,7 +7,7 @@ function initElements() {
 }
 
 function initBackground() {
-    data.filter(e => e.type == "Background").forEach(e => {
+    data.filter(e => e.type == "Background").sort((a, b) => a.id.localeCompare(b.id)).forEach(e => {
         const opt = document.createElement("option");
         opt.value = e.id;
         opt.textContent = e.name;
@@ -16,7 +16,7 @@ function initBackground() {
 }
 
 function initSpecies() {
-    data.filter(e => e.type == "Species").forEach(e => {
+    data.filter(e => e.type == "Species").sort((a, b) => a.id.localeCompare(b.id)).forEach(e => {
         const opt = document.createElement("option");
         opt.value = e.id;
         opt.textContent = e.name;
@@ -25,7 +25,7 @@ function initSpecies() {
 }
 
 function initClasses() {
-    data.filter(e => e.type == "Class").forEach(e => {
+    data.filter(e => e.type == "Class").sort((a, b) => a.id.localeCompare(b.id)).forEach(e => {
         const opt = document.createElement("option");
         opt.value = e.id;
         opt.textContent = e.name;
