@@ -41,4 +41,10 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+  const isLocked = localStorage.getItem("character_is_locked") === "true";
+    const btnLock = document.querySelector('[name="toggle_lock"]');
+    if (btnLock && isLocked) {
+        btnLock.innerHTML = "🔒"; 
+        toggleLock(btnLock);
+    }
 });

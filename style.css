@@ -19,6 +19,22 @@ select {
     font-weight: inherit;
 }
 
+button {
+    box-sizing: border-box;
+    border: 1px solid black;
+    /* min-width: 20px; */
+    margin: 0px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.button-info {
+    width: 20px;
+    border-radius: 50%;
+}
+
 p {
     margin-block-start: 5px;
     margin-block-end: 0px;
@@ -81,8 +97,8 @@ h3 {
 }
 
 .icon-img {
-    min-height: 57px;
-    max-height: 57px;
+    min-height: 55px;
+    max-height: 55px;
     box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
     border: solid 1px #aaa;
     outline: solid 1px rgb(72, 72, 72);
@@ -104,6 +120,7 @@ h3 {
     background-color: #000000;
     box-sizing: border-box;
     height: 100%;
+    overflow-y: auto;
 }
 
 .fixed {
@@ -119,21 +136,6 @@ h3 {
     text-align: right;
     display: grid;
     padding: 5px 5px 0px 5px;
-}
-
-button {
-    min-width: 18px;
-    border: none;
-    margin: 0px;
-}
-
-button:hover {
-    cursor: pointer;
-}
-
-.button-info {
-    width: 20px;
-    border-radius: 50%;
 }
 
 #desc_name {
@@ -313,28 +315,25 @@ td {
 
 /* Cantrip */
 .spell-lv0 {
-    background: #D0D6DD;
+    background: #9CA3AF; /* xám lạnh hơn */
     color: #000;
 }
 
 /* Lv1 */
 .spell-lv1 {
     background: #22C55E;
-    /* xanh sáng hơn */
     color: #fff;
 }
 
 /* Lv2 */
 .spell-lv2 {
-    background: #EAB308;
-    /* vàng đậm hơn */
+    background: #FACC15; /* vàng sáng hơn, fantasy hơn */
     color: #000;
 }
 
 /* Lv3 */
 .spell-lv3 {
     background: #F97316;
-    /* cam rực */
     color: #fff;
 }
 
@@ -353,21 +352,18 @@ td {
 /* Lv6 */
 .spell-lv6 {
     background: #A855F7;
-    /* tím sáng hơn */
     color: #fff;
 }
 
 /* Lv7 */
 .spell-lv7 {
-    background: #6366F1;
-    /* indigo sáng */
+    background: #7C3AED; /* tím rõ hơn */
     color: #fff;
 }
 
 /* Lv8 */
 .spell-lv8 {
-    background: #4F46E5;
-    /* đỡ tối hơn bản cũ */
+    background: #4338CA; /* xanh tím đậm hơn */
     color: #fff;
 }
 
@@ -379,10 +375,9 @@ td {
 }
 
 .show-more {
-  display: inline-block;
-  color: #007bff;
-  font-weight: 500;
   cursor: pointer;
-  position: relative;
-  transition: all 0.2s ease;
 }
+
+.expand {
+    cursor: pointer;
+  }

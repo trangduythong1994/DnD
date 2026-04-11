@@ -1,4 +1,4 @@
-document.body.addEventListener('click', function (e) {
+document.addEventListener('click', function (e) {
     if (!e.target) return;
     contextMenu.style.display = 'none';
     const targetNode = e.target.closest('[name]');
@@ -30,6 +30,24 @@ document.body.addEventListener('click', function (e) {
         case "item_unequip":
             unequipItem(targetNode);
             break;
+        case "spell_prepare":
+            prepareSpell(targetNode);
+            break;
+        case "spell_unprepare":
+            unprepareSpell(targetNode);
+            break;
+        case "expand":
+            expand(targetNode);
+            break;
+        case "toggle_lock":
+            toggleLock(targetNode);
+            break;
+        case "reset":
+            reset(targetNode);
+            break;
+        case "add_item_by_code":
+            addItemByCode();
+            break;
     }
 
     const customTagNode = e.target.closest('c-1');
@@ -40,7 +58,7 @@ document.body.addEventListener('click', function (e) {
     }
 });
 
-document.body.addEventListener('input', function (e) {
+document.addEventListener('input', function (e) {
     if (!e.target) return;
     const id = e.target.getAttribute("id");
     switch (id) {
@@ -59,7 +77,7 @@ document.body.addEventListener('input', function (e) {
     }
 });
 
-document.body.addEventListener('change', function (e) {
+document.addEventListener('change', function (e) {
     if (!e.target) return;
     const id = e.target.getAttribute("id");
     switch (id) {
@@ -80,50 +98,64 @@ document.body.addEventListener('change', function (e) {
     }
 });
 
+document.addEventListener('keydown', function (e) {
+    if (e.target && e.target.id === "add_item_input" && e.key === "Enter") {
+        e.preventDefault(); 
+        addItemByCode();
+    }
+});
+
 document.addEventListener('contextmenu', function (e) {
-    if (e.target.closest('.inventory-item')) {
-        e.preventDefault();
-        const itemTarget = e.target.closest('.inventory-item');
-        const itemId = itemTarget.getAttribute('data-item-id');
-        const itemType = itemTarget.getAttribute('data-item-type');
-        let menuItems = '';
-        if (itemType === 'Weapon') {
-            menuItems += `<li name="item_equip" data-item-id="${itemId}" data-item-type="${itemType}" data-body-slot="body_slots_main_hand">Equip to Main Hand</li>`;
-            menuItems += `<li name="item_equip" data-item-id="${itemId}" data-item-type="${itemType}" data-body-slot="body_slots_off_hand">Equip to Off Hand</li>`;
-        } else if (itemType === 'Armor') {
-            const itemCategory = data.find(e => e.id == itemId).category;
-            if (itemCategory == "Shield") {
-                menuItems += `<li name="item_equip" data-item-id="${itemId}" data-item-type="${itemType}" data-body-slot="body_slots_off_hand">Equip to Off Hand</li>`;
-            } else {
-                menuItems += `<li name="item_equip" data-item-id="${itemId}" data-item-type="${itemType}" data-body-slot="body_slots_chest">Equip to Chest</li>`;
+    const target = e.target.closest('.inventory-item, .item-list-interaction, .body-slot');
+    if (!target) {
+        contextMenu.style.display = 'none';
+        return;
+    }
+    e.preventDefault();
+    let menuItems = '';
+    const id = target.getAttribute('data-item-id');
+    const item = id ? data.find(i => i.id == id) : null;
+    if (target.classList.contains('inventory-item')) {
+        if (!item) return;
+
+        if (item.type === 'Weapon') {
+            menuItems += `<li name="item_equip" data-item-id="${id}" data-body-slot="body_slots_main_hand">Equip to Main Hand</li>
+                          <li name="item_equip" data-item-id="${id}" data-body-slot="body_slots_off_hand">Equip to Off Hand</li>`;
+        } else if (item.type === 'Armor') {
+            const isShield = item.category === "Shield";
+            const slot = isShield ? "body_slots_off_hand" : "body_slots_chest";
+            const text = isShield ? "Equip to Off Hand" : "Equip to Chest";
+            menuItems += `<li name="item_equip" data-item-id="${id}" data-body-slot="${slot}">${text}</li>`;
+        } else if (item.type === 'Spell') {
+            if (target.closest('#spellbooks-section')) {
+                menuItems += `<li name="spell_prepare" data-item-id="${id}" style="color: #ffdc6b;">Prepare this spell</li>`;
+                menuItems += `<li name="item_delete" data-inv-type="Spellbook" data-item-id="${id}" style="color: #ff6b6b;">Remove from Spellbook</li>`;
+            }
+            else if (target.closest('#spells-section')) {
+                menuItems += `<li name="spell_unprepare" data-item-id="${id}" style="color: #ffdc6b;">Unprepare this spell</li>`;
             }
         }
-        menuItems += `<li name="item_delete" data-item-id="${itemId}" data-item-type="${itemType}" style="color: #ff6b6b;">Remove this item</li>`;
+        if (item.type !== 'Spell') {
+            menuItems += `<li name="item_delete" data-item-id="${id}" style="color: #ff6b6b;">Remove</li>`;
+        }
+    } else if (target.classList.contains('item-list-interaction')) {
+        const charClass = $id("character_class").value;
+        if (item?.type !== "Spell") {
+            menuItems += `<li name="item_add" data-item-id="${id}" style="color: #ffdc6b;">Add this item</li>`;
+        } else {
+            const spellText = (charClass === "class_wizard") ? "Add to spellbook" : "Prepare this spell";
+            menuItems += `<li name="item_add" data-item-id="${id}" style="color: #ffdc6b;">${spellText}</li>`;
+        }
+    } else if (target.classList.contains('body-slot')) {
+        const slotId = target.getAttribute('id');
+        menuItems += `<li name="item_unequip" data-body-slot="${slotId}" style="color: #ff6b6b;">Unequip</li>`;
+    }
+    if (menuItems) {
         contextMenu.innerHTML = menuItems;
-        contextMenu.style.top = `${e.pageY}px`;
-        contextMenu.style.left = `${e.pageX}px`;
-        contextMenu.style.display = 'block';
-    } else if (e.target.closest('.item-list-interaction')) {
-        e.preventDefault();
-        const itemTarget = e.target.closest('.item-list-interaction');
-        const itemId = itemTarget.getAttribute('data-item-id');
-        let menuItems = '';
-        menuItems += `<li name="item_add" data-item-id="${itemId}" style="color: #ffdc6b;">Add this item</li>`;
-        contextMenu.innerHTML = menuItems;
-        contextMenu.style.top = `${e.pageY}px`;
-        contextMenu.style.left = `${e.pageX}px`;
-        contextMenu.style.display = 'block';
-    } else if (e.target.closest('.body-slot')) {
-        e.preventDefault();
-        const itemTarget = e.target.closest('.body-slot');
-        const id = itemTarget.getAttribute('id');
-        let menuItems = '';
-        menuItems += `<li name="item_unequip" data-body-slot="${id}" style="color: #ff6b6b;">Unequip</li>`;
-        contextMenu.innerHTML = menuItems;
-        contextMenu.style.top = `${e.pageY}px`;
-        contextMenu.style.left = `${e.pageX}px`;
-        contextMenu.style.display = 'block';
-    } else {
-        contextMenu.style.display = 'none';
+        Object.assign(contextMenu.style, {
+            top: `${e.pageY}px`,
+            left: `${e.pageX}px`,
+            display: 'block'
+        });
     }
 });

@@ -59,8 +59,8 @@
           data-computed="true" disabled><input type="text" id="character_prof_bonus" data-computed="true" disabled>
         <label>XP</label><input type="text" id="character_xp"><input type="text" id="character_next_xp_level"
           data-computed="true" disabled>
-        <label>Class <button class="button-info" id="class_info" name="character_class">i</button></label><select
-          id="character_class" style="grid-column: 2/span 2;"></select>
+        <label>Class <button class="button-info" id="class_info" name="character_class">i</button></label><select id="character_class" style="grid-column: 2/span 2;"></select>
+        <lable></lable><button name="toggle_lock" id="btn_toggle_lock">🔒</button><button name="reset">🔄️</button>
       </div>
 
       <div class="title">Ability Score</div>
@@ -213,7 +213,7 @@
       <div id="features_general"></div>
       <!-- <div class="title">Senses</div>
       <div id="features_senses"></div> -->
-      <div class="title">Feats <span name="show_more" class="show-more" data-item-type="Feat">List</span></div>
+      <div class="title">Feats <span name="show_more" class="show-more" data-item-type="Feat">📚</span></div>
       <div class="flex-container" id="feats-section"></div>
       <div class="title">Species Features</div>
       <div class="flex-container" id="features_species"></div>
@@ -230,6 +230,10 @@
     <!-- col-4 -->
     <div class="col fixed">
       <h3>Inventory</h3>
+      <div class="section" style="grid-template-columns: 1fr auto; margin-bottom: 8px;">
+        <input type="text" id="add_item_input" placeholder="Enter a passcode" data-computed="true">
+        <button name="add_item_by_code" id="btn_add_item_code">Add</button>
+      </div>
       <div class="title">Coins</div>
       <div class="section" id="hit-points-section" style="grid-template-columns: 1fr 1fr 1fr 1fr">
         <label style="text-align: center;">PP</label>
@@ -241,20 +245,36 @@
         <input type="number" id="ttl_sp">
         <input type="number" id="ttl_cp">
       </div>
-      <div class="title">Weapons <span name="show_more" class="show-more" data-item-type="Weapon">List</span></div>
-      <div class="flex-container" id="weapons-section"></div>
-      <div class="title">Armors <span name="show_more" class="show-more" data-item-type="Armor">List</span></div>
-      <div class="flex-container" id="armors-section"></div>
-      <div class="title">Tools <span name="show_more" class="show-more" data-item-type="Tool">List</span></div>
-      <div class="flex-container" id="tools-section"></div>
-      <div class="title">Adventure Gears <span name="show_more" class="show-more" data-item-type="Gear">List</span></div>
-      <div class="flex-container" id="gears-section"></div>
-      <div class="spellcasting-area">
-        <div class="title">Spellbook <span name="show_more" class="show-more" data-item-type="Spell">List</span></div>
-        <div class="flex-container" id="spellbook-section"></div>
-        <div class="title">Prepared Spells <span name="show_more" class="show-more" data-item-type="Spell">List</span></div>
-        <div class="flex-container" id="spells-section"></div>
+      <div class="title">Weapons 
+        <span name="show_more" class="show-more" data-item-type="Weapon">📚 </span>
+        <span name="expand" class="expand" data-item-type="weapons-section">↕️ </span>
       </div>
+      <div class="flex-container" id="weapons-section"></div>
+      <div class="title">Armors 
+        <span name="show_more" class="show-more" data-item-type="Armor">📚</span>
+        <span name="expand" class="expand" data-item-type="armors-section">↕️ </span>
+      </div>
+      <div class="flex-container" id="armors-section"></div>
+      <div class="title">Tools 
+        <span name="show_more" class="show-more" data-item-type="Tool">📚</span>
+        <span name="expand" class="expand" data-item-type="tools-section">↕️ </span>
+      </div>
+      <div class="flex-container" id="tools-section"></div>
+      <div class="title">Adventure Gears 
+        <span name="show_more" class="show-more" data-item-type="Gear">📚</span>
+        <span name="expand" class="expand" data-item-type="gears-section">↕️ </span>
+      </div>
+      <div class="flex-container" id="gears-section"></div>
+      <div class="title spellbook">Spellbook 
+        <span name="show_more" class="show-more" data-item-type="Spell">📚</span>
+        <span name="expand" class="expand" data-item-type="spellbooks-section">↕️ </span>
+      </div>
+      <div class="flex-container spellbook" id="spellbooks-section"></div>
+      <div class="title spellcasting-area">Prepared Spells 
+        <span name="show_more" class="show-more" data-item-type="Spell">📚</span>
+        <span name="expand" class="expand" data-item-type="spells-section">↕️ </span>
+      </div>
+      <div class="flex-container spellcasting-area" id="spells-section"></div>
     </div>
 
     <!-- col-5 -->

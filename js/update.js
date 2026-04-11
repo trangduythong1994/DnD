@@ -147,12 +147,17 @@ function updateArmorClass() {
 
 function updateSpellcastingArea() {
     document.querySelectorAll(".spellcasting-area").forEach(e => e.style.display = "none");
+    document.querySelectorAll(".spellbook").forEach(e => e.style.display = "none");
     const feature = data.find(e => e.id == $id("character_class").value);
+    if (!feature) return;
     for (let i = 0; i <= character_level.value; i++) {
         if (feature?.level?.[i]) {
             const f = feature?.level?.[i];
             if (f.spellcasting_ability) {
                 document.querySelectorAll(".spellcasting-area").forEach(e => { e.style.display = ""; });
+                if (feature.id == "class_wizard") {
+                    document.querySelectorAll(".spellbook").forEach(e => e.style.display = "");
+                }
                 spellcasting_ability.value = feature.spellcasting_ability;
                 spell_attack_roll_mod.value = formatModifier(parseInt(character_prof_bonus.value) + parseInt($id("as_" + f.spellcasting_ability + "_mod").value));
                 spell_save_dc.value = 8 + parseInt(character_prof_bonus.value) + parseInt($id("as_" + f.spellcasting_ability + "_mod").value);
@@ -189,7 +194,14 @@ function showItemList(target) {
     if (!type) return;
     desc_item_list_name.innerHTML = `${type} List`;
     let content = ``;
-    data.filter(e => e.type == type && !e.locked).sort((a, b) => a.id.localeCompare(b.id)).forEach(obj => {
+    data.filter(e => e.type == type && !e.locked) .sort((a, b) => {
+        const levelA = a.level ?? Number.MAX_SAFE_INTEGER;
+        const levelB = b.level ?? Number.MAX_SAFE_INTEGER;
+        if (levelA !== levelB) {
+          return levelA - levelB;
+        }
+        return a.id.localeCompare(b.id);
+      }).forEach(obj => {
         if (obj.type != "Spell") {
             content += `
                 <span name="item" class="item-list-interaction" data-item-id="${obj.id}">
@@ -258,11 +270,15 @@ function showItem(target) {
 
 function addItem(target) {
     const id = target.getAttribute("data-item-id");
-    const type = data.find(e => e.id == id).type;
+    let type = data.find(e => e.id == id).type;
+    if (type == "Spell" && $id("character_class").value == "class_wizard") {
+        type = "Spellbook";
+    }
     let items = JSON.parse(localStorage.getItem(`inventory_${type}`)) || [];
     let existing = items.find(item => item.id == id);
+    
     if (existing) {
-        if (type != 'Spell') {
+        if (type != 'Spell' && type != 'Spellbook' && type != 'Feat') {
             existing.qty += 1;
         }
     } else {
@@ -273,16 +289,40 @@ function addItem(target) {
 }
 
 function deleteItem(target) {
-    const item_type = target.getAttribute("data-item-type");
-    const item_id = target.getAttribute("data-item-id");
-    let items = JSON.parse(localStorage.getItem(`inventory_${item_type}`)) || [];
-    let existing = items.find(item => item.id == item_id);
-    if (existing && existing.qty > 1) {
+    const id = target.getAttribute("data-item-id");
+    let type = target.getAttribute("data-inv-type");
+    if (!type) {
+        type = data.find(e => e.id == id).type;
+        if (type == "Spell" && $id("character_class").value == "class_wizard") {
+            type = "Spellbook";
+        }
+    }
+    let items = JSON.parse(localStorage.getItem(`inventory_${type}`)) || [];
+    let existing = items.find(item => item.id == id);
+    if (existing && existing.qty > 1 && type != 'Spell' && type != 'Spellbook' && type != 'Feat') {
         existing.qty -= 1;
     } else {
-        items = items.filter(item => item.id != item_id);
+        items = items.filter(item => item.id != id);
     }
-    localStorage.setItem(`inventory_${item_type}`, JSON.stringify(items));
+    localStorage.setItem(`inventory_${type}`, JSON.stringify(items));
+    updateInventory();
+}
+
+function prepareSpell(target) {
+    const id = target.getAttribute("data-item-id");
+    let items = JSON.parse(localStorage.getItem(`inventory_Spell`)) || [];
+    if (!items.find(item => item.id == id)) {
+        items.push({ id: id, qty: 1 });
+    }
+    localStorage.setItem(`inventory_Spell`, JSON.stringify(items));
+    updateInventory();
+}
+
+function unprepareSpell(target) {
+    const id = target.getAttribute("data-item-id");
+    let items = JSON.parse(localStorage.getItem(`inventory_Spell`)) || [];
+    items = items.filter(item => item.id != id);
+    localStorage.setItem(`inventory_Spell`, JSON.stringify(items));
     updateInventory();
 }
 
@@ -318,17 +358,17 @@ function updateBodySlots() {
 }
 
 function updateInventory() {
-    ["Weapon", "Armor", "Tool", "Gear", "Spell", "Feat"].forEach(type => {
+    ["Weapon", "Armor", "Tool", "Gear", "Spellbook", "Spell", "Feat"].forEach(type => {
         const savedInventory = JSON.parse(localStorage.getItem(`inventory_${type}`)) || [];
         const inventoryMap = savedInventory.reduce((acc, curr) => { acc[curr.id] = curr; return acc; }, {});
-        const content = data.filter(x => x.type === type && inventoryMap[x.id])
+        const content = data.filter(x => inventoryMap[x.id])
             .map(e => {
                 const item = inventoryMap[e.id];
                 let attr = ``;
-                if (type == "Spell") {
-                    attr += `<span class="lvl spell-lv${e.level}">${e.level}</span>`;
-                } else {
+                if (type != "Spellbook" && type != "Spell" && type != "Feat") {
                     attr += `<span class="qty">${item.qty}</span>`;
+                } else if (type == "Spellbook" || type == "Spell") {
+                    attr += `<span class="lvl spell-lv${e.level}">${e.level}</span>`;
                 }
                 return `
                 <span class="inventory-item" name="item" data-item-id="${e.id}" data-item-type="${e.type}" style="cursor: pointer;">
@@ -465,4 +505,73 @@ function updateAction() {
             }
         }
     }
+}
+
+function expand(target) {
+    const item_id = target.getAttribute('data-item-type');
+    if ($id(item_id).style.display == "none") {
+        $id(item_id).style.display = "";
+    } else {
+        $id(item_id).style.display = "none"
+    }
+}
+
+function reset() {
+    const confirmReset = confirm("Are you sure you want to delete all character data? This cannot be undone.");
+    
+    if (confirmReset) {
+        localStorage.clear();
+        location.reload();
+    }
+}
+
+function toggleLock(btn) {
+    const section = document.getElementById("general-section");
+    if (!section) return;
+
+    const willLock = btn.innerHTML === "🔒";
+    const fields = section.querySelectorAll('input:not([data-computed="true"]):not(#character_xp), select:not([data-computed="true"])');
+
+    fields.forEach(el => {
+        el.disabled = willLock;
+        el.style.opacity = willLock ? "0.7" : "1";
+        el.style.cursor = willLock ? "not-allowed" : "default";
+    });
+    btn.innerHTML = willLock ? "🔓" : "🔒";
+    localStorage.setItem("character_is_locked", willLock);
+}
+
+function addItemByCode() {
+    const inputNode = document.getElementById("add_item_input");
+    if (!inputNode) return;
+    const inputCode = inputNode.value.trim();
+    if (inputCode === "") return;
+    const item = data.find(e => e.id === inputCode);
+    if (!item) {
+        alert(`Item not found!`);
+        inputNode.value = ""; 
+        return;
+    }
+    let type = item.type;
+    if (type === "Spell" && document.getElementById("character_class").value === "class_wizard") {
+        type = "Spellbook";
+    }
+    let items = JSON.parse(localStorage.getItem(`inventory_${type}`)) || [];
+    let existing = items.find(i => i.id === item.id);
+    if (existing) {
+        if (type !== 'Spell' && type !== 'Spellbook' && type !== 'Feat') {
+            existing.qty += 1;
+            alert(`Added another ${item.name}! Total: ${existing.qty}`);
+        } else {
+            alert(`${item.name} is already in your list!`);
+            inputNode.value = ""; 
+            return;
+        }
+    } else {
+        items.push({ id: item.id, qty: 1 });
+        alert(`Successfully added ${item.name}!`);
+    }
+    localStorage.setItem(`inventory_${type}`, JSON.stringify(items));
+    updateInventory();
+    inputNode.value = ""; 
 }

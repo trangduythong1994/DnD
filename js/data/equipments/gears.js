@@ -1048,7 +1048,7 @@ const data_gears = [
             , "Weight": "-"
             , "Cost": "30 GP"
         }
-        , locked: true
+        // , locked: true
     }
     , {
         id: "gear_spell_scroll_level_1"
@@ -1059,7 +1059,7 @@ const data_gears = [
             , "Weight": "-"
             , "Cost": "50 GP"
         }
-        , locked: true
+        // , locked: true
     }
     , {
         id: "gear_spikes_iron"
