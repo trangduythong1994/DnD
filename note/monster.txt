@@ -1,0 +1,117 @@
+🧱 I. BASE PROMPT FORMAT
+🧍 STANDARD (default)
+High fantasy character concept art of a [CREATURE] — a [brief identity / role].
+
+Appearance: [body type, defining features, materials, signature traits].
+
+Equipment / Attributes: [weapons, items, magical objects if any].
+
+Action / Aura: subtle [magic / energy / presence], hinting at its nature without active combat.
+
+Composition: single character, full body, centered, eye-level view, dominant subject, subject occupies ~75–85% of frame, clear silhouette.
+
+Style: high fantasy, smooth shading, soft edges, painterly rendering, balanced colors, soft lighting, clean presentation.
+
+Background: minimal or softly blurred environment, low detail, non-distracting, secondary to the subject.
+
+Tone: [CREATURE TYPE] + [CR TIER]
+Color palette: [matching palette]
+
+Negative: dynamic action, exaggerated motion, small subject, multiple characters, busy composition, highly detailed background, landscape focus, realism, cel-shading, vector style, hard outlines, heavy ink.
+⚔️ ELITE / MINI-BOSS
+High fantasy character concept art of a [CREATURE] — a powerful [role / rank], more dangerous and refined than common foes.
+
+Appearance: [enhanced or more detailed version].
+
+Equipment / Attributes: [notable gear, magical focus].
+
+Action / Aura: actively channeling [power], visible energy forming, suggesting imminent action.
+
+Composition: single character, full body, slightly dynamic pose, slightly low angle, dominant subject, subject occupies ~70–80% of frame.
+
+Style: high fantasy, painterly rendering, stronger contrast, cinematic lighting, controlled glow effects.
+
+Background: lightly detailed environment, slightly blurred, secondary.
+
+Tone: [CREATURE TYPE] + [CR TIER]
+Color palette: [matching palette]
+
+Negative: static pose, neutral stance, overly chaotic effects, multiple characters, highly detailed background focus, landscape focus, cel-shading, vector style, hard outlines, heavy ink.
+💀 BOSS / SPLASH ART
+High fantasy boss fight splash art of a [CREATURE] — a dominant and terrifying [role / title], unleashing its full power in battle.
+
+Appearance: [imposing, exaggerated form, strong identity].
+
+Equipment / Attributes: [iconic weapon or magical focus].
+
+Action / Aura: mid-action, unleashing powerful [attack], energy erupting outward, affecting the environment.
+
+Composition: single character, dynamic pose, slightly low angle, cinematic perspective, dominant subject, subject occupies ~70–80% of frame, strong silhouette, foreground effects.
+
+Style: high fantasy, painterly rendering, high contrast, dramatic lighting, deep shadows, intense glow, cinematic atmosphere.
+
+Background: chaotic or thematic environment, blurred/desaturated, secondary.
+
+Tone: [CREATURE TYPE] + [CR TIER]
+Color palette: [matching palette]
+
+Negative: static pose, calm scene, minimal effects, small subject, multiple characters, highly detailed background focus, landscape focus, cel-shading, vector style, hard outlines, heavy ink.
+🎨 II. CREATURE TYPE TONE PRESETS
+😈 Fiend
+dark, sinister, infernal, oppressive, arcane
+Color palette: deep red, burnt orange, black, toxic green or violet
+💀 Undead
+dark, cold, eerie, decayed, deathly
+Color palette: desaturated blue, pale green, gray, black
+🐺 Beast
+primal, savage, natural, untamed
+Color palette: earthy brown, forest green, muted yellow
+🧚 Fey
+ethereal, mystical, dreamlike, whimsical
+Color palette: pastel pink, cyan, luminous green, soft glow
+👁️ Aberration
+eldritch, alien, unsettling, warped reality
+Color palette: sickly purple, teal, black, unnatural gradients
+🤖 Construct
+mechanical, artificial, rigid, controlled
+Color palette: metallic gray, bronze, gold, muted blue
+😇 Celestial
+divine, radiant, holy, majestic
+Color palette: gold, white, soft blue
+🐉 Dragon
+majestic, ancient, powerful, elemental
+Color palette: type-based (red, blue, green, black, gold...)
+👤 Humanoid
+grounded, realistic, cultural
+Color palette: natural tones + equipment-based
+🌿 Plant
+verdant, overgrown, organic, life-infused
+Color palette: deep green, moss, brown
+👻 Spirit
+ethereal, ghostly, drifting, intangible
+Color palette: pale blue, white, transparent glow
+🩸 Monstrosity
+unnatural, aggressive, grotesque, mutated
+Color palette: dark flesh tones, red, gray
+🗿 Giant
+massive, heavy, imposing, elemental
+Color palette: stone gray, earth tones
+🧬 Shapechanger
+deceptive, fluid, unsettling, adaptive
+Color palette: shifting tones, shadow blends
+⚡ Elemental
+raw, chaotic, energetic, pure element
+Color palette: element-based (fire/red, water/blue, air/white, earth/brown)
+⚔️ III. CR TIER PRESETS
+🪶 LOW CR
+subdued, restrained, grounded
+Color palette: muted, low saturation
+⚖️ MID CR
+intense, threatening, energized
+Color palette: richer colors, moderate contrast, controlled glow
+💀 BOSS CR
+dramatic, overwhelming, high-impact, epic
+Color palette: high contrast, deep shadows, strong highlights
+🧠 CÁCH DÙNG (FINAL FORMULA)
+Tone = Creature Type + CR Tier
+Color palette = theo type (có thể tweak theo CR)
