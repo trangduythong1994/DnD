@@ -89,7 +89,7 @@ h3 {
 
 #desc_image {
     min-height: 250px;
-    align-self: center;
+    align-self: center; 
 }
 
 #desc_image>img {
