@@ -59,7 +59,8 @@
           data-computed="true" disabled><input type="text" id="character_prof_bonus" data-computed="true" disabled>
         <label>XP</label><input type="text" id="character_xp"><input type="text" id="character_next_xp_level"
           data-computed="true" disabled>
-        <label>Class <button class="button-info" id="class_info" name="character_class">i</button></label><select id="character_class" style="grid-column: 2/span 2;"></select>
+        <label>Class <button class="button-info" id="class_info" name="character_class">i</button></label><select
+          id="character_class" style="grid-column: 2/span 2;"></select>
         <lable></lable><button name="toggle_lock" id="btn_toggle_lock">🔒</button><button name="reset">🔄️</button>
       </div>
 
@@ -245,36 +246,36 @@
         <input type="number" id="ttl_sp">
         <input type="number" id="ttl_cp">
       </div>
-      <div class="title">Weapons 
+      <div class="title">Weapons
         <span name="show_more" class="show-more" data-item-type="Weapon">📚 </span>
         <span name="expand" class="expand" data-item-type="weapons-section">↕️ </span>
       </div>
       <div class="flex-container" id="weapons-section"></div>
-      <div class="title">Armors 
+      <div class="title">Armors
         <span name="show_more" class="show-more" data-item-type="Armor">📚</span>
         <span name="expand" class="expand" data-item-type="armors-section">↕️ </span>
       </div>
       <div class="flex-container" id="armors-section"></div>
-      <div class="title">Tools 
+      <div class="title">Tools
         <span name="show_more" class="show-more" data-item-type="Tool">📚</span>
         <span name="expand" class="expand" data-item-type="tools-section">↕️ </span>
       </div>
       <div class="flex-container" id="tools-section"></div>
-      <div class="title">Adventure Gears 
+      <div class="title">Adventure Gears
         <span name="show_more" class="show-more" data-item-type="Gear">📚</span>
         <span name="expand" class="expand" data-item-type="gears-section">↕️ </span>
       </div>
       <div class="flex-container" id="gears-section"></div>
-      <div class="title spellbook">Spellbook 
+      <div class="title spellbook">Spellbook
         <span name="show_more" class="show-more" data-item-type="Spell">📚</span>
         <span name="expand" class="expand" data-item-type="spellbooks-section">↕️ </span>
       </div>
       <div class="flex-container spellbook" id="spellbooks-section"></div>
-      <div class="title spellcasting-area">Prepared Spells 
+      <div class="title inventory-prepared-spell">Prepared Spells
         <span name="show_more" class="show-more" data-item-type="Spell">📚</span>
         <span name="expand" class="expand" data-item-type="spells-section">↕️ </span>
       </div>
-      <div class="flex-container spellcasting-area" id="spells-section"></div>
+      <div class="flex-container inventory-prepared-spell" id="spells-section"></div>
     </div>
 
     <!-- col-5 -->
@@ -300,13 +301,9 @@
     <div class="col flex" style="display: flex; flex-direction: column;">
       <div class="section" id="desc_name"></div>
       <div class="section" id="desc_from"></div>
-      <div class="section" style="height: 250px; grid-template-columns: 250px 1fr; align-items: start;">
-        <div class="section" id="desc_image" style="overflow: hidden;"></div>
-        <div id="right_scroll_wrapper" style="height: 100%; overflow-y: auto; overflow-x: hidden;">
-          <div class="section" id="desc_content"></div>
-          <div class="section" id="desc_item" style="grid-template-columns: auto 1fr;"></div>
-        </div>
-      </div>
+      <div class="section" id="desc_image"></div>
+      <div class="section" id="desc_content" style="overflow-y: auto;"></div>
+      <div class="section" id="desc_item" style="height: 300px; overflow-y: auto; grid-template-columns: auto 1fr; align-content: start;"></div>
       <div class="section" id="desc_class_core" style="grid-template-columns: auto 1fr;"></div>
       <div class="section" id="desc_item_list_name" style="grid-template-columns: 1fr"></div>
       <div class="flex-container" id="desc_item_list"></div>

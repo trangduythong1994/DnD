@@ -157,13 +157,9 @@ const data_classes_cleric = [
         }
         , name: "Cleric Spellcasting"
         , description: `You have learned to cast spells through prayer and meditation.
-            <p><b>Cantrips.</b> You know three cantrips of your choice from the Cleric spell list.
-            <br>Whenever you gain a Cleric level, you can replace one of your cantrips with another cantrip of your choice from the Cleric spell list.
-            <br><span data-level="4">When you reach Cleric levels 4 </span><span data-level="10">and 10</span>, you learn another cantrip of your choice from the Cleric spell list, as shown in the Cantrips column of the Cleric Features table.
-            <p><b>Spell Slots.</b> The Cleric Features table shows how many spell slots you have to cast your level 1+ spells. You regain all expended slots when you finish a Long Rest.
-            <p><b>Prepared Spells of Level 1+.</b> You prepare the list of level 1+ spells that are available for you to cast with this feature. To start, choose four level 1 spells from the Cleric spell list.
-            <br>The number of spells on your list increases as you gain Cleric levels, as shown in the Prepared Spells column of the Cleric Features table. Whenever that number increases, choose additional spells from the Cleric spell list until the number of spells on your list matches the number on the table. The chosen spells must be of a level for which you have spell slots.
-            <br>If another Cleric feature gives spells that you always have prepared, those spells don’t count against the number of spells on the list you prepare with this feature, but those spells otherwise count as Cleric spells for you.
+            <p><b>Cantrips.</b> Whenever you gain a Cleric level, you can replace one of your cantrips with another cantrip of your choice from the Cleric spell list.
+            <p><b>Spell Slots.</b> You regain all expended slots when you finish a Long Rest.
+            <p><b>Prepared Spells of Level 1+.</b> You prepare the list of level 1+ spells that are available for you to cast with this feature.
             <p><b>Changing Your Prepared Spells.</b> Whenever you finish a Long Rest, you can change your list of prepared spells, replacing any of the spells there with other Cleric spells for which you have spell slots.
             <p><b>Spellcasting Ability.</b> Wisdom is your spellcasting ability for your Cleric spells.
             <p><b>Spellcasting Focus.</b> You can use a Holy Symbol as a Spellcasting Focus for your Cleric spells.`
@@ -191,7 +187,7 @@ const data_classes_cleric = [
         }
         , name: "Channel Divinity"
         , description: `You can channel divine energy directly from the Outer Planes to fuel magical effects. You start with two such effects: Divine Spark and Turn Undead, each of which is described below. Each time you use your Channel Divinity, choose which Channel Divinity effect from this class to create. You gain additional effect options at higher Cleric levels.
-            <p>You can use this class's Channel Divinity twice. You regain one of its expended uses when you finish a Short Rest, and you regain all expended uses when you finish a Long Rest. <span data-level="6">You gain additional uses khi đạt Cleric levels 6 </span><span data-level="18">và 18</span>, như trong bảng Cleric Features.
+            <p>You can use this class's Channel Divinity twice. You regain one of its expended uses when you finish a Short Rest, and you regain all expended uses when you finish a Long Rest.
             <p>If a Channel Divinity effect requires a saving throw, the DC equals the spell save DC from this class’s Spellcasting feature.`
     }
     , {
@@ -203,8 +199,7 @@ const data_classes_cleric = [
             , level: 2
         }
         , name: "Divine Spark"
-        , description: `As a Magic action, you point your Holy Symbol at another creature you can see within 30 feet of yourself and focus divine energy at it. Roll 1d8 and add your Wisdom modifier. You either restore Hit Points to the creature equal to that total or force the creature to make a Constitution saving throw. On a failed save, the creature takes Necrotic or Radiant damage (your choice) equal to that total. On a successful save, the creature takes half as much damage (round down).
-            <p><span data-level="7">You roll an additional d8 khi đạt Cleric levels 7 (2d8)</span><span data-level="13">, 13 (3d8)</span><span data-level="18">, và 18 (4d8)</span>.`
+        , description: `As a Magic action, you point your Holy Symbol at another creature you can see within 30 feet of yourself and focus divine energy at it. Roll 1d8 and add your Wisdom modifier. You either restore Hit Points to the creature equal to that total or force the creature to make a Constitution saving throw. On a failed save, the creature takes Necrotic or Radiant damage (your choice) equal to that total. On a successful save, the creature takes half as much damage (round down).`
     }
     , {
         id: "feature_class_cleric_turn_undead"

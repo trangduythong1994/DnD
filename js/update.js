@@ -147,18 +147,20 @@ function updateArmorClass() {
 
 function updateSpellcastingArea() {
     document.querySelectorAll(".spellcasting-area").forEach(e => e.style.display = "none");
+    document.querySelectorAll(".inventory-prepared-spell").forEach(e => e.style.display = "none");
     document.querySelectorAll(".spellbook").forEach(e => e.style.display = "none");
-    const feature = data.find(e => e.id == $id("character_class").value);
-    if (!feature) return;
+    const class_feature = data.find(e => e.id == $id("character_class").value);
+    if (!class_feature) return;
     for (let i = 0; i <= character_level.value; i++) {
-        if (feature?.level?.[i]) {
-            const f = feature?.level?.[i];
+        if (class_feature?.level?.[i]) {
+            const f = class_feature?.level?.[i];
             if (f.spellcasting_ability) {
                 document.querySelectorAll(".spellcasting-area").forEach(e => { e.style.display = ""; });
-                if (feature.id == "class_wizard") {
+                document.querySelectorAll(".inventory-prepared-spell").forEach(e => e.style.display = "");
+                if (class_feature.id == "class_wizard") {
                     document.querySelectorAll(".spellbook").forEach(e => e.style.display = "");
                 }
-                spellcasting_ability.value = feature.spellcasting_ability;
+                spellcasting_ability.value = class_feature.spellcasting_ability;
                 spell_attack_roll_mod.value = formatModifier(parseInt(character_prof_bonus.value) + parseInt($id("as_" + f.spellcasting_ability + "_mod").value));
                 spell_save_dc.value = 8 + parseInt(character_prof_bonus.value) + parseInt($id("as_" + f.spellcasting_ability + "_mod").value);
             }
@@ -170,6 +172,15 @@ function updateSpellcastingArea() {
             }
         }
     }
+    const savedInventory = JSON.parse(localStorage.getItem(`inventory_Feat`)) || [];
+    const inventoryMap = savedInventory.reduce((acc, curr) => { acc[curr.id] = curr; return acc; }, {});
+    data.filter(x => inventoryMap[x.id])
+        .map(e => {
+            const item = inventoryMap[e.id];
+            if (item.id == "feat_magic_initiate_cleric" || item.id == "feat_magic_initiate_druid" || item.id == "feat_magic_initiate_wizard") {
+                document.querySelectorAll(".inventory-prepared-spell").forEach(e => e.style.display = "");
+            }
+        });
 }
 
 function updateHitDice() {
@@ -201,8 +212,16 @@ function showItemList(target) {
           return levelA - levelB;
         }
         return a.id.localeCompare(b.id);
-      }).forEach(obj => {
-        if (obj.type != "Spell") {
+    }).forEach(obj => {
+        if (obj.type != "Feat" && (id == "feat_magic_initiate_cleric" || id == "feat_magic_initiate_druid" || id == "feat_magic_initiate_wizard")) {
+            if (obj.classes.indexOf("class_wizard") > -1 && obj.level <= 1) {
+                content += `
+                    <span name="item" class="item-list-interaction" data-item-id="${obj.id}">
+                        <img class="icon-img" src="img/${obj.type.toLowerCase()}/${obj.id}.jpg" onerror="this.src='img/Failed Image.png'">
+                        <span class="lvl spell-lv${obj.level}">${obj.level}</span>
+                    </span>`;
+            }
+        } else if (obj.type != "Spell") {
             content += `
                 <span name="item" class="item-list-interaction" data-item-id="${obj.id}">
                     <img class="icon-img" src="img/${obj.type.toLowerCase()}/${obj.id}.jpg" onerror="this.src='img/Failed Image.png'">
@@ -216,8 +235,8 @@ function showItemList(target) {
                     </span>`;
             }
         }
-
     });
+
     desc_item_list.innerHTML = content;
 }
 
@@ -265,7 +284,7 @@ function showItem(target) {
     desc_item.innerHTML = content;
     desc_image.innerHTML = `<img src="img/${item.type.toLowerCase()}/${item.id}.jpg" onerror="this.src='img/Failed Image.png'">`;
     updateContentByLevel();
-    showItemList(target);
+    // showItemList(target);
 }
 
 function addItem(target) {
@@ -379,6 +398,7 @@ function updateInventory() {
         const section = $id(`${type?.toLowerCase()}s-section`);
         if (section) section.innerHTML = content;
     });
+    updateSpellcastingArea();
 }
 
 function updateContentByLevel() {
@@ -469,6 +489,13 @@ function updateAction() {
                 <input type="text" id="weapon_mastery" disabled >
             </div>`;
     }
+    if ($id("character_class").value == "class_wizard") {
+        features_general += `
+            <div class="section" style="grid-template-columns: auto 1fr;">
+                <label>Spells in Spellbook</label>
+                <input type="text" id="spellbook_spell" disabled>
+            </div>`;
+    }
     data.filter(e => e.type == "Feature").sort((a, b) => (a.conditions.level - b.conditions.level)).forEach(e => {
         if ($id("character_species").value == e.conditions.species && parseInt($id("character_level").value) >= parseInt(e.conditions.level ? e.conditions.level : 0)) {
             content = `<img name="action" class="icon-img" data-id="${e.id}" src="img/${e.type.toLowerCase()}/${e.id}.jpg" onerror="this.src='img/Failed Image.png'">`;
@@ -502,6 +529,9 @@ function updateAction() {
             }
             if (f.weapon_mastery) {
                 $id("weapon_mastery").value = f.weapon_mastery;
+            }
+            if (f.spellbook_spell) {
+                $id("spellbook_spell").value = f.spellbook_spell;
             }
         }
     }

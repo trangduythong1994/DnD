@@ -73,8 +73,7 @@ const data_classes_rogue = [
             , level: 1
         }
         , name: "Expertise"
-        , description: `You gain Expertise in two of your skill proficiencies of your choice. Sleight of Hand and Stealth are recommended if you have proficiency in them.
-        <p><span data-level="6">At Rogue level 6, you gain Expertise in two more of your skill proficiencies of your choice.</span>`
+        , description: `You gain Expertise in two of your skill proficiencies of your choice. Sleight of Hand and Stealth are recommended if you have proficiency in them.`
     }
     , {
         id: "feature_class_rogue_sneak_attack"
@@ -86,8 +85,7 @@ const data_classes_rogue = [
         }
         , name: "Sneak Attack"
         , description: `You know how to strike subtly and exploit a foe’s distraction. Once per turn, you can deal an extra 1d6 damage to one creature you hit with an attack roll if you have Advantage on the roll and the attack uses a Finesse or a Ranged weapon. The extra damage’s type is the same as the weapon’s type.
-        <p>You don’t need Advantage on the attack roll if at least one of your allies is within 5 feet of the target, the ally doesn’t have the Incapacitated condition, and you don’t have Disadvantage on the attack roll.
-        <p>The extra damage increases as you gain Rogue levels, as shown in the Sneak Attack column of the Rogue Features table.`
+        <p>You don’t need Advantage on the attack roll if at least one of your allies is within 5 feet of the target, the ally doesn’t have the Incapacitated condition, and you don’t have Disadvantage on the attack roll.`
     }
     , {
         id: "feature_class_rogue_thieves_cant"

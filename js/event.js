@@ -134,6 +134,10 @@ document.addEventListener('contextmenu', function (e) {
             else if (target.closest('#spells-section')) {
                 menuItems += `<li name="spell_unprepare" data-item-id="${id}" style="color: #ffdc6b;">Unprepare this spell</li>`;
             }
+        } else if (item.type === 'Feat') {
+            if (id == "feat_magic_initiate_cleric" || id == "feat_magic_initiate_druid" || id == "feat_magic_initiate_wizard") {
+                menuItems += `<li name="show_more" data-item-id="${id}" data-item-type="Spell" style="color:rgb(238, 107, 255);">Spell List</li>`;
+            }
         }
         if (item.type !== 'Spell') {
             menuItems += `<li name="item_delete" data-item-id="${id}" style="color: #ff6b6b;">Remove</li>`;

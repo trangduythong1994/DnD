@@ -89,6 +89,7 @@ h3 {
 
 #desc_image {
     min-height: 250px;
+    align-self: center;
 }
 
 #desc_image>img {
@@ -130,6 +131,7 @@ h3 {
 .flex {
     flex: 1;
     min-width: 250px;
+    max-width: 1000px;
 }
 
 .section {

@@ -99,7 +99,7 @@ const data_classes_fighter = [
             , level: 1
         }
         , name: "Fighting Style"
-        , description: `You have honed your martial prowess and gain a Fighting Style feat of your choice. Defense is recommended.
+        , description: `You have honed your martial prowess and gain a Fighting Style feat of your choice.
         <p>Whenever you gain a Fighter level, you can replace the feat you chose with a different Fighting Style feat.`
     }
     , {
@@ -112,8 +112,7 @@ const data_classes_fighter = [
         }
         , name: "Second Wind"
         , description: `You have a limited well of physical and mental stamina that you can draw on. As a Bonus Action, you can use it to regain Hit Points equal to 1d10 plus your Fighter level.
-        <p>You can use this feature twice. You regain one expended use when you finish a Short Rest, and you regain all expended uses when you finish a Long Rest.
-        <p><span data-level="4">When you reach certain Fighter levels, you gain more uses of this feature</span>, as shown in the Second Wind column of the Fighter Features table.`
+        <p>You can use this feature twice. You regain one expended use when you finish a Short Rest, and you regain all expended uses when you finish a Long Rest.`
     }
     , {
         id: "feature_class_fighter_weapon_mastery"
@@ -124,8 +123,7 @@ const data_classes_fighter = [
             , level: 1
         }
         , name: "Weapon Mastery"
-        , description: `Your training with weapons allows you to use the mastery property of three kinds of Simple or Martial weapons of your choice. Whenever you finish a Long Rest, you can practice weapon drills and change one of those weapon choices.
-        <p><span data-level="4">When you reach certain Fighter levels, you gain the ability to use the mastery properties of more kinds of weapons</span>, as shown in the Weapon Mastery column of the Fighter Features table.`
+        , description: `Your training with weapons allows you to use the mastery property of three kinds of Simple or Martial weapons of your choice. Whenever you finish a Long Rest, you can practice weapon drills and change one of those weapon choices.`
     }
     , {
         id: "feature_class_fighter_action_surge"

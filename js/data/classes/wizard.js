@@ -10,26 +10,26 @@ const data_classes_wizard = [
         <p>But the lure of knowledge calls even the most unadventurous Wizards from the safety of their libraries and laboratories and into crumbling ruins and lost cities. Most Wizards believe that their counterparts in ancient civilizations knew secrets of magic that have been lost to the ages, and discovering those secrets could unlock the path to a power greater than any magic available in the present age.`
         , level: [
             { id: 0, hit_dice: 6 }
-            , { id: 1, spellcasting_ability: "int", cantrip_qty: 3, prepared_spell: 4 }
-            , { id: 2, prepared_spell: 5 }
-            , { id: 3, prepared_spell: 6 }
-            , { id: 4, cantrip_qty: 4, prepared_spell: 7 }
-            , { id: 5, prepared_spell: 9 }
-            , { id: 6, prepared_spell: 10 }
-            , { id: 7, prepared_spell: 11 }
-            , { id: 8, prepared_spell: 12 }
-            , { id: 9, prepared_spell: 14 }
-            , { id: 10, cantrip_qty: 5, prepared_spell: 15 }
-            , { id: 11, prepared_spell: 16 }
-            , { id: 12, prepared_spell: 16 }
-            , { id: 13, prepared_spell: 17 }
-            , { id: 14, prepared_spell: 18 }
-            , { id: 15, prepared_spell: 19 }
-            , { id: 16, prepared_spell: 21 }
-            , { id: 17, prepared_spell: 22 }
-            , { id: 18, prepared_spell: 23 }
-            , { id: 19, prepared_spell: 24 }
-            , { id: 20, prepared_spell: 25 }
+            , { id: 1, spellcasting_ability: "int", cantrip_qty: 3, prepared_spell: 4, spellbook_spell: 6 }
+            , { id: 2, prepared_spell: 5, spellbook_spell: 8 }
+            , { id: 3, prepared_spell: 6, spellbook_spell: 10 }
+            , { id: 4, cantrip_qty: 4, prepared_spell: 7, spellbook_spell: 12}
+            , { id: 5, prepared_spell: 9, spellbook_spell: 14 }
+            , { id: 6, prepared_spell: 10, spellbook_spell: 16 }
+            , { id: 7, prepared_spell: 11, spellbook_spell: 18}
+            , { id: 8, prepared_spell: 12, spellbook_spell: 20 }
+            , { id: 9, prepared_spell: 14, spellbook_spell: 22 }
+            , { id: 10, cantrip_qty: 5, prepared_spell: 15, spellbook_spell: 24 }
+            , { id: 11, prepared_spell: 16, spellbook_spell: 26}
+            , { id: 12, prepared_spell: 16, spellbook_spell: 28 }
+            , { id: 13, prepared_spell: 17, spellbook_spell: 30 }
+            , { id: 14, prepared_spell: 18, spellbook_spell: 32 }
+            , { id: 15, prepared_spell: 19, spellbook_spell: 34 }
+            , { id: 16, prepared_spell: 21, spellbook_spell: 36 }
+            , { id: 17, prepared_spell: 22, spellbook_spell: 38 }
+            , { id: 18, prepared_spell: 23, spellbook_spell: 40 }
+            , { id: 19, prepared_spell: 24, spellbook_spell: 42 }
+            , { id: 20, prepared_spell: 25, spellbook_spell: 44 }
         ]
         , description: {
             "Primary Ability": "Intelligence"
@@ -69,15 +69,12 @@ const data_classes_wizard = [
         , conditions: { class: "class_wizard", level: 1 }
         , name: "Wizard Spellcasting"
         , description: `As a student of arcane magic, you have learned to cast spells.
-        <p><b>Cantrips.</b> You know three Wizards cantrips of your choice. Light, Mage Hand, and Ray of Frost are recommended. Whenever you finish a Long Rest, you can replace one of your cantrips from this feature with another Wizard cantrip of your choice.
-        <br><span data-level="4">When you reach Wizard levels 4 <span data-level="10">and 10</span>, you learn another Wizard cantrip of your choice, as shown in the Cantrips column of the Wizard Features table.</span>
-        <p><b>Spellbook.</b> Your wizardly apprenticeship culminated in the creation of a unique book: your spellbook. It is a Tiny object that weighs 3 pounds, contains 100 pages, and can be read only by you or someone casting Identify. You determine the book’s appearance and materials, such as a gilt-edged tome or a collection of vellum bound with twine.
-        <br>The book contains the level 1+ spells you know. It starts with six level 1 Wizard spells of your choice. Detect Magic, Feather Fall, Mage Armor, Magic Missile, Sleep, and Thunderwave are recommended.
-        <br>Whenever you gain a Wizard level after 1, add two Wizard spells of your choice to your spellbook. Each of these spells must be of a level for which you have spell slots, as shown on the Wizard Features table. The spells are the culmination of arcane research you do regularly.
-        <p><b>Spell Slots.</b> The Wizard Features table shows how many spell slots you have to cast your level 1+ spells. You regain all expended spell slots when you finish a Long Rest.
-        <p><b>Prepared Spells of Level 1+.</b> You prepare the list of level 1+ spells that are available for you to cast with this feature. To do so, choose four spells from your spellbook. The chosen spells must be of a level for which you have spell slots.
-        <br>The number of spells on your list increases as you gain Wizard levels, as shown in the Prepared Spells column of the Wizard Features table. Whenever that number increases, choose additional Wizard spells until the number of spells on your list matches the number on the table. The chosen spells must be of a level for which you have spell slots. <span data-level="3">For example, if you’re a level 3 Wizard, your list of prepared spells can include six spells of levels 1 and 2 in any combination, chosen from your spellbook.</span>
-        <br>If another Wizard feature gives spells that you always have prepared, those spells don’t count against the number of spells you can prepare with this feature, but those spells otherwise count as Wizard spells for you.
+        <p><b>Cantrips.</b> Whenever you finish a Long Rest, you can replace one of your cantrips from this feature with another Wizard cantrip of your choice.
+        <p><b>Spellbook.</b> Your wizardly apprenticeship culminated in the creation of a unique book: your spellbook. It is a Tiny object that weighs 3 pounds, contains 100 pages, and can be read only by you or someone casting Identify.
+        <br>The book contains the level 1+ spells you know. It starts with six level 1 Wizard spells of your choice.
+        <br>Whenever you gain a Wizard level after 1, add two Wizard spells of your choice to your spellbook.
+        <p><b>Spell Slots.</b> You regain all expended spell slots when you finish a Long Rest.
+        <p><b>Prepared Spells of Level 1+.</b> Choose spells from your spellbook.
         <p><b>Changing Your Prepared Spells.</b> Whenever you finish a Long Rest, you can change your list of prepared spells, replacing any of the spells there with spells from your spellbook.
         <p><b>Spellcasting Ability.</b> Intelligence is your spellcasting ability for your Wizard spells.
         <p><b>Spellcasting Focus.</b> You can use an Arcane Focus or your spellbook as a Spellcasting Focus for your Wizard spells.`
