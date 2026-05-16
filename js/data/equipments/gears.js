@@ -86,6 +86,7 @@ const data_gears = [
             , "Cost": "50 GP"
         }
         , locked: true
+        , passcode: 8665818362
     }
     , {
         id: "gear_arcane_focus_crystal"
