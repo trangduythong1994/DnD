@@ -203,7 +203,9 @@ function showItemList(target) {
     let id = target.getAttribute("data-item-id");
     if (!type) type = data.find(e => e.id == id)?.type;
     if (!type) return;
-    desc_item_list_name.innerHTML = `${type} List`;
+
+    desc_item_list_name.innerHTML = `${type} List <input type="text" id="item_filter_input" style="margin-left: 10px; padding: 2px 8px; font-weight: normal; font-size: 14px;">`;
+
     let content = ``;
     data.filter(e => e.type == type && !e.locked) .sort((a, b) => {
         const levelA = a.level ?? Number.MAX_SAFE_INTEGER;
@@ -238,6 +240,10 @@ function showItemList(target) {
     });
 
     desc_item_list.innerHTML = content;
+    const filterInput = document.getElementById('item_filter_input');
+    if(filterInput) {
+        filterInput.focus();
+    }
 }
 
 function showItem(target) {
@@ -250,7 +256,7 @@ function showItem(target) {
     let item = data.find(o => o.id == item_id);
     switch (item.type) {
         case "Weapon":
-            table_attr = ["Category", "Damage", "Properties", "Mastery", "Weight", "Rarity", "Cost"];
+            table_attr = ["Category", "Damage", "Properties", "Mastery", "Weight", "Rarity", "Cost", "Description"];
             break;
         case "Armor":
             table_attr = ["Category", "AC", "Strength", "Stealth", "Weight", "Rarity", "Cost"];
@@ -576,7 +582,7 @@ function addItemByCode() {
     if (!inputNode) return;
     const inputCode = inputNode.value.trim();
     if (inputCode === "") return;
-    const item = data.find(e => e.id === inputCode);
+    const item = data.find(e => e.passcode == inputCode);
     if (!item) {
         alert(`Item not found!`);
         inputNode.value = ""; 
@@ -604,4 +610,26 @@ function addItemByCode() {
     localStorage.setItem(`inventory_${type}`, JSON.stringify(items));
     updateInventory();
     inputNode.value = ""; 
+}
+
+function filterItemList(searchTerm) {
+    // Lấy tất cả các item đang được render trong desc_item_list
+    const items = desc_item_list.querySelectorAll('.item-list-interaction');
+    
+    items.forEach(el => {
+        const itemId = el.getAttribute('data-item-id');
+        const itemObj = data.find(d => d.id == itemId);
+        if (!itemObj) return;
+
+        // Tạo chuỗi kết hợp Name + Level (nếu có level)
+        const levelStr = itemObj.level !== undefined ? `level ${itemObj.level}` : '';
+        const targetString = `${itemObj.name} ${levelStr}`;
+        
+        // Ẩn/hiện dựa trên kết quả Fuzzy Match
+        if (isFuzzyMatch(searchTerm, targetString)) {
+            el.style.display = ""; // Khớp thì hiện
+        } else {
+            el.style.display = "none"; // Không khớp thì ẩn
+        }
+    });
 }

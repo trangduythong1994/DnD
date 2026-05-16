@@ -215,17 +215,17 @@
       <!-- <div class="title">Senses</div>
       <div id="features_senses"></div> -->
       <div class="title">Feats <span name="show_more" class="show-more" data-item-type="Feat">📚</span></div>
-      <div class="flex-container" id="feats-section"></div>
+      <div class="grid-container" id="feats-section"></div>
       <div class="title">Species Features</div>
-      <div class="flex-container" id="features_species"></div>
+      <div class="grid-container" id="features_species"></div>
       <div class="title">Class Features</div>
-      <div class="flex-container" id="features_class"></div>
+      <div class="grid-container" id="features_class"></div>
       <div class="title">🟩 Action</div>
-      <div class="flex-container" id="actions-section"></div>
+      <div class="grid-container" id="actions-section"></div>
       <div class="title">🔶 Bonus Action</div>
-      <div class="flex-container" id="bonus-actions-section"></div>
+      <div class="grid-container" id="bonus-actions-section"></div>
       <div class="title">🔻 Reaction</div>
-      <div class="flex-container" id="reactions-section"></div>
+      <div class="grid-container" id="reactions-section"></div>
     </div>
 
     <!-- col-4 -->
@@ -250,32 +250,32 @@
         <span name="show_more" class="show-more" data-item-type="Weapon">📚 </span>
         <span name="expand" class="expand" data-item-type="weapons-section">↕️ </span>
       </div>
-      <div class="flex-container" id="weapons-section"></div>
+      <div class="grid-container" id="weapons-section"></div>
       <div class="title">Armors
         <span name="show_more" class="show-more" data-item-type="Armor">📚</span>
         <span name="expand" class="expand" data-item-type="armors-section">↕️ </span>
       </div>
-      <div class="flex-container" id="armors-section"></div>
+      <div class="grid-container" id="armors-section"></div>
       <div class="title">Tools
         <span name="show_more" class="show-more" data-item-type="Tool">📚</span>
         <span name="expand" class="expand" data-item-type="tools-section">↕️ </span>
       </div>
-      <div class="flex-container" id="tools-section"></div>
+      <div class="grid-container" id="tools-section"></div>
       <div class="title">Adventure Gears
         <span name="show_more" class="show-more" data-item-type="Gear">📚</span>
         <span name="expand" class="expand" data-item-type="gears-section">↕️ </span>
       </div>
-      <div class="flex-container" id="gears-section"></div>
+      <div class="grid-container" id="gears-section"></div>
       <div class="title spellbook">Spellbook
         <span name="show_more" class="show-more" data-item-type="Spell">📚</span>
         <span name="expand" class="expand" data-item-type="spellbooks-section">↕️ </span>
       </div>
-      <div class="flex-container spellbook" id="spellbooks-section"></div>
+      <div class="grid-container spellbook" id="spellbooks-section"></div>
       <div class="title inventory-prepared-spell">Prepared Spells
         <span name="show_more" class="show-more" data-item-type="Spell">📚</span>
         <span name="expand" class="expand" data-item-type="spells-section">↕️ </span>
       </div>
-      <div class="flex-container inventory-prepared-spell" id="spells-section"></div>
+      <div class="grid-container inventory-prepared-spell" id="spells-section"></div>
     </div>
 
     <!-- col-5 -->
@@ -286,8 +286,12 @@
         <textarea id="notes_prof_wp"
           style="field-sizing: content; border: none; box-sizing: border-box; width: 100%; resize: none;"></textarea>
         <div class="title">Armor & Shield Proficiencies</div>
-        <textarea id="notes_prof_ans"
-          style="field-sizing: content; border: none; box-sizing: border-box; width: 100%; resize: none;"></textarea>
+        <div class="section" style="grid-template-columns: auto 1fr auto 1fr">
+          <label>Light</label><input type="checkbox">
+          <label>Medium</label><input type="checkbox">
+          <label>Heavy</label><input type="checkbox">
+          <label>Shield</label><input type="checkbox">
+        </div>
         <div class="title">Tool Proficiencies</div>
         <textarea id="notes_prof_tool"
           style="field-sizing: content; border: none; box-sizing: border-box; width: 100%; resize: none;"></textarea>
@@ -305,8 +309,8 @@
       <div class="section" id="desc_content" style="overflow-y: auto;"></div>
       <div class="section" id="desc_item" style="height: 300px; overflow-y: auto; grid-template-columns: auto 1fr; align-content: start;"></div>
       <div class="section" id="desc_class_core" style="grid-template-columns: auto 1fr;"></div>
-      <div class="section" id="desc_item_list_name" style="grid-template-columns: 1fr"></div>
-      <div class="flex-container" id="desc_item_list"></div>
+      <div class="section" id="desc_item_list_name" style="grid-template-columns: auto 1fr"></div>
+      <div class="grid-container" id="desc_item_list"></div>
     </div>
   </div>
   <div id="toast"></div>

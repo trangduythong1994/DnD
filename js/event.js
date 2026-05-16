@@ -74,6 +74,9 @@ document.addEventListener('input', function (e) {
         case "character_xp":
             updateLevel();
             break;
+        case "item_filter_input":
+            filterItemList(e.target.value);
+            break;
     }
 });
 

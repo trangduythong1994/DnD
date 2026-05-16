@@ -124,3 +124,22 @@ function showToast(message, duration = 3000) {
 
   startHideTimer();
 }
+
+function isFuzzyMatch(query, targetString) {
+  const normalizedQuery = query.toLowerCase().replace(/\s+/g, '');
+  const normalizedTarget = targetString.toLowerCase();
+
+  let queryIndex = 0;
+  
+  for (let i = 0; i < normalizedTarget.length; i++) {
+      // Nếu ký tự khớp, tăng index của query lên 1
+      if (normalizedTarget[i] === normalizedQuery[queryIndex]) {
+          queryIndex++;
+      }
+      if (queryIndex === normalizedQuery.length) {
+          return true;
+      }
+  }
+  
+  return false;
+}

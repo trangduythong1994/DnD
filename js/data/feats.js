@@ -181,13 +181,19 @@ const data_feats = [
         , locked: true
     }
     , {
-        id: "feat_tough"
+        id: "feat_fighting_style"
         , type: "Feat"
-        , category: "Origin"
-        , name: "Tough"
+        , category: "Fighting Style"
+        , name: "Fighting Style"
         , description: {
-            "Description": `Your Hit Point maximum increases by an amount equal to twice your character level when you gain this feat. Whenever you gain a character level thereafter, your Hit Point maximum increases by an additional 2 Hit Points.`
+            "Prerequisite": `Fighting Style Feature`
+            , "Repeatable": `Yes, but you can't choose the same Fighting Style option more than once.`
+            , "Description": `You gain one Fighting Style option of your choice.
+                <p><b><i>Archery.</i></b> You gain a +2 bonus to attack rolls you make with Ranged weapons.
+                <p><b><i>Defense.</i></b> While you're wearing Light, Medium, or Heavy armor, you gain a +1 bonus to Armor Class.
+                <p><b><i>Dueling.</i></b> When you're holding a Melee weapon in one hand and no other weapons, you gain a +2 bonus to damage rolls with that weapon.
+                <p><b><i>Great Weapon Fighting.</i></b> When you roll damage for an attack you make with a Melee weapon that you are holding with two hands, you can treat any 1 or 2 on a damage die as a 3. The weapon must have the Two-Handed or Versatile property to gain this benefit.`
         }
-        , locked: true
+        // , locked: true
     }
 ]

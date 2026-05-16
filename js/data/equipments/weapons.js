@@ -500,4 +500,38 @@ const data_weapons = [
     cost: "250 GP"
     , locked: true
   }
+  ,{
+    id: "weapon_uncommon_whisperfang",
+    type: "Weapon",
+    rarity: "Uncommon",
+    category: "Simple Melee",
+    name: "Whisperfang",
+    damage: "1d4 Piercing",
+    properties: "Finesse, Light, Thrown (Range 20/60)",
+    mastery: "Nick",
+    weight: "1 lb.",
+    cost: "???",
+    description: `You have a +1 bonus to attack and damage rolls made with this magic weapon.
+    <p>Proficiency with a Dagger allows you to add your proficiency bonus to the attack roll for any attack you make with it.`
+    , passcode: 6006453655
+    , locked: true
+  }
+  ,{
+    id: "weapon_rare_sun_blade",
+    type: "Weapon",
+    rarity: "Rare",
+    category: "Martial Melee",
+    name: "Sun Blade",
+    damage: "1d8 Radiant",
+    properties: "Finesse, Versatile (1d10)",
+    mastery: "Sap",
+    weight: "3 lb.",
+    cost: "???",
+    description: `This item appears to be a sword hilt.
+	  <p><b><i>Blade of Radiance.</b></i> While grasping the hilt, you can take a Bonus Action to cause a blade of pure radiance to spring into existence or make the blade disappear. While the blade exists, this magic weapon functions as a Longsword with Finesse. If you are proficient with Longswords or Shortswords, you are proficient with the Sun Blade.
+	  <p>You gain a +2 bonus to attack rolls and damage rolls made with this weapon, which deals Radiant damage instead of Slashing damage. When you hit an Undead with it, that target takes an extra 1d8 Radiant damage.
+	  <p><b><i>Sunlight.</b></i> The sword’s luminous blade emits Bright Light in a 15-foot radius and Dim Light for an additional 15 feet. The light is sunlight. While the blade persists, you can take a Magic action to expand or reduce its radius of Bright Light and Dim Light by 5 feet each, to a maximum of 30 feet each or a minimum of 10 feet each.`,
+    passcode: 7429185301,
+    locked: true
+  }
 ];
