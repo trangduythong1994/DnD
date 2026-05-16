@@ -8,7 +8,7 @@ const data_weapons = [
     name: "Club",
     damage: "1d4 Bludgeoning",
     properties: "Light",
-    mastery: "Slow",
+    mastery: "Slow — If you hit a creature with this weapon and deal damage to it, you can reduce its Speed by 10 feet until the start of your next turn. If the creature is hit more than once by weapons that have this property, the Speed reduction doesn’t exceed 10 feet.",
     weight: "2 lb.",
     cost: "1 SP"
     , locked: true
@@ -21,7 +21,7 @@ const data_weapons = [
     name: "Dagger",
     damage: "1d4 Piercing",
     properties: "Finesse, Light, Thrown (Range 20/60)",
-    mastery: "Nick",
+    mastery: "Nick — When you make the extra attack of the Light property, you can make it as part of the Attack action instead of as a Bonus Action. You can make this extra attack only once per turn.",
     weight: "1 lb.",
     cost: "2 GP"
     // , locked: true
@@ -34,7 +34,7 @@ const data_weapons = [
     name: "Greatclub",
     damage: "1d8 Bludgeoning",
     properties: "Two-Handed",
-    mastery: "Push",
+    mastery: "Push — If you hit a creature with this weapon, you can push the creature up to 10 feet straight away from yourself if it is Large or smaller.",
     weight: "10 lb.",
     cost: "2 SP"
     , locked: true
@@ -47,7 +47,7 @@ const data_weapons = [
     name: "Handaxe",
     damage: "1d6 Slashing",
     properties: "Light, Thrown (Range 20/60)",
-    mastery: "Vex",
+    mastery: "Vex — If you hit a creature with this weapon and deal damage to the creature, you have Advantage on your next attack roll against that creature before the end of your next turn.",
     weight: "2 lb.",
     cost: "5 GP"
     , locked: true
@@ -60,7 +60,7 @@ const data_weapons = [
     name: "Javelin",
     damage: "1d6 Piercing",
     properties: "Thrown (Range 30/120)",
-    mastery: "Slow",
+    mastery: "Slow — If you hit a creature with this weapon and deal damage to it, you can reduce its Speed by 10 feet until the start of your next turn. If the creature is hit more than once by weapons that have this property, the Speed reduction doesn’t exceed 10 feet.",
     weight: "2 lb.",
     cost: "5 SP"
     // , locked: true
@@ -73,7 +73,7 @@ const data_weapons = [
     name: "Light Hammer",
     damage: "1d4 Bludgeoning",
     properties: "Light, Thrown (Range 20/60)",
-    mastery: "Nick",
+    mastery: "Nick — When you make the extra attack of the Light property, you can make it as part of the Attack action instead of as a Bonus Action. You can make this extra attack only once per turn.",
     weight: "2 lb.",
     cost: "2 GP"
     , locked: true
@@ -86,7 +86,7 @@ const data_weapons = [
     name: "Mace",
     damage: "1d6 Bludgeoning",
     properties: "—",
-    mastery: "Sap",
+    mastery: "Sap — If you hit a creature with this weapon, that creature has Disadvantage on its next attack roll before the start of your next turn.",
     weight: "4 lb.",
     cost: "5 GP"
     // , locked: true
@@ -99,7 +99,7 @@ const data_weapons = [
     name: "Quarterstaff",
     damage: "1d6 Bludgeoning",
     properties: "Versatile (1d8)",
-    mastery: "Topple",
+    mastery: "Topple — If you hit a creature with this weapon, you can force the creature to make a Constitution saving throw (DC 8 plus the ability modifier used to make the attack roll and your Proficiency Bonus). On a failed save, the creature has the Prone condition.",
     weight: "4 lb.",
     cost: "2 SP"
     // , locked: true
@@ -112,7 +112,7 @@ const data_weapons = [
     name: "Sickle",
     damage: "1d4 Slashing",
     properties: "Light",
-    mastery: "Nick",
+    mastery: "Nick — When you make the extra attack of the Light property, you can make it as part of the Attack action instead of as a Bonus Action. You can make this extra attack only once per turn.",
     weight: "2 lb.",
     cost: "1 GP"
     , locked: true
@@ -125,7 +125,7 @@ const data_weapons = [
     name: "Spear",
     damage: "1d6 Piercing",
     properties: "Thrown (Range 20/60), Versatile (1d8)",
-    mastery: "Sap",
+    mastery: "Sap — If you hit a creature with this weapon, that creature has Disadvantage on its next attack roll before the start of your next turn.",
     weight: "3 lb.",
     cost: "1 GP"
     // , locked: true
@@ -140,7 +140,7 @@ const data_weapons = [
     name: "Dart",
     damage: "1d4 Piercing",
     properties: "Finesse, Thrown (Range 20/60)",
-    mastery: "Vex",
+    mastery: "Vex — If you hit a creature with this weapon and deal damage to the creature, you have Advantage on your next attack roll against that creature before the end of your next turn.",
     weight: "1/4 lb.",
     cost: "5 CP"
     , locked: true
@@ -153,7 +153,7 @@ const data_weapons = [
     name: "Light Crossbow",
     damage: "1d8 Piercing",
     properties: "Ammunition (Range 80/320; Bolt), Loading, Two-Handed",
-    mastery: "Slow",
+    mastery: "Slow — If you hit a creature with this weapon and deal damage to it, you can reduce its Speed by 10 feet until the start of your next turn. If the creature is hit more than once by weapons that have this property, the Speed reduction doesn’t exceed 10 feet.",
     weight: "5 lb.",
     cost: "25 GP"
     , locked: true
@@ -166,7 +166,7 @@ const data_weapons = [
     name: "Shortbow",
     damage: "1d6 Piercing",
     properties: "Ammunition (Range 80/320; Arrow), Two-Handed",
-    mastery: "Vex",
+    mastery: "Vex — If you hit a creature with this weapon and deal damage to the creature, you have Advantage on your next attack roll against that creature before the end of your next turn.",
     weight: "2 lb.",
     cost: "25 GP"
     // , locked: true
@@ -179,7 +179,7 @@ const data_weapons = [
     name: "Sling",
     damage: "1d4 Bludgeoning",
     properties: "Ammunition (Range 30/120; Bullet)",
-    mastery: "Slow",
+    mastery: "Slow — If you hit a creature with this weapon and deal damage to it, you can reduce its Speed by 10 feet until the start of your next turn. If the creature is hit more than once by weapons that have this property, the Speed reduction doesn’t exceed 10 feet.",
     weight: "0 lb.",
     cost: "1 SP"
     , locked: true
@@ -194,7 +194,7 @@ const data_weapons = [
     name: "Battleaxe",
     damage: "1d8 Slashing",
     properties: "Versatile (1d10)",
-    mastery: "Topple",
+    mastery: "Topple — If you hit a creature with this weapon, you can force the creature to make a Constitution saving throw (DC 8 plus the ability modifier used to make the attack roll and your Proficiency Bonus). On a failed save, the creature has the Prone condition.",
     weight: "4 lb.",
     cost: "10 GP"
     , locked: true
@@ -207,7 +207,7 @@ const data_weapons = [
     name: "Flail",
     damage: "1d8 Bludgeoning",
     properties: "—",
-    mastery: "Sap",
+    mastery: "Sap — If you hit a creature with this weapon, that creature has Disadvantage on its next attack roll before the start of your next turn.",
     weight: "2 lb.",
     cost: "10 GP"
     // , locked: true
@@ -220,7 +220,7 @@ const data_weapons = [
     name: "Glaive",
     damage: "1d10 Slashing",
     properties: "Heavy, Reach, Two-Handed",
-    mastery: "Graze",
+    mastery: "Graze — If your attack roll with this weapon misses a creature, you can deal damage to that creature equal to the ability modifier you used to make the attack roll. This damage is the same type dealt by the weapon, and the damage can be increased only by increasing the ability modifier.",
     weight: "6 lb.",
     cost: "20 GP"
     , locked: true
@@ -233,7 +233,7 @@ const data_weapons = [
     name: "Greataxe",
     damage: "1d12 Slashing",
     properties: "Heavy, Two-Handed",
-    mastery: "Cleave",
+    mastery: "Cleave — If you hit a creature with a melee attack roll using this weapon, you can make a melee attack roll with the weapon against a second creature within 5 feet of the first that is also within your reach. On a hit, the second creature takes the weapon’s damage, but don’t add your ability modifier to that damage unless that modifier is negative. You can make this extra attack only once per turn.",
     weight: "7 lb.",
     cost: "30 GP"
     , locked: true
@@ -246,7 +246,7 @@ const data_weapons = [
     name: "Greatsword",
     damage: "2d6 Slashing",
     properties: "Heavy, Two-Handed",
-    mastery: "Graze",
+    mastery: "Graze — If your attack roll with this weapon misses a creature, you can deal damage to that creature equal to the ability modifier you used to make the attack roll. This damage is the same type dealt by the weapon, and the damage can be increased only by increasing the ability modifier.",
     weight: "6 lb.",
     cost: "50 GP"
     // , locked: true
@@ -259,7 +259,7 @@ const data_weapons = [
     name: "Halberd",
     damage: "1d10 Slashing",
     properties: "Heavy, Reach, Two-Handed",
-    mastery: "Cleave",
+    mastery: "Cleave — If you hit a creature with a melee attack roll using this weapon, you can make a melee attack roll with the weapon against a second creature within 5 feet of the first that is also within your reach. On a hit, the second creature takes the weapon’s damage, but don’t add your ability modifier to that damage unless that modifier is negative. You can make this extra attack only once per turn.",
     weight: "6 lb.",
     cost: "20 GP"
     , locked: true
@@ -272,7 +272,7 @@ const data_weapons = [
     name: "Lance",
     damage: "1d10 Piercing",
     properties: "Heavy, Reach, Two-Handed (unless mounted)",
-    mastery: "Topple",
+    mastery: "Topple — If you hit a creature with this weapon, you can force the creature to make a Constitution saving throw (DC 8 plus the ability modifier used to make the attack roll and your Proficiency Bonus). On a failed save, the creature has the Prone condition.",
     weight: "6 lb.",
     cost: "10 GP"
     , locked: true
@@ -285,7 +285,7 @@ const data_weapons = [
     name: "Longsword",
     damage: "1d8 Slashing",
     properties: "Versatile (1d10)",
-    mastery: "Sap",
+    mastery: "Sap — If you hit a creature with this weapon, that creature has Disadvantage on its next attack roll before the start of your next turn.",
     weight: "3 lb.",
     cost: "15 GP"
     , locked: true
@@ -298,7 +298,7 @@ const data_weapons = [
     name: "Maul",
     damage: "2d6 Bludgeoning",
     properties: "Heavy, Two-Handed",
-    mastery: "Topple",
+    mastery: "Topple — If you hit a creature with this weapon, you can force the creature to make a Constitution saving throw (DC 8 plus the ability modifier used to make the attack roll and your Proficiency Bonus). On a failed save, the creature has the Prone condition.",
     weight: "10 lb.",
     cost: "10 GP"
     , locked: true
@@ -311,7 +311,7 @@ const data_weapons = [
     name: "Morningstar",
     damage: "1d8 Piercing",
     properties: "—",
-    mastery: "Sap",
+    mastery: "Sap — If you hit a creature with this weapon, that creature has Disadvantage on its next attack roll before the start of your next turn.",
     weight: "4 lb.",
     cost: "15 GP"
     , locked: true
@@ -324,7 +324,7 @@ const data_weapons = [
     name: "Pike",
     damage: "1d10 Piercing",
     properties: "Heavy, Reach, Two-Handed",
-    mastery: "Push",
+    mastery: "Push — If you hit a creature with this weapon, you can push the creature up to 10 feet straight away from yourself if it is Large or smaller.",
     weight: "18 lb.",
     cost: "5 GP"
     , locked: true
@@ -337,7 +337,7 @@ const data_weapons = [
     name: "Rapier",
     damage: "1d8 Piercing",
     properties: "Finesse",
-    mastery: "Vex",
+    mastery: "Vex — If you hit a creature with this weapon and deal damage to the creature, you have Advantage on your next attack roll against that creature before the end of your next turn.",
     weight: "2 lb.",
     cost: "25 GP"
     , locked: true
@@ -350,7 +350,7 @@ const data_weapons = [
     name: "Scimitar",
     damage: "1d6 Slashing",
     properties: "Finesse, Light",
-    mastery: "Nick",
+    mastery: "Nick — When you make the extra attack of the Light property, you can make it as part of the Attack action instead of as a Bonus Action. You can make this extra attack only once per turn.",
     weight: "3 lb.",
     cost: "25 GP"
     // , locked: true
@@ -363,7 +363,7 @@ const data_weapons = [
     name: "Shortsword",
     damage: "1d6 Piercing",
     properties: "Finesse, Light",
-    mastery: "Vex",
+    mastery: "Vex — If you hit a creature with this weapon and deal damage to the creature, you have Advantage on your next attack roll against that creature before the end of your next turn.",
     weight: "2 lb.",
     cost: "10 GP"
     // , locked: true
@@ -376,7 +376,7 @@ const data_weapons = [
     name: "Trident",
     damage: "1d8 Piercing",
     properties: "Thrown (Range 20/60), Versatile (1d10)",
-    mastery: "Topple",
+    mastery: "Topple — If you hit a creature with this weapon, you can force the creature to make a Constitution saving throw (DC 8 plus the ability modifier used to make the attack roll and your Proficiency Bonus). On a failed save, the creature has the Prone condition.",
     weight: "4 lb.",
     cost: "5 GP"
     , locked: true
@@ -389,7 +389,7 @@ const data_weapons = [
     name: "Warhammer",
     damage: "1d8 Bludgeoning",
     properties: "Versatile (1d10)",
-    mastery: "Push",
+    mastery: "Push — If you hit a creature with this weapon, you can push the creature up to 10 feet straight away from yourself if it is Large or smaller.",
     weight: "5 lb.",
     cost: "15 GP"
     , locked: true
@@ -402,7 +402,7 @@ const data_weapons = [
     name: "War Pick",
     damage: "1d8 Piercing",
     properties: "Versatile (1d10)",
-    mastery: "Sap",
+    mastery: "Sap — If you hit a creature with this weapon, that creature has Disadvantage on its next attack roll before the start of your next turn.",
     weight: "2 lb.",
     cost: "5 GP"
     , locked: true
@@ -415,7 +415,7 @@ const data_weapons = [
     name: "Whip",
     damage: "1d4 Slashing",
     properties: "Finesse, Reach",
-    mastery: "Slow",
+    mastery: "Slow — If you hit a creature with this weapon and deal damage to it, you can reduce its Speed by 10 feet until the start of your next turn. If the creature is hit more than once by weapons that have this property, the Speed reduction doesn’t exceed 10 feet.",
     weight: "3 lb.",
     cost: "2 GP"
     , locked: true
@@ -430,7 +430,7 @@ const data_weapons = [
     name: "Blowgun",
     damage: "1 Piercing",
     properties: "Ammunition (Range 25/100; Needle), Loading",
-    mastery: "Vex",
+    mastery: "Vex — If you hit a creature with this weapon and deal damage to the creature, you have Advantage on your next attack roll against that creature before the end of your next turn.",
     weight: "1 lb.",
     cost: "10 GP"
     , locked: true
@@ -443,7 +443,7 @@ const data_weapons = [
     name: "Hand Crossbow",
     damage: "1d6 Piercing",
     properties: "Ammunition (Range 30/120; Bolt), Light, Loading",
-    mastery: "Vex",
+    mastery: "Vex — If you hit a creature with this weapon and deal damage to the creature, you have Advantage on your next attack roll against that creature before the end of your next turn.",
     weight: "3 lb.",
     cost: "75 GP"
     , locked: true
@@ -456,7 +456,7 @@ const data_weapons = [
     name: "Heavy Crossbow",
     damage: "1d10 Piercing",
     properties: "Ammunition (Range 100/400; Bolt), Heavy, Loading, Two-Handed",
-    mastery: "Push",
+    mastery: "Push — If you hit a creature with this weapon, you can push the creature up to 10 feet straight away from yourself if it is Large or smaller.",
     weight: "18 lb.",
     cost: "50 GP"
     , locked: true
@@ -469,7 +469,7 @@ const data_weapons = [
     name: "Longbow",
     damage: "1d8 Piercing",
     properties: "Ammunition (Range 150/600; Arrow), Heavy, Two-Handed",
-    mastery: "Slow",
+    mastery: "Slow — If you hit a creature with this weapon and deal damage to it, you can reduce its Speed by 10 feet until the start of your next turn. If the creature is hit more than once by weapons that have this property, the Speed reduction doesn’t exceed 10 feet.",
     weight: "2 lb.",
     cost: "50 GP"
     // , locked: true
@@ -482,7 +482,7 @@ const data_weapons = [
     name: "Musket",
     damage: "1d12 Piercing",
     properties: "Ammunition (Range 40/120; Bullet), Loading, Two-Handed",
-    mastery: "Slow",
+    mastery: "Slow — If you hit a creature with this weapon and deal damage to it, you can reduce its Speed by 10 feet until the start of your next turn. If the creature is hit more than once by weapons that have this property, the Speed reduction doesn’t exceed 10 feet.",
     weight: "10 lb.",
     cost: "500 GP"
     , locked: true
@@ -495,7 +495,7 @@ const data_weapons = [
     name: "Pistol",
     damage: "1d10 Piercing",
     properties: "Ammunition (Range 30/90; Bullet), Loading",
-    mastery: "Vex",
+    mastery: "Vex — If you hit a creature with this weapon and deal damage to the creature, you have Advantage on your next attack roll against that creature before the end of your next turn.",
     weight: "3 lb.",
     cost: "250 GP"
     , locked: true
@@ -508,7 +508,7 @@ const data_weapons = [
     name: "Whisperfang",
     damage: "1d4 Piercing",
     properties: "Finesse, Light, Thrown (Range 20/60)",
-    mastery: "Nick",
+    mastery: "Nick — When you make the extra attack of the Light property, you can make it as part of the Attack action instead of as a Bonus Action. You can make this extra attack only once per turn.",
     weight: "1 lb.",
     cost: "???",
     description: `You have a +1 bonus to attack and damage rolls made with this magic weapon.
@@ -524,7 +524,7 @@ const data_weapons = [
     name: "Sun Blade",
     damage: "1d8 Radiant",
     properties: "Finesse, Versatile (1d10)",
-    mastery: "Sap",
+    mastery: "Sap — If you hit a creature with this weapon, that creature has Disadvantage on its next attack roll before the start of your next turn.",
     weight: "3 lb.",
     cost: "???",
     description: `This item appears to be a sword hilt.
