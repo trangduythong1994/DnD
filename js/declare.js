@@ -55,13 +55,16 @@ const reactions_section = $id("reactions-section");
 const contextMenu = $id('custom-context-menu');
 
 const data_equipments = [...data_weapons, ...data_armors, ...data_tools, ...data_gears, ...data_feats];
+const data_descriptions = [...data_weaponProperties, ...data_weaponMasteries];
 const data = [ 
     ...data_equipments
     , ...data_spells
     , ...data_backgrounds
     , ...data_classes
     , ...data_species
-    , ...data_actions];
+    , ...data_actions
+
+    , ...data_descriptions];
 
 const slotPerLevel = [
     [0, 0, 0, 0, 0, 0, 0]

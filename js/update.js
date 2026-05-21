@@ -207,11 +207,11 @@ function showItemList(target) {
     desc_item_list_name.innerHTML = `${type} List <input type="text" id="item_filter_input" style="margin-left: 10px; padding: 2px 8px; font-weight: normal; font-size: 14px;">`;
 
     let content = ``;
-    data.filter(e => e.type == type && !e.locked) .sort((a, b) => {
+    data.filter(e => e.type == type && !e.locked).sort((a, b) => {
         const levelA = a.level ?? Number.MAX_SAFE_INTEGER;
         const levelB = b.level ?? Number.MAX_SAFE_INTEGER;
         if (levelA !== levelB) {
-          return levelA - levelB;
+            return levelA - levelB;
         }
         return a.id.localeCompare(b.id);
     }).forEach(obj => {
@@ -241,7 +241,7 @@ function showItemList(target) {
 
     desc_item_list.innerHTML = content;
     const filterInput = document.getElementById('item_filter_input');
-    if(filterInput) {
+    if (filterInput) {
         filterInput.focus();
     }
 }
@@ -256,7 +256,7 @@ function showItem(target) {
     let item = data.find(o => o.id == item_id);
     switch (item.type) {
         case "Weapon":
-            table_attr = ["Category", "Damage", "Properties", "Mastery", "Weight", "Rarity", "Cost", "Description"];
+            table_attr = ["Category", "Damage", "Properties", "Mastery", "Rarity", "Weight", "Cost", "Description"];
             break;
         case "Armor":
             table_attr = ["Category", "AC", "Strength", "Stealth", "Weight", "Rarity", "Cost"];
@@ -266,7 +266,7 @@ function showItem(target) {
             break;
     }
     desc_name.innerHTML = `${item.name}`;
-    desc_from.innerHTML = `${item.type}`;
+    desc_from.innerHTML = `${item.type}${item.archetype == undefined ? "" : " (" + item.archetype + ")"}`;
     if (item.type == "Tool" || item.type == "Gear" || item.type == "Feat") {
         for (const [key, value] of Object.entries(item.description)) {
             let displayValue = Array.isArray(value) ? value.join(', ') : value;
@@ -278,10 +278,26 @@ function showItem(target) {
     } else {
         table_attr.forEach(attr => {
             content += '<label class="desc_content_header">' + attr + '</label>';
-            if (Array.isArray(item[attr])) {
-                content += '<span class="desc_content_body">' + item[attr.toLowerCase().replace(' ', '_')].join(", ") + '</span>';
+            if (attr == "Description") {
+                let desc = ``, desc1 = ``, desc2 = ``;
+                item["properties"].split(", ").forEach(p => {
+                    let p1 = p.split(" ")[0];
+                    if (p1 != "—") {
+                        desc1 += `<p><b><i>${p1}.</b></i> `
+                        desc1 += data_weaponProperties.find(e => e.name == p1)?.description.lang_vi;
+                    }
+                })
+                item["mastery"].split(", ").forEach(p => {
+                    let p1 = p.split(" ")[0];
+                    if (p1 != "—") {
+                        desc2 += `<p><b><i>${p1}.</b></i> `
+                        desc2 += data_weaponMasteries.find(e => e.name == p1)?.description.lang_vi;
+                    }
+                })
+                desc = item[attr.toLowerCase()] + desc1 + desc2;
+                content += '<span class="desc_content_body">' + desc + '</span>';
             } else {
-                content += '<span class="desc_content_body">' + item[attr.toLowerCase().replace(' ', '_')] + '</span>';
+                content += '<span class="desc_content_body">' + item[attr.toLowerCase()] + '</span>';
             }
         });
     }
@@ -301,7 +317,7 @@ function addItem(target) {
     }
     let items = JSON.parse(localStorage.getItem(`inventory_${type}`)) || [];
     let existing = items.find(item => item.id == id);
-    
+
     if (existing) {
         if (type != 'Spell' && type != 'Spellbook' && type != 'Feat') {
             existing.qty += 1;
@@ -554,7 +570,7 @@ function expand(target) {
 
 function reset() {
     const confirmReset = confirm("Are you sure you want to delete all character data? This cannot be undone.");
-    
+
     if (confirmReset) {
         localStorage.clear();
         location.reload();
@@ -585,7 +601,7 @@ function addItemByCode() {
     const item = data.find(e => e.passcode == inputCode);
     if (!item) {
         alert(`Item not found!`);
-        inputNode.value = ""; 
+        inputNode.value = "";
         return;
     }
     let type = item.type;
@@ -600,7 +616,7 @@ function addItemByCode() {
             alert(`Added another ${item.name}! Total: ${existing.qty}`);
         } else {
             alert(`${item.name} is already in your list!`);
-            inputNode.value = ""; 
+            inputNode.value = "";
             return;
         }
     } else {
@@ -609,13 +625,13 @@ function addItemByCode() {
     }
     localStorage.setItem(`inventory_${type}`, JSON.stringify(items));
     updateInventory();
-    inputNode.value = ""; 
+    inputNode.value = "";
 }
 
 function filterItemList(searchTerm) {
     // Lấy tất cả các item đang được render trong desc_item_list
     const items = desc_item_list.querySelectorAll('.item-list-interaction');
-    
+
     items.forEach(el => {
         const itemId = el.getAttribute('data-item-id');
         const itemObj = data.find(d => d.id == itemId);
@@ -624,7 +640,7 @@ function filterItemList(searchTerm) {
         // Tạo chuỗi kết hợp Name + Level (nếu có level)
         const levelStr = itemObj.level !== undefined ? `level ${itemObj.level}` : '';
         const targetString = `${itemObj.name} ${levelStr}`;
-        
+
         // Ẩn/hiện dựa trên kết quả Fuzzy Match
         if (isFuzzyMatch(searchTerm, targetString)) {
             el.style.display = ""; // Khớp thì hiện
