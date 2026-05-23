@@ -280,14 +280,14 @@ function showItem(target) {
             content += '<label class="desc_content_header">' + attr + '</label>';
             if (attr == "Description") {
                 let desc = ``, desc1 = ``, desc2 = ``;
-                item["properties"].split(", ").forEach(p => {
+                item["properties"]?.split(", ").forEach(p => {
                     let p1 = p.split(" ")[0];
                     if (p1 != "—") {
                         desc1 += `<p><b><i>${p1}.</b></i> `
                         desc1 += data_weaponProperties.find(e => e.name == p1)?.description.lang_vi;
                     }
                 })
-                item["mastery"].split(", ").forEach(p => {
+                item["mastery"]?.split(", ").forEach(p => {
                     let p1 = p.split(" ")[0];
                     if (p1 != "—") {
                         desc2 += `<p><b><i>${p1}.</b></i> `
