@@ -175,4 +175,19 @@ const data_armors = [
     cost: "10 GP"
     // , locked: true
   }
+  ,   {
+    id: "armor_uncommon_dawn_shield",
+    type: "Armor",
+    rarity: "Uncommon",
+    category: "Shield",
+    name: "Dawn Shield",
+    ac: "+2",
+    strength: "—",
+    stealth: "—",
+    weight: "6 lb.",
+    cost: "???"
+    , description: `While holding this Shield, you have Advantage on Initiative rolls and Wisdom (Perception) checks. The Shield is emblazoned with a symbol of an eye.`
+    , passcode: "0723777143"
+    , locked: true
+  }
 ];

@@ -108,6 +108,25 @@ document.addEventListener('keydown', function (e) {
     }
 });
 
+const tabButtons = document.querySelectorAll('.tab-btn');
+const tabContents = document.querySelectorAll('.tab-content');
+
+tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+
+        button.classList.add('active');
+
+        const targetId = button.getAttribute('data-target');
+        const targetContent = document.getElementById(targetId);
+        
+        if (targetContent) {
+            targetContent.classList.add('active');
+        }
+    });
+});
+
 document.addEventListener('contextmenu', function (e) {
     const target = e.target.closest('.inventory-item, .item-list-interaction, .body-slot');
     if (!target) {
@@ -141,6 +160,13 @@ document.addEventListener('contextmenu', function (e) {
             if (id == "feat_magic_initiate_cleric" || id == "feat_magic_initiate_druid" || id == "feat_magic_initiate_wizard") {
                 menuItems += `<li name="show_more" data-item-id="${id}" data-item-type="Spell" style="color:rgb(238, 107, 255);">Spell List</li>`;
             }
+        } else if (item.type === 'Gear') {
+            menuItems += `<li name="item_equip" data-item-id="${id}" data-body-slot="body_slots_main_hand">Equip to Main Hand</li>
+                          <li name="item_equip" data-item-id="${id}" data-body-slot="body_slots_off_hand">Equip to Off Hand</li>`;
+        } else if (item.type === 'Wondrous') {
+            menuItems += `<li name="item_equip" data-item-id="${id}" data-body-slot="body_slots_wonderous_1">Equip to Wondrous Slot 1</li>
+                          <li name="item_equip" data-item-id="${id}" data-body-slot="body_slots_wonderous_2">Equip to Wondrous Slot 2</li>
+                          <li name="item_equip" data-item-id="${id}" data-body-slot="body_slots_wonderous_3">Equip to Wondrous Slot 3</li>`;
         }
         if (item.type !== 'Spell') {
             menuItems += `<li name="item_delete" data-item-id="${id}" style="color: #ff6b6b;">Remove</li>`;

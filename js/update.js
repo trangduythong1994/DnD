@@ -122,7 +122,7 @@ document.getElementById("character_speed").value = "30ft";
 
 function updateArmorClass() {
     let ac = 10 + parseInt(mod(as_dex.value));
-    if (body_slots_chest.value != "") {
+    if (body_slots_chest.getAttribute("data-item-id") != "") {
         const item = data.find(w => w.id == body_slots_chest.getAttribute("data-item-id"));
         const item_ac = item.ac.split("+")[0].trim();
         switch (item.category) {
@@ -139,8 +139,10 @@ function updateArmorClass() {
                 break;
         }
     }
-    if (body_slots_off_hand.value == "Shield") {
-        ac += 2;
+    if (body_slots_off_hand.getAttribute("data-item-id") != "") {
+        const item = data.find(w => w.id == body_slots_off_hand.getAttribute("data-item-id"));
+        const item_ac = item.ac.trim();
+        ac += parseInt(item_ac);
     }
     armor_class.value = ac;
 }
@@ -267,7 +269,7 @@ function showItem(target) {
     }
     desc_name.innerHTML = `${item.name}`;
     desc_from.innerHTML = `${item.type}${item.archetype == undefined ? "" : " (" + item.archetype + ")"}`;
-    if (item.type == "Tool" || item.type == "Gear" || item.type == "Feat") {
+    if (item.type == "Tool" || item.type == "Gear" || item.type == "Feat" || item.type == "Wondrous") {
         for (const [key, value] of Object.entries(item.description)) {
             let displayValue = Array.isArray(value) ? value.join(', ') : value;
             if (key.indexOf("Level") < 0 || key.replace("Level ", "") <= max_level) {
@@ -368,38 +370,46 @@ function unprepareSpell(target) {
 }
 
 function equipItem(target) {
-    const id = target.getAttribute("data-item-id");
-    const body_slot = target.getAttribute("data-body-slot");
-    localStorage.setItem(body_slot, id);
+    const item_id = target.getAttribute("data-item-id");
+    const slot_id = target.getAttribute("data-body-slot");
+    localStorage.setItem(slot_id, item_id);
     updateBodySlots();
     updateAttack();
     updateArmorClass();
 }
 
 function unequipItem(target) {
-    const body_slot = target.getAttribute("data-body-slot");
-    localStorage.setItem(body_slot, "");
+    const slot_id = target.getAttribute("data-body-slot");
+    localStorage.setItem(slot_id, "");
     updateBodySlots();
     updateAttack();
     updateArmorClass();
 }
 
 function updateBodySlots() {
-    ["body_slots_main_hand", "body_slots_off_hand", "body_slots_chest"].forEach(body_slot => {
-        const id = localStorage.getItem(body_slot);
-        const item = data.find(e => e.id == id);
+    ["body_slots_main_hand", "body_slots_off_hand", "body_slots_chest", "body_slots_wonderous_1", "body_slots_wonderous_2", "body_slots_wonderous_3"].forEach(slot_id => {
+        const slotElement = $id(slot_id);
+        if (!slotElement) return;
+        const imgElement = slotElement.querySelector('.icon-img');
+        const item = data.find(e => e.id == localStorage.getItem(slot_id));
         if (item) {
-            $id(body_slot).value = item.name;
-            $id(body_slot).setAttribute("data-item-id", item.id);
+            slotElement.setAttribute("data-item-id", item.id); 
+            slotElement.setAttribute("data-item-type", item.type);
+            if (imgElement) {
+                imgElement.src = `img/${item.type?.toLowerCase()}/${item.id}.jpg`; 
+            }
         } else {
-            $id(body_slot).value = "";
-            $id(body_slot).setAttribute("data-item-id", "");
+            slotElement.setAttribute("data-item-id", "");
+            slotElement.setAttribute("data-item-type", "");
+            if (imgElement) {
+                imgElement.src = "";
+            }
         }
     });
 }
 
 function updateInventory() {
-    ["Weapon", "Armor", "Tool", "Gear", "Spellbook", "Spell", "Feat"].forEach(type => {
+    ["Weapon", "Armor", "Wondrous", "Tool", "Gear", "Spellbook", "Spell", "Feat"].forEach(type => {
         const savedInventory = JSON.parse(localStorage.getItem(`inventory_${type}`)) || [];
         const inventoryMap = savedInventory.reduce((acc, curr) => { acc[curr.id] = curr; return acc; }, {});
         const content = data.filter(x => inventoryMap[x.id])
@@ -414,7 +424,7 @@ function updateInventory() {
                 return `
                 <span class="inventory-item" name="item" data-item-id="${e.id}" data-item-type="${e.type}" style="cursor: pointer;">
                     <img class="icon-img" src="img/${e.type.toLowerCase()}/${e.id}.jpg" onerror="this.src='img/Failed Image.png'">
-                    ${attr}${attr}
+                    ${attr}
                 </span>`;
             }).join('');
         const section = $id(`${type?.toLowerCase()}s-section`);
@@ -440,7 +450,7 @@ function clickAction(e) {
     desc_name.innerHTML = `${item.name}`;
     desc_from.innerHTML = `${item.type}`;
     let description = item.description;
-    desc_content.innerHTML = `${description}`;
+    desc_content.innerHTML = `${description.lang_vi}`;
     desc_image.innerHTML = `<img src="img/${item.type.toLowerCase()}/${item.id}.jpg" onerror="this.src='img/Failed Image.png'">`;
     updateContentByLevel();
 }
@@ -453,12 +463,12 @@ function updateAttack() {
         melee_attack_roll_mod.value = formatModifier(mod(as_str.value));
         ranged_attack_roll_mod.value = formatModifier(mod(as_dex.value));
     }
-    if (body_slots_main_hand.value == "") {
-        melee_attack_damage_mod.value = 1 + mod(as_str.value);
-    } else {
-        melee_attack_damage_mod.value = formatModifier(mod(as_str.value));
-        ranged_attack_damage_mod.value = formatModifier(mod(as_dex.value));
-    }
+    // if (body_slots_main_hand.value == "") {
+    //     melee_attack_damage_mod.value = 1 + mod(as_str.value);
+    // } else {
+    //     melee_attack_damage_mod.value = formatModifier(mod(as_str.value));
+    //     ranged_attack_damage_mod.value = formatModifier(mod(as_dex.value));
+    // }
 }
 
 function updateAction() {
