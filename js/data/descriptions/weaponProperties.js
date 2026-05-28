@@ -23,8 +23,8 @@ const data_weaponProperties = [
     {
         name: "Light",
         description: {
-            lang_en: `When you take the Attack action on your turn and attack with a Light weapon, you can make one extra attack as a Bonus Action later on the same turn. That extra attack must be made with a different Light weapon, and you don’t add your ability modifier to the extra attack’s damage unless that modifier is negative. For example, you can attack with a Shortsword in one hand and a Dagger in the other using the Attack action and a Bonus Action, but you don’t add your Strength or Dexterity modifier to the damage roll of the Bonus Action unless that modifier is negative.`,
-            lang_vi: `Khi bạn thực hiện một Attack action trong lượt của mình và tấn công bằng một vũ khí Light (Nhẹ), bạn có thể thực hiện thêm một đòn tấn công phụ bằng một Bonus Action sau đó trong cùng lượt. Đòn tấn công phụ đó phải được thực hiện bằng một vũ khí Light khác, và bạn không được cộng ability modifier của mình vào sát thương của đòn tấn công phụ trừ khi modifier đó là số âm. Ví dụ, bạn có thể tấn công bằng một thanh Shortsword ở một tay và Dagger ở tay kia bằng Attack action và một Bonus Action, nhưng bạn không cộng modifier của Strength hoặc Dexterity vào damage roll của Bonus Action trừ khi modifier đó là số âm.`
+            lang_en: `When you take the Attack action on your turn and attack with a Light weapon, you can make one extra attack as a Bonus Action later on the same turn. That extra attack must be made with a different Light weapon, and you don’t add your ability modifier to the extra attack’s damage unless that modifier is negative.`,
+            lang_vi: `Khi bạn thực hiện một Attack action trong lượt của mình và tấn công bằng một vũ khí Light (Nhẹ), bạn có thể thực hiện thêm một đòn tấn công phụ bằng một Bonus Action sau đó trong cùng lượt. Đòn tấn công phụ đó phải được thực hiện bằng một vũ khí Light khác, và bạn không được cộng ability modifier của mình vào sát thương của đòn tấn công phụ trừ khi modifier đó là số âm.`
         }
     },
     {

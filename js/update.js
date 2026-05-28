@@ -221,8 +221,7 @@ function showItemList(target) {
             if (obj.classes.indexOf("class_wizard") > -1 && obj.level <= 1) {
                 content += `
                     <span name="item" class="item-list-interaction" data-item-id="${obj.id}">
-                        <img class="icon-img" src="img/${obj.type.toLowerCase()}/${obj.id}.jpg" onerror="this.src='img/Failed Image.png'">
-                        <span class="lvl spell-lv${obj.level}">${obj.level}</span>
+                        <img class="icon-img spell-lv${obj.level}" src="img/${obj.type.toLowerCase()}/${obj.id}.jpg" onerror="this.src='img/Failed Image.png'">
                     </span>`;
             }
         } else if (obj.type != "Spell") {
@@ -234,8 +233,7 @@ function showItemList(target) {
             if (obj.classes.indexOf($id("character_class").value) > -1 && obj.level <= maxSpellLevelPerLevel[$id("character_level").value]) {
                 content += `
                     <span name="item" class="item-list-interaction" data-item-id="${obj.id}">
-                        <img class="icon-img" src="img/${obj.type.toLowerCase()}/${obj.id}.jpg" onerror="this.src='img/Failed Image.png'">
-                        <span class="lvl spell-lv${obj.level}">${obj.level}</span>
+                        <img class="icon-img spell-lv${obj.level}" src="img/${obj.type.toLowerCase()}/${obj.id}.jpg" onerror="this.src='img/Failed Image.png'">
                     </span>`;
             }
         }
@@ -286,14 +284,14 @@ function showItem(target) {
                     let p1 = p.split(" ")[0];
                     if (p1 != "—") {
                         desc1 += `<p><b><i>${p1}.</b></i> `
-                        desc1 += data_weaponProperties.find(e => e.name == p1)?.description.lang_vi;
+                        desc1 += data_weaponProperties.find(e => e.name == p1)?.description.lang_en;
                     }
                 })
                 item["mastery"]?.split(", ").forEach(p => {
                     let p1 = p.split(" ")[0];
                     if (p1 != "—") {
                         desc2 += `<p><b><i>${p1}.</b></i> `
-                        desc2 += data_weaponMasteries.find(e => e.name == p1)?.description.lang_vi;
+                        desc2 += data_weaponMasteries.find(e => e.name == p1)?.description.lang_en;
                     }
                 })
                 desc = item[attr.toLowerCase()] + desc1 + desc2;
@@ -418,12 +416,10 @@ function updateInventory() {
                 let attr = ``;
                 if (type != "Spellbook" && type != "Spell" && type != "Feat") {
                     attr += `<span class="qty">${item.qty}</span>`;
-                } else if (type == "Spellbook" || type == "Spell") {
-                    attr += `<span class="lvl spell-lv${e.level}">${e.level}</span>`;
                 }
                 return `
                 <span class="inventory-item" name="item" data-item-id="${e.id}" data-item-type="${e.type}" style="cursor: pointer;">
-                    <img class="icon-img" src="img/${e.type.toLowerCase()}/${e.id}.jpg" onerror="this.src='img/Failed Image.png'">
+                    <img class="icon-img spell-lv${e.level}" src="img/${e.type.toLowerCase()}/${e.id}.jpg" onerror="this.src='img/Failed Image.png'">
                     ${attr}
                 </span>`;
             }).join('');
@@ -450,7 +446,7 @@ function clickAction(e) {
     desc_name.innerHTML = `${item.name}`;
     desc_from.innerHTML = `${item.type}`;
     let description = item.description;
-    desc_content.innerHTML = `${description.lang_vi}`;
+    desc_content.innerHTML = `${typeof description === "object" && description !== null ? description.lang_en : description}`;
     desc_image.innerHTML = `<img src="img/${item.type.toLowerCase()}/${item.id}.jpg" onerror="this.src='img/Failed Image.png'">`;
     updateContentByLevel();
 }
@@ -492,12 +488,14 @@ function updateAction() {
     reactions_section.innerHTML = content_reaction;
 
     if ($id("character_class").value == "class_cleric") {
-        features_general += `
+        if (character_level.value >= 2) {
+            features_general += `
             <div class="section" style="grid-template-columns: auto 1fr 1fr;">
                 <label>Channel Divinity</label>
                 <input type="text" id="channel_divinity" disabled>
                 <input type="text" id="channel_divinity_used">
             </div>`;
+        }
     }
     if ($id("character_class").value == "class_rogue") {
         features_general += `
@@ -512,14 +510,19 @@ function updateAction() {
                 <label>Second Wind</label>
                 <input type="text" id="second_wind" disabled>
                 <input type="text" id="second_wind_used">
-                <label>Action Surge</label>
-                <input type="text" id="action_surge" disabled>
-                <input type="text" id="action_surge_used">
             </div>
             <div class="section" style="grid-template-columns: auto 1fr">
                 <label>Weapon Mastery</label>
                 <input type="text" id="weapon_mastery" disabled >
             </div>`;
+        if (character_level.value >= 2) {
+            features_general += `
+            <div class="section" style="grid-template-columns: auto 1fr 1fr">
+                <label>Action Surge</label>
+                <input type="text" id="action_surge" disabled>
+                <input type="text" id="action_surge_used">
+            </div>`;
+        }
     }
     if ($id("character_class").value == "class_wizard") {
         features_general += `

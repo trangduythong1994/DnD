@@ -6,7 +6,7 @@ const data_spells = [
         , level: 0
         , school: "Evocation"
         , classes: ["class_artificer", "class_sorcerer", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "60 feet"
         , components: "V, S"
         , duration: "Instantaneous"
@@ -19,7 +19,7 @@ const data_spells = [
         , level: 0
         , school: "Abjuration"
         , classes: ["class_bard", "class_sorcerer", "class_warlock", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Self"
         , components: "V, S"
         , duration: "Concentration, up to 1 minute"
@@ -31,7 +31,7 @@ const data_spells = [
         , level: 0
         , school: "Necromancy"
         , classes: ["class_sorcerer", "class_warlock", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Touch"
         , components: "V, S"
         , duration: "Instantaneous"
@@ -44,7 +44,7 @@ const data_spells = [
         , level: 0
         , school: "Illusion"
         , classes: ["class_artificer", "class_bard", "class_sorcerer", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "120 feet"
         , components: "V, S, M (a bit of phosphorus)"
         , duration: "Concentration, up to 1 minute"
@@ -57,7 +57,7 @@ const data_spells = [
         , level: 0
         , school: "Transmutation"
         , classes: ["class_druid"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "30 feet"
         , components: "V, S"
         , duration: "Instantaneous"
@@ -73,7 +73,7 @@ const data_spells = [
         , level: 0
         , school: "Evocation"
         , classes: ["class_warlock"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "120 feet"
         , components: "V, S"
         , duration: "Instantaneous"
@@ -86,7 +86,7 @@ const data_spells = [
         , level: 0
         , school: "Transmutation"
         , classes: ["class_artificer", "class_druid", "class_sorcerer", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "30 feet"
         , components: "V, S"
         , duration: "Instantaneous"
@@ -103,7 +103,7 @@ const data_spells = [
         , level: 0
         , school: "Evocation"
         , classes: ["class_artificer", "class_sorcerer", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "120 feet"
         , components: "V, S"
         , duration: "Instantaneous"
@@ -116,7 +116,7 @@ const data_spells = [
         , level: 0
         , school: "Enchantment"
         , classes: ["class_bard", "class_sorcerer", "class_warlock", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "10 feet"
         , components: "S, M (some makeup)"
         , duration: "Concentration, up to 1 minute"
@@ -130,7 +130,7 @@ const data_spells = [
         , level: 0
         , school: "Divination"
         , classes: ["class_cleric", "class_druid"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Touch"
         , components: "V, S"
         , duration: "Concentration, up to 1 minute"
@@ -143,7 +143,7 @@ const data_spells = [
         , level: 0
         , school: "Evocation"
         , classes: ["class_bard", "class_cleric", "class_sorcerer", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Touch"
         , components: "V, M (a firefly or phosphorescent moss)"
         , duration: "1 hour"
@@ -157,7 +157,7 @@ const data_spells = [
         , level: 0
         , school: "Conjuration"
         , classes: ["class_bard", "class_sorcerer", "class_warlock", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "30 feet"
         , components: "V, S"
         , duration: "1 minute"
@@ -173,7 +173,7 @@ const data_spells = [
         , level: 0
         , school: "Transmutation"
         , classes: ["class_bard", "class_cleric", "class_druid", "class_sorcerer", "class_wizard"]
-        , casting_time: "1 minute"
+        , "casting time": "1 minute"
         , range: "Touch"
         , components: "V, S, M (two lodestones)"
         , duration: "Instantaneous"
@@ -187,7 +187,7 @@ const data_spells = [
         , level: 0
         , school: "Transmutation"
         , classes: ["class_bard", "class_druid", "class_sorcerer", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "120 feet"
         , components: "S, M (a copper wire)"
         , duration: "1 round"
@@ -201,7 +201,7 @@ const data_spells = [
         , level: 0
         , school: "Enchantment"
         , classes: ["class_sorcerer", "class_warlock", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "60 feet"
         , components: "V"
         , duration: "1 round"
@@ -215,7 +215,7 @@ const data_spells = [
         , level: 0
         , school: "Illusion"
         , classes: ["class_bard", "class_sorcerer", "class_warlock", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "30 feet"
         , components: "S, M (a bit of fleece)"
         , duration: "1 minute"
@@ -231,7 +231,7 @@ const data_spells = [
         , level: 0
         , school: "Necromancy"
         , classes: ["class_druid", "class_sorcerer", "class_warlock", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "30 feet"
         , components: "V, S"
         , duration: "Instantaneous"
@@ -245,7 +245,7 @@ const data_spells = [
         , level: 0
         , school: "Transmutation"
         , classes: ["class_bard", "class_sorcerer", "class_warlock", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "10 feet"
         , components: "V, S"
         , duration: "Up to 1 hour"
@@ -264,7 +264,7 @@ const data_spells = [
         , level: 0
         , school: "Conjuration"
         , classes: ["class_druid"]
-        , casting_time: "Bonus Action"
+        , "casting time": "Bonus Action"
         , range: "Self"
         , components: "V, S"
         , duration: "10 minutes"
@@ -279,7 +279,7 @@ const data_spells = [
         , level: 0
         , school: "Evocation"
         , classes: ["class_sorcerer", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "60 feet"
         , components: "V, S"
         , duration: "Instantaneous"
@@ -293,7 +293,7 @@ const data_spells = [
         , level: 0
         , school: "Abjuration"
         , classes: ["class_cleric", "class_druid"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Touch"
         , components: "V, S"
         , duration: "Concentration, up to 1 minute"
@@ -306,7 +306,7 @@ const data_spells = [
         , level: 0
         , school: "Evocation"
         , classes: ["class_cleric"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "60 feet"
         , components: "V, S"
         , duration: "Instantaneous"
@@ -320,7 +320,7 @@ const data_spells = [
         , level: 0
         , school: "Transmutation"
         , classes: ["class_druid"]
-        , casting_time: "Bonus Action"
+        , "casting time": "Bonus Action"
         , range: "Self"
         , components: "V, S, M (mistletoe)"
         , duration: "1 minute"
@@ -335,7 +335,7 @@ const data_spells = [
         , level: 0
         , school: "Evocation"
         , classes: ["class_sorcerer", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Touch"
         , components: "V, S"
         , duration: "Instantaneous"
@@ -349,7 +349,7 @@ const data_spells = [
         , level: 0
         , school: "Evocation"
         , classes: ["class_sorcerer"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "120 feet"
         , components: "V, S"
         , duration: "Instantaneous"
@@ -364,7 +364,7 @@ const data_spells = [
         , level: 0
         , school: "Necromancy"
         , classes: ["class_cleric", "class_druid"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "15 feet"
         , components: "V, S"
         , duration: "Instantaneous"
@@ -378,7 +378,7 @@ const data_spells = [
         , level: 0
         , school: "Evocation"
         , classes: ["class_bard", "class_druid"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "60 feet"
         , components: "V, S"
         , duration: "Instantaneous"
@@ -392,7 +392,7 @@ const data_spells = [
         , level: 0
         , school: "Transmutation"
         , classes: ["class_cleric"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "30 feet"
         , components: "V"
         , duration: "Up to 1 minute"
@@ -411,7 +411,7 @@ const data_spells = [
         , level: 0
         , school: "Transmutation"
         , classes: ["class_druid"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "30 feet"
         , components: "V, S, M (the stem of a thorny plant)"
         , duration: "Instantaneous"
@@ -425,7 +425,7 @@ const data_spells = [
         , level: 0
         , school: "Evocation"
         , classes: ["class_bard", "class_druid", "class_sorcerer", "class_warlock", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Self"
         , components: "S"
         , duration: "Instantaneous"
@@ -439,7 +439,7 @@ const data_spells = [
         , level: 0
         , school: "Necromancy"
         , classes: ["class_cleric", "class_warlock", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "60 feet"
         , components: "V, S"
         , duration: "Instantaneous"
@@ -453,7 +453,7 @@ const data_spells = [
         , level: 0
         , school: "Divination"
         , classes: ["class_bard", "class_sorcerer", "class_warlock", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Self"
         , components: "S, M (a weapon with which you have proficiency and that is worth 1+ CP)"
         , duration: "Instantaneous"
@@ -467,7 +467,7 @@ const data_spells = [
         , level: 0
         , school: "Enchantment"
         , classes: ["class_bard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "60 feet"
         , components: "V"
         , duration: "Instantaneous"
@@ -481,7 +481,7 @@ const data_spells = [
         , level: 0
         , school: "Evocation"
         , classes: ["class_cleric"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Self"
         , components: "V, M (a sunburst token)"
         , duration: "Instantaneous"
@@ -498,7 +498,7 @@ data_spells.push(
         , level: 1
         , school: "Abjuration"
         , classes: ["class_ranger", "class_wizard"]
-        , casting_time: "1 minute or Ritual"
+        , "casting time": "1 minute or Ritual"
         , range: "30 feet"
         , components: "V, S, M (a bell and silver wire)"
         , duration: "8 hours"
@@ -513,7 +513,7 @@ data_spells.push(
         , level: 1
         , school: "Enchantment"
         , classes: ["class_bard", "class_druid", "class_ranger"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "30 feet"
         , components: "V, S, M (a morsel of food)"
         , duration: "24 hours"
@@ -527,7 +527,7 @@ data_spells.push(
         , level: 1
         , school: "Abjuration"
         , classes: ["class_warlock"]
-        , casting_time: "Bonus Action"
+        , "casting time": "Bonus Action"
         , range: "Self"
         , components: "V, S, M (a shard of blue glass)"
         , duration: "1 hour"
@@ -541,7 +541,7 @@ data_spells.push(
         , level: 1
         , school: "Conjuration"
         , classes: ["class_warlock"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Self"
         , components: "V, S"
         , duration: "Instantaneous"
@@ -555,7 +555,7 @@ data_spells.push(
         , level: 1
         , school: "Enchantment"
         , classes: ["class_bard", "class_cleric", "class_warlock"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "30 feet"
         , components: "V, S, M (a drop of blood)"
         , duration: "Concentration, up to 1 minute"
@@ -569,7 +569,7 @@ data_spells.push(
         , level: 1
         , school: "Enchantment"
         , classes: ["class_cleric", "class_paladin"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "30 feet"
         , components: "V, S, M (a Holy Symbol, worth 5+ GP)"
         , duration: "Concentration, up to 1 minute"
@@ -583,7 +583,7 @@ data_spells.push(
         , level: 1
         , school: "Evocation"
         , classes: ["class_sorcerer", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Self"
         , components: "V, S"
         , duration: "Instantaneous"
@@ -598,7 +598,7 @@ data_spells.push(
         , level: 1
         , school: "Enchantment"
         , classes: ["class_bard", "class_druid", "class_sorcerer", "class_warlock", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "30 feet"
         , components: "V, S"
         , duration: "1 hour"
@@ -612,7 +612,7 @@ data_spells.push(
         , level: 1
         , school: "Evocation"
         , classes: ["class_sorcerer", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "90 feet"
         , components: "V, S, M (a diamond worth 50+ GP)"
         , duration: "Instantaneous"
@@ -627,7 +627,7 @@ data_spells.push(
         , level: 1
         , school: "Illusion"
         , classes: ["class_bard", "class_sorcerer", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Self"
         , components: "V, S, M (a pinch of colorful sand)"
         , duration: "Instantaneous"
@@ -640,7 +640,7 @@ data_spells.push(
         , level: 1
         , school: "Enchantment"
         , classes: ["class_bard", "class_cleric", "class_paladin"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "60 feet"
         , components: "V"
         , duration: "Instantaneous"
@@ -659,7 +659,7 @@ data_spells.push(
         , level: 1
         , school: "Enchantment"
         , classes: ["class_paladin"]
-        , casting_time: "Bonus Action"
+        , "casting time": "Bonus Action"
         , range: "30 feet"
         , components: "V"
         , duration: "Concentration, up to 1 minute"
@@ -673,7 +673,7 @@ data_spells.push(
         , level: 1
         , school: "Divination"
         , classes: ["class_bard", "class_sorcerer", "class_warlock", "class_wizard"]
-        , casting_time: "Action or Ritual"
+        , "casting time": "Action or Ritual"
         , range: "Self"
         , components: "V, S, M (a pinch of soot and salt)"
         , duration: "1 hour"
@@ -686,7 +686,7 @@ data_spells.push(
         , level: 1
         , school: "Transmutation"
         , classes: ["class_cleric", "class_druid"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "30 feet"
         , components: "V, S, M (a mix of water and sand)"
         , duration: "Instantaneous"
@@ -702,7 +702,7 @@ data_spells.push(
         , level: 1
         , school: "Abjuration"
         , classes: ["class_bard", "class_cleric", "class_druid", "class_paladin", "class_ranger"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Touch"
         , components: "V, S"
         , duration: "Instantaneous"
@@ -716,7 +716,7 @@ data_spells.push(
         , level: 1
         , school: "Divination"
         , classes: ["class_cleric", "class_paladin"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Self"
         , components: "V, S"
         , duration: "Concentration, up to 10 minutes"
@@ -730,7 +730,7 @@ data_spells.push(
         , level: 1
         , school: "Divination"
         , classes: ["class_bard", "class_cleric", "class_druid", "class_paladin", "class_ranger", "class_sorcerer", "class_warlock", "class_wizard"]
-        , casting_time: "Action or Ritual"
+        , "casting time": "Action or Ritual"
         , range: "Self"
         , components: "V, S"
         , duration: "Concentration, up to 10 minutes"
@@ -748,7 +748,7 @@ data_spells.push(
         , level: 1
         , school: "Divination"
         , classes: ["class_cleric", "class_druid", "class_paladin", "class_ranger"]
-        , casting_time: "Action or Ritual"
+        , "casting time": "Action or Ritual"
         , range: "Self"
         , components: "V, S, M (a yew leaf)"
         , duration: "Concentration, up to 10 minutes"
@@ -762,7 +762,7 @@ data_spells.push(
         , level: 1
         , school: "Illusion"
         , classes: ["class_bard", "class_sorcerer", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Self"
         , components: "V, S"
         , duration: "1 hour"
@@ -777,7 +777,7 @@ data_spells.push(
         , level: 1
         , school: "Enchantment"
         , classes: ["class_bard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "60 feet"
         , components: "V"
         , duration: "Instantaneous"
@@ -791,7 +791,7 @@ data_spells.push(
         , level: 1
         , school: "Transmutation"
         , classes: ["class_paladin"]
-        , casting_time: "Bonus Action"
+        , "casting time": "Bonus Action"
         , range: "Self"
         , components: "V, S"
         , duration: "1 minute"
@@ -804,7 +804,7 @@ data_spells.push(
         , level: 1
         , school: "Evocation"
         , classes: ["class_paladin"]
-        , casting_time: "Bonus Action, which you take immediately after hitting a target with a Melee weapon or an Unarmed Strike"
+        , "casting time": "Bonus Action, which you take immediately after hitting a target with a Melee weapon or an Unarmed Strike"
         , range: "Self"
         , components: "V"
         , duration: "Instantaneous"
@@ -818,7 +818,7 @@ data_spells.push(
         , level: 1
         , school: "Conjuration"
         , classes: ["class_ranger"]
-        , casting_time: "Bonus Action, which you take immediately after hitting a creature with a weapon"
+        , "casting time": "Bonus Action, which you take immediately after hitting a creature with a weapon"
         , range: "Self"
         , components: "V"
         , duration: "Concentration, up to 1 minute"
@@ -833,7 +833,7 @@ data_spells.push(
         , level: 1
         , school: "Conjuration"
         , classes: ["class_druid", "class_ranger"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "90 feet"
         , components: "V, S"
         , duration: "Concentration, up to 1 minute"
@@ -847,7 +847,7 @@ data_spells.push(
         , level: 1
         , school: "Transmutation"
         , classes: ["class_sorcerer", "class_warlock", "class_wizard"]
-        , casting_time: "Bonus Action"
+        , "casting time": "Bonus Action"
         , range: "Self"
         , components: "V, S"
         , duration: "Concentration, up to 10 minutes"
@@ -860,7 +860,7 @@ data_spells.push(
         , level: 1
         , school: "Evocation"
         , classes: ["class_bard", "class_druid"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "60 feet"
         , components: "V"
         , duration: "Concentration, up to 1 minute"
@@ -874,7 +874,7 @@ data_spells.push(
         , level: 1
         , school: "Necromancy"
         , classes: ["class_sorcerer", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Self"
         , components: "V, S, M (a drop of alcohol)"
         , duration: "Instantaneous"
@@ -888,7 +888,7 @@ data_spells.push(
         , level: 1
         , school: "Transmutation"
         , classes: ["class_bard", "class_sorcerer", "class_wizard"]
-        , casting_time: "Reaction, which you take when you or a creature you can see within 60 feet of you falls"
+        , "casting time": "Reaction, which you take when you or a creature you can see within 60 feet of you falls"
         , range: "60 feet"
         , components: "V, M (a small feather or piece of down)"
         , duration: "1 minute"
@@ -901,7 +901,7 @@ data_spells.push(
         , level: 1
         , school: "Conjuration"
         , classes: ["class_wizard"]
-        , casting_time: "1 hour or Ritual"
+        , "casting time": "1 hour or Ritual"
         , range: "10 feet"
         , components: "V, S, M (burning incense worth 10+ GP, which the spell consumes)"
         , duration: "Instantaneous"
@@ -919,7 +919,7 @@ data_spells.push(
         , level: 1
         , school: "Conjuration"
         , classes: ["class_druid", "class_ranger", "class_sorcerer", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "120 feet"
         , components: "V, S"
         , duration: "Concentration, up to 1 hour"
@@ -933,7 +933,7 @@ data_spells.push(
         , level: 1
         , school: "Conjuration"
         , classes: ["class_druid", "class_ranger"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Self"
         , components: "V, S, M (a sprig of mistletoe)"
         , duration: "24 hours"
@@ -947,7 +947,7 @@ data_spells.push(
         , level: 1
         , school: "Conjuration"
         , classes: ["class_sorcerer", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "60 feet"
         , components: "V, S, M (a bit of pork rind or butter)"
         , duration: "1 minute"
@@ -961,7 +961,7 @@ data_spells.push(
         , level: 1
         , school: "Evocation"
         , classes: ["class_cleric"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "120 feet"
         , components: "V, S"
         , duration: "1 round"
@@ -975,7 +975,7 @@ data_spells.push(
         , level: 1
         , school: "Conjuration"
         , classes: ["class_ranger"]
-        , casting_time: "Bonus Action, which you take immediately after hitting a creature with a Ranged weapon"
+        , "casting time": "Bonus Action, which you take immediately after hitting a creature with a Ranged weapon"
         , range: "Self"
         , components: "V"
         , duration: "Instantaneous"
@@ -989,7 +989,7 @@ data_spells.push(
         , level: 1
         , school: "Abjuration"
         , classes: ["class_bard", "class_cleric", "class_druid"]
-        , casting_time: "Bonus Action"
+        , "casting time": "Bonus Action"
         , range: "60 feet"
         , components: "V"
         , duration: "Instantaneous"
@@ -1006,7 +1006,7 @@ data_spells.push(
         , level: 1
         , school: "Evocation"
         , classes: ["class_warlock"]
-        , casting_time: "Reaction, which you take in response to taking damage from a creature that you can see within 60 feet of yourself"
+        , "casting time": "Reaction, which you take in response to taking damage from a creature that you can see within 60 feet of yourself"
         , range: "60 feet"
         , components: "V, S"
         , duration: "Instantaneous"
@@ -1020,7 +1020,7 @@ data_spells.push(
         , level: 1
         , school: "Enchantment"
         , classes: ["class_bard", "class_paladin"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Touch"
         , components: "V, S"
         , duration: "Concentration, up to 1 minute"
@@ -1034,7 +1034,7 @@ data_spells.push(
         , level: 1
         , school: "Enchantment"
         , classes: ["class_warlock"]
-        , casting_time: "Bonus Action"
+        , "casting time": "Bonus Action"
         , range: "90 feet"
         , components: "V, S, M (the petrified eye of a newt)"
         , duration: "Concentration, up to 1 hour"
@@ -1049,7 +1049,7 @@ data_spells.push(
         , level: 1
         , school: "Divination"
         , classes: ["class_ranger"]
-        , casting_time: "Bonus Action"
+        , "casting time": "Bonus Action"
         , range: "90 feet"
         , components: "V"
         , duration: "Concentration, up to 1 hour"
@@ -1064,7 +1064,7 @@ data_spells.push(
         , level: 1
         , school: "Conjuration"
         , classes: ["class_druid", "class_sorcerer", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "60 feet"
         , components: "S, M (a drop of water or a piece of ice)"
         , duration: "Instantaneous"
@@ -1078,7 +1078,7 @@ data_spells.push(
         , level: 1
         , school: "Divination"
         , classes: ["class_bard", "class_wizard"]
-        , casting_time: "1 minute or Ritual"
+        , "casting time": "1 minute or Ritual"
         , range: "Touch"
         , components: "V, S, M (a pearl worth 100+ GP)"
         , duration: "Instantaneous"
@@ -1092,7 +1092,7 @@ data_spells.push(
         , level: 1
         , school: "Illusion"
         , classes: ["class_bard", "class_warlock", "class_wizard"]
-        , casting_time: "1 minute or Ritual"
+        , "casting time": "1 minute or Ritual"
         , range: "Touch"
         , components: "S, M (ink worth 10+ GP, which the spell consumes)"
         , duration: "10 days"
@@ -1107,7 +1107,7 @@ data_spells.push(
         , level: 1
         , school: "Necromancy"
         , classes: ["class_cleric"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Touch"
         , components: "V, S"
         , duration: "Instantaneous"
@@ -1121,7 +1121,7 @@ data_spells.push(
         , level: 1
         , school: "Transmutation"
         , classes: ["class_druid", "class_ranger", "class_sorcerer", "class_wizard"]
-        , casting_time: "Bonus Action"
+        , "casting time": "Bonus Action"
         , range: "Touch"
         , components: "V, S, M (a grasshopper's hind leg)"
         , duration: "1 minute"
@@ -1135,7 +1135,7 @@ data_spells.push(
         , level: 1
         , school: "Transmutation"
         , classes: ["class_bard", "class_druid", "class_ranger", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Touch"
         , components: "V, S, M (a pinch of dirt)"
         , duration: "1 hour"
@@ -1149,7 +1149,7 @@ data_spells.push(
         , level: 1
         , school: "Abjuration"
         , classes: ["class_sorcerer", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Touch"
         , components: "V, S, M (a piece of cured leather)"
         , duration: "8 hours"
@@ -1162,7 +1162,7 @@ data_spells.push(
         , level: 1
         , school: "Evocation"
         , classes: ["class_sorcerer", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "120 feet"
         , components: "V, S"
         , duration: "Instantaneous"
@@ -1176,7 +1176,7 @@ data_spells.push(
         , level: 1
         , school: "Abjuration"
         , classes: ["class_cleric", "class_druid", "class_paladin", "class_warlock", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Touch"
         , components: "V, S, M (a flask of Holy Water worth 25+ GP, which the spell consumes)"
         , duration: "Concentration, up to 10 minutes"
@@ -1189,7 +1189,7 @@ data_spells.push(
         , level: 1
         , school: "Transmutation"
         , classes: ["class_cleric", "class_druid", "class_paladin"]
-        , casting_time: "Action or Ritual"
+        , "casting time": "Action or Ritual"
         , range: "10 feet"
         , components: "V, S"
         , duration: "Instantaneous"
@@ -1202,7 +1202,7 @@ data_spells.push(
         , level: 1
         , school: "Necromancy"
         , classes: ["class_sorcerer", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "60 feet"
         , components: "V, S"
         , duration: "Instantaneous"
@@ -1216,7 +1216,7 @@ data_spells.push(
         , level: 1
         , school: "Abjuration"
         , classes: ["class_cleric"]
-        , casting_time: "Bonus Action"
+        , "casting time": "Bonus Action"
         , range: "30 feet"
         , components: "V, S, M (a shard of glass from a mirror)"
         , duration: "1 minute"
@@ -1230,7 +1230,7 @@ data_spells.push(
         , level: 1
         , school: "Evocation"
         , classes: ["class_paladin"]
-        , casting_time: "Bonus Action, which you take immediately after hitting a target with a Melee weapon or an Unarmed Strike"
+        , "casting time": "Bonus Action, which you take immediately after hitting a target with a Melee weapon or an Unarmed Strike"
         , range: "Self"
         , components: "V"
         , duration: "1 minute"
@@ -1244,7 +1244,7 @@ data_spells.push(
         , level: 1
         , school: "Abjuration"
         , classes: ["class_sorcerer", "class_wizard"]
-        , casting_time: "Reaction, which you take when you are hit by an attack roll or targeted by the Magic Missile spell"
+        , "casting time": "Reaction, which you take when you are hit by an attack roll or targeted by the Magic Missile spell"
         , range: "Self"
         , components: "V, S"
         , duration: "1 round"
@@ -1257,7 +1257,7 @@ data_spells.push(
         , level: 1
         , school: "Abjuration"
         , classes: ["class_cleric", "class_paladin"]
-        , casting_time: "Bonus Action"
+        , "casting time": "Bonus Action"
         , range: "60 feet"
         , components: "V, S, M (a prayer scroll)"
         , duration: "Concentration, up to 10 minutes"
@@ -1270,7 +1270,7 @@ data_spells.push(
         , level: 1
         , school: "Illusion"
         , classes: ["class_bard", "class_sorcerer", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "60 feet"
         , components: "V, S, M (a bit of fleece)"
         , duration: "Concentration, up to 10 minutes"
@@ -1285,7 +1285,7 @@ data_spells.push(
         , level: 1
         , school: "Enchantment"
         , classes: ["class_bard", "class_sorcerer", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "60 feet"
         , components: "V, S, M (a pinch of sand or rose petals)"
         , duration: "Concentration, up to 1 minute"
@@ -1299,7 +1299,7 @@ data_spells.push(
         , level: 1
         , school: "Divination"
         , classes: ["class_bard", "class_druid", "class_ranger", "class_warlock"]
-        , casting_time: "Action or Ritual"
+        , "casting time": "Action or Ritual"
         , range: "Self"
         , components: "V, S"
         , duration: "10 minutes"
@@ -1313,7 +1313,7 @@ data_spells.push(
         , level: 1
         , school: "Enchantment"
         , classes: ["class_bard", "class_warlock", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "30 feet"
         , components: "V, S, M (a tart and a feather)"
         , duration: "Concentration, up to 1 minute"
@@ -1328,7 +1328,7 @@ data_spells.push(
         , level: 1
         , school: "Conjuration"
         , classes: ["class_wizard"]
-        , casting_time: "Action or Ritual"
+        , "casting time": "Action or Ritual"
         , range: "30 feet"
         , components: "V, S, M (a drop of mercury)"
         , duration: "1 hour"
@@ -1343,7 +1343,7 @@ data_spells.push(
         , level: 1
         , school: "Evocation"
         , classes: ["class_paladin"]
-        , casting_time: "Bonus Action, which you take immediately after hitting a target with a Melee weapon or an Unarmed Strike"
+        , "casting time": "Bonus Action, which you take immediately after hitting a target with a Melee weapon or an Unarmed Strike"
         , range: "Self"
         , components: "V"
         , duration: "Instantaneous"
@@ -1357,7 +1357,7 @@ data_spells.push(
         , level: 1
         , school: "Evocation"
         , classes: ["class_bard", "class_druid", "class_sorcerer", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Self"
         , components: "V, S"
         , duration: "Instantaneous"
@@ -1372,7 +1372,7 @@ data_spells.push(
         , level: 1
         , school: "Conjuration"
         , classes: ["class_bard", "class_warlock", "class_wizard"]
-        , casting_time: "Action or Ritual"
+        , "casting time": "Action or Ritual"
         , range: "60 feet"
         , components: "V, S, M (a bit of string and of wood)"
         , duration: "1 hour"
@@ -1387,7 +1387,7 @@ data_spells.push(
         , level: 1
         , school: "Evocation"
         , classes: ["class_sorcerer", "class_warlock", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "60 feet"
         , components: "V, S, M (a twig struck by lightning)"
         , duration: "Concentration, up to 1 minute"
@@ -1402,7 +1402,7 @@ data_spells.push(
         , level: 1
         , school: "Necromancy"
         , classes: ["class_paladin"]
-        , casting_time: "Bonus Action, which you take immediately after hitting a creature with a Melee weapon or an Unarmed Strike"
+        , "casting time": "Bonus Action, which you take immediately after hitting a creature with a Melee weapon or an Unarmed Strike"
         , range: "Self"
         , components: "V"
         , duration: "1 minute"
@@ -1419,7 +1419,7 @@ data_spells.push(
         , level: 2
         , school: "Abjuration"
         , classes: ["class_bard", "class_cleric", "class_druid", "class_paladin", "class_ranger"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "30 feet"
         , components: "V, S, M (a strip of white cloth)"
         , duration: "8 hours"
@@ -1433,7 +1433,7 @@ data_spells.push(
         , level: 2
         , school: "Transmutation"
         , classes: ["class_sorcerer", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Self"
         , components: "V, S"
         , duration: "Concentration, up to 1 hour"
@@ -1449,7 +1449,7 @@ data_spells.push(
         , level: 2
         , school: "Enchantment"
         , classes: ["class_bard", "class_druid", "class_ranger"]
-        , casting_time: "Action or Ritual"
+        , "casting time": "Action or Ritual"
         , range: "30 feet"
         , components: "V, S, M (a morsel of food)"
         , duration: "24 hours"
@@ -1464,7 +1464,7 @@ data_spells.push(
         , level: 2
         , school: "Abjuration"
         , classes: ["class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Touch"
         , components: "V, S, M (gold dust worth 25+ GP, which the spell consumes)"
         , duration: "Until dispelled"
@@ -1477,7 +1477,7 @@ data_spells.push(
         , level: 2
         , school: "Abjuration"
         , classes: ["class_sorcerer", "class_wizard"]
-        , casting_time: "Bonus Action"
+        , "casting time": "Bonus Action"
         , range: "Self"
         , components: "V, S"
         , duration: "Instantaneous"
@@ -1491,7 +1491,7 @@ data_spells.push(
         , level: 2
         , school: "Divination"
         , classes: ["class_cleric", "class_druid", "class_wizard"]
-        , casting_time: "1 minute or Ritual"
+        , "casting time": "1 minute or Ritual"
         , range: "Self"
         , components: "V, S, M (special marked sticks, bones, cards, or other divinatory tokens worth 25+ GP)"
         , duration: "Instantaneous"
@@ -1520,7 +1520,7 @@ data_spells.push(
         , level: 2
         , school: "Transmutation"
         , classes: ["class_druid", "class_ranger"]
-        , casting_time: "Bonus Action"
+        , "casting time": "Bonus Action"
         , range: "Touch"
         , components: "V, S, M (a handful of bark)"
         , duration: "1 hour"
@@ -1533,7 +1533,7 @@ data_spells.push(
         , level: 2
         , school: "Divination"
         , classes: ["class_druid", "class_ranger"]
-        , casting_time: "Action or Ritual"
+        , "casting time": "Action or Ritual"
         , range: "Touch"
         , components: "S"
         , duration: "Concentration, up to 1 hour"
@@ -1546,7 +1546,7 @@ data_spells.push(
         , level: 2
         , school: "Transmutation"
         , classes: ["class_bard", "class_cleric", "class_sorcerer", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "120 feet"
         , components: "V"
         , duration: "1 minute"
@@ -1560,7 +1560,7 @@ data_spells.push(
         , level: 2
         , school: "Illusion"
         , classes: ["class_sorcerer", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Self"
         , components: "V"
         , duration: "Concentration, up to 1 minute"
@@ -1576,7 +1576,7 @@ data_spells.push(
         , level: 2
         , school: "Enchantment"
         , classes: ["class_bard", "class_cleric"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "60 feet"
         , components: "V, S"
         , duration: "Concentration, up to 1 minute"
@@ -1593,7 +1593,7 @@ data_spells.push(
         , level: 2
         , school: "Conjuration"
         , classes: ["class_bard", "class_sorcerer", "class_warlock", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "60 feet"
         , components: "V, S, M (a sliver of glass)"
         , duration: "Concentration, up to 1 minute"
@@ -1608,7 +1608,7 @@ data_spells.push(
         , level: 2
         , school: "Evocation"
         , classes: ["class_cleric", "class_druid", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Touch"
         , components: "V, S, M (ruby dust worth 50+ GP, which the spell consumes)"
         , duration: "Until dispelled"
@@ -1621,7 +1621,7 @@ data_spells.push(
         , level: 2
         , school: "Transmutation"
         , classes: ["class_ranger"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Touch"
         , components: "V, S, M (an ornamental braid)"
         , duration: "8 hours"
@@ -1636,7 +1636,7 @@ data_spells.push(
         , level: 2
         , school: "Enchantment"
         , classes: ["class_bard", "class_sorcerer", "class_warlock", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "120 feet"
         , components: "V, S"
         , duration: "Concentration, up to 1 minute"
@@ -1651,7 +1651,7 @@ data_spells.push(
         , level: 2
         , school: "Evocation"
         , classes: ["class_sorcerer", "class_warlock", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "60 feet"
         , components: "V, M (bat fur and a piece of coal)"
         , duration: "Concentration, up to 10 minutes"
@@ -1666,7 +1666,7 @@ data_spells.push(
         , level: 2
         , school: "Transmutation"
         , classes: ["class_druid", "class_ranger", "class_sorcerer", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Touch"
         , components: "V, S, M (a dried carrot)"
         , duration: "8 hours"
@@ -1679,7 +1679,7 @@ data_spells.push(
         , level: 2
         , school: "Divination"
         , classes: ["class_bard", "class_sorcerer", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Self"
         , components: "V, S, M (a copper piece)"
         , duration: "Concentration, up to 1 minute"
@@ -1696,7 +1696,7 @@ data_spells.push(
         , level: 2
         , school: "Transmutation"
         , classes: ["class_sorcerer", "class_wizard"]
-        , casting_time: "Bonus Action"
+        , "casting time": "Bonus Action"
         , range: "Touch"
         , components: "V, S, M (a hot pepper)"
         , duration: "Concentration, up to 1 minute"
@@ -1710,7 +1710,7 @@ data_spells.push(
         , level: 2
         , school: "Transmutation"
         , classes: ["class_bard", "class_cleric", "class_druid", "class_ranger", "class_sorcerer", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Touch"
         , components: "V, S, M (fur or a feather)"
         , duration: "Concentration, up to 1 hour"
@@ -1727,7 +1727,7 @@ data_spells.push(
         , level: 2
         , school: "Transmutation"
         , classes: ["class_bard", "class_druid", "class_sorcerer", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "30 feet"
         , components: "V, S, M (a pinch of powdered iron)"
         , duration: "Concentration, up to 1 minute"
@@ -1743,7 +1743,7 @@ data_spells.push(
         , level: 2
         , school: "Enchantment"
         , classes: ["class_bard", "class_warlock"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "60 feet"
         , components: "V, S"
         , duration: "Concentration, up to 1 minute"
@@ -1756,7 +1756,7 @@ data_spells.push(
         , level: 2
         , school: "Conjuration"
         , classes: ["class_paladin"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "30 feet"
         , components: "V, S"
         , duration: "Instantaneous"
@@ -1773,7 +1773,7 @@ data_spells.push(
         , level: 2
         , school: "Divination"
         , classes: ["class_cleric", "class_druid", "class_ranger"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "120 feet"
         , components: "V, S"
         , duration: "Instantaneous"
@@ -1787,7 +1787,7 @@ data_spells.push(
         , level: 2
         , school: "Evocation"
         , classes: ["class_druid", "class_sorcerer"]
-        , casting_time: "Bonus Action"
+        , "casting time": "Bonus Action"
         , range: "Self"
         , components: "V, S, M (a sumac leaf)"
         , duration: "Concentration, up to 10 minutes"
@@ -1803,7 +1803,7 @@ data_spells.push(
         , level: 2
         , school: "Conjuration"
         , classes: ["class_druid", "class_sorcerer", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "60 feet"
         , components: "V, S, M (a ball of wax)"
         , duration: "Concentration, up to 1 minute"
@@ -1819,7 +1819,7 @@ data_spells.push(
         , level: 2
         , school: "Necromancy"
         , classes: ["class_cleric", "class_paladin", "class_wizard"]
-        , casting_time: "Action or Ritual"
+        , "casting time": "Action or Ritual"
         , range: "Touch"
         , components: "V, S, M (2 copper pieces, which the spell consumes)"
         , duration: "10 days"
@@ -1833,7 +1833,7 @@ data_spells.push(
         , level: 2
         , school: "Evocation"
         , classes: ["class_druid", "class_ranger", "class_sorcerer", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Self"
         , components: "V, S, M (a legume seed)"
         , duration: "Concentration, up to 1 minute"
@@ -1849,7 +1849,7 @@ data_spells.push(
         , level: 2
         , school: "Transmutation"
         , classes: ["class_bard", "class_druid"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "60 feet"
         , components: "V, S, M (a piece of iron and a flame)"
         , duration: "Concentration, up to 1 minute"
@@ -1864,7 +1864,7 @@ data_spells.push(
         , level: 2
         , school: "Enchantment"
         , classes: ["class_bard", "class_cleric", "class_druid", "class_sorcerer", "class_warlock", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "60 feet"
         , components: "V, S, M (a straight piece of iron)"
         , duration: "Concentration, up to 1 minute"
@@ -1881,7 +1881,7 @@ data_spells.push(
         , level: 2
         , school: "Illusion"
         , classes: ["class_bard", "class_sorcerer", "class_warlock", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Touch"
         , components: "V, S, M (an eyelash in gum arabic)"
         , duration: "Concentration, up to 1 hour"
@@ -1895,7 +1895,7 @@ data_spells.push(
         , level: 2
         , school: "Transmutation"
         , classes: ["class_bard", "class_sorcerer", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "60 feet"
         , components: "V"
         , duration: "Instantaneous"
@@ -1911,7 +1911,7 @@ data_spells.push(
         , level: 2
         , school: "Abjuration"
         , classes: ["class_bard", "class_cleric", "class_druid", "class_paladin", "class_ranger"]
-        , casting_time: "Bonus Action"
+        , "casting time": "Bonus Action"
         , range: "Touch"
         , components: "V, S"
         , duration: "Instantaneous"
@@ -1924,7 +1924,7 @@ data_spells.push(
         , level: 2
         , school: "Transmutation"
         , classes: ["class_sorcerer", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "60 feet"
         , components: "V, S, M (a metal spring)"
         , duration: "Concentration, up to 10 minutes"
@@ -1939,7 +1939,7 @@ data_spells.push(
         , level: 2
         , school: "Divination"
         , classes: ["class_bard", "class_druid", "class_ranger"]
-        , casting_time: "Action or Ritual"
+        , "casting time": "Action or Ritual"
         , range: "Self"
         , components: "V, S, M (fur from a bloodhound)"
         , duration: "Instantaneous"
@@ -1952,7 +1952,7 @@ data_spells.push(
         , level: 2
         , school: "Divination"
         , classes: ["class_bard", "class_cleric", "class_druid", "class_paladin", "class_ranger", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Self"
         , components: "V, S, M (a forked twig)"
         , duration: "Concentration, up to 10 minutes"
@@ -1967,7 +1967,7 @@ data_spells.push(
         , level: 2
         , school: "Illusion"
         , classes: ["class_bard", "class_wizard"]
-        , casting_time: "1 minute or Ritual"
+        , "casting time": "1 minute or Ritual"
         , range: "30 feet"
         , components: "V, S, M (jade dust worth 10+ GP, which the spell consumes)"
         , duration: "Until dispelled"
@@ -1982,7 +1982,7 @@ data_spells.push(
         , level: 2
         , school: "Transmutation"
         , classes: ["class_paladin", "class_ranger", "class_sorcerer", "class_wizard"]
-        , casting_time: "Bonus Action"
+        , "casting time": "Bonus Action"
         , range: "Touch"
         , components: "V, S"
         , duration: "1 hour"
@@ -1996,7 +1996,7 @@ data_spells.push(
         , level: 2
         , school: "Evocation"
         , classes: ["class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "90 feet"
         , components: "V, S, M (powdered rhubarb leaf)"
         , duration: "Instantaneous"
@@ -2010,7 +2010,7 @@ data_spells.push(
         , level: 2
         , school: "Divination"
         , classes: ["class_sorcerer", "class_warlock", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "120 feet"
         , components: "S"
         , duration: "Concentration, up to 1 hour"
@@ -2027,7 +2027,7 @@ data_spells.push(
         , level: 2
         , school: "Illusion"
         , classes: ["class_bard", "class_sorcerer", "class_warlock", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Self"
         , components: "V, S"
         , duration: "1 minute"
@@ -2042,7 +2042,7 @@ data_spells.push(
         , level: 2
         , school: "Conjuration"
         , classes: ["class_sorcerer", "class_warlock", "class_wizard"]
-        , casting_time: "Bonus Action"
+        , "casting time": "Bonus Action"
         , range: "Self"
         , components: "V"
         , duration: "Instantaneous"
@@ -2055,7 +2055,7 @@ data_spells.push(
         , level: 2
         , school: "Evocation"
         , classes: ["class_druid"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "120 feet"
         , components: "V, S, M (a moonseed leaf)"
         , duration: "Concentration, up to 1 minute"
@@ -2069,7 +2069,7 @@ data_spells.push(
         , level: 2
         , school: "Illusion"
         , classes: ["class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Touch"
         , components: "V, S, M (a small square of silk)"
         , duration: "24 hours"
@@ -2084,7 +2084,7 @@ data_spells.push(
         , level: 2
         , school: "Abjuration"
         , classes: ["class_druid", "class_ranger"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Self"
         , components: "V, S, M (ashes from a burned mistletoe)"
         , duration: "Concentration, up to 1 hour"
@@ -2097,7 +2097,7 @@ data_spells.push(
         , level: 2
         , school: "Illusion"
         , classes: ["class_bard", "class_sorcerer", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "60 feet"
         , components: "V, S, M (a bit of fleece)"
         , duration: "Concentration, up to 1 minute"
@@ -2113,7 +2113,7 @@ data_spells.push(
         , level: 2
         , school: "Abjuration"
         , classes: ["class_cleric", "class_paladin"]
-        , casting_time: "10 minutes"
+        , "casting time": "10 minutes"
         , range: "30 feet"
         , components: "V"
         , duration: "Instantaneous"
@@ -2127,7 +2127,7 @@ data_spells.push(
         , level: 2
         , school: "Abjuration"
         , classes: ["class_cleric", "class_druid", "class_paladin", "class_ranger"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Touch"
         , components: "V, S"
         , duration: "1 hour"
@@ -2140,7 +2140,7 @@ data_spells.push(
         , level: 2
         , school: "Necromancy"
         , classes: ["class_warlock", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "60 feet"
         , components: "V, S"
         , duration: "Concentration, up to 1 minute"
@@ -2154,7 +2154,7 @@ data_spells.push(
         , level: 2
         , school: "Transmutation"
         , classes: ["class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Touch"
         , components: "V, S, M (a segment of rope)"
         , duration: "1 hour"
@@ -2172,7 +2172,7 @@ data_spells.push(
         , level: 2
         , school: "Evocation"
         , classes: ["class_sorcerer", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "120 feet"
         , components: "V, S"
         , duration: "Instantaneous"
@@ -2186,7 +2186,7 @@ data_spells.push(
         , level: 2
         , school: "Divination"
         , classes: ["class_bard", "class_sorcerer", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Self"
         , components: "V, S, M (a pinch of talc)"
         , duration: "1 hour"
@@ -2199,7 +2199,7 @@ data_spells.push(
         , level: 2
         , school: "Evocation"
         , classes: ["class_bard", "class_sorcerer", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "60 feet"
         , components: "V, S, M (a chip of mica)"
         , duration: "Instantaneous"
@@ -2214,7 +2214,7 @@ data_spells.push(
         , level: 2
         , school: "Transmutation"
         , classes: ["class_paladin"]
-        , casting_time: "Bonus Action, which you take immediately after hitting a creature with a Melee weapon or an Unarmed Strike"
+        , "casting time": "Bonus Action, which you take immediately after hitting a creature with a Melee weapon or an Unarmed Strike"
         , range: "Self"
         , components: "V"
         , duration: "Concentration, up to 1 minute"
@@ -2228,7 +2228,7 @@ data_spells.push(
         , level: 2
         , school: "Illusion"
         , classes: ["class_bard", "class_cleric", "class_ranger"]
-        , casting_time: "Action or Ritual"
+        , "casting time": "Action or Ritual"
         , range: "120 feet"
         , components: "V, S"
         , duration: "Concentration, up to 10 minutes"
@@ -2241,7 +2241,7 @@ data_spells.push(
         , level: 2
         , school: "Transmutation"
         , classes: ["class_sorcerer", "class_warlock", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Touch"
         , components: "V, S, M (a drop of bitumen and a spider)"
         , duration: "Concentration, up to 1 hour"
@@ -2255,7 +2255,7 @@ data_spells.push(
         , level: 2
         , school: "Transmutation"
         , classes: ["class_druid", "class_ranger"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "150 feet"
         , components: "V, S, M (seven thorns)"
         , duration: "Concentration, up to 10 minutes"
@@ -2269,7 +2269,7 @@ data_spells.push(
         , level: 2
         , school: "Evocation"
         , classes: ["class_cleric"]
-        , casting_time: "Bonus Action"
+        , "casting time": "Bonus Action"
         , range: "60 feet"
         , components: "V, S"
         , duration: "Concentration, up to 1 minute"
@@ -2284,7 +2284,7 @@ data_spells.push(
         , level: 2
         , school: "Enchantment"
         , classes: ["class_bard", "class_sorcerer", "class_warlock", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "30 feet"
         , components: "V, M (a drop of honey)"
         , duration: "Concentration, up to 8 hours"
@@ -2298,7 +2298,7 @@ data_spells.push(
         , level: 2
         , school: "Conjuration"
         , classes: ["class_druid", "class_ranger"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "90 feet"
         , components: "V, S, M (a feather, tuft of fur, and fish tail inside a gilded acorn worth 200+ GP)"
         , duration: "Concentration, up to 1 hour"
@@ -2313,7 +2313,7 @@ data_spells.push(
         , level: 2
         , school: "Abjuration"
         , classes: ["class_cleric", "class_paladin"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Touch"
         , components: "V, S, M (a pair of platinum rings worth 50+ GP each, which you and the target must wear for the duration)"
         , duration: "1 hour"
@@ -2327,7 +2327,7 @@ data_spells.push(
         , level: 2
         , school: "Conjuration"
         , classes: ["class_sorcerer", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "60 feet"
         , components: "V, S, M (a bit of spiderweb)"
         , duration: "Concentration, up to 1 hour"
@@ -2344,7 +2344,7 @@ data_spells.push(
         , level: 2
         , school: "Enchantment"
         , classes: ["class_bard", "class_cleric", "class_paladin"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "60 feet"
         , components: "V, S"
         , duration: "10 minutes"
@@ -2362,7 +2362,7 @@ data_spells.push(
         , level: 3
         , school: "Necromancy"
         , classes: ["class_cleric", "class_wizard"]
-        , casting_time: "1 minute"
+        , "casting time": "1 minute"
         , range: "10 feet"
         , components: "V, S, M (a drop of blood, a piece of flesh, and a pinch of bone dust)"
         , duration: "Instantaneous"
@@ -2378,7 +2378,7 @@ data_spells.push(
         , level: 3
         , school: "Abjuration"
         , classes: ["class_cleric", "class_druid", "class_paladin"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Self"
         , components: "V"
         , duration: "Concentration, up to 1 minute"
@@ -2391,7 +2391,7 @@ data_spells.push(
         , level: 3
         , school: "Abjuration"
         , classes: ["class_cleric"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "30 feet"
         , components: "V, S"
         , duration: "Concentration, up to 1 minute"
@@ -2404,7 +2404,7 @@ data_spells.push(
         , level: 3
         , school: "Necromancy"
         , classes: ["class_bard", "class_cleric", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Touch"
         , components: "V, S"
         , duration: "Concentration, up to 1 minute"
@@ -2424,7 +2424,7 @@ data_spells.push(
         , level: 3
         , school: "Evocation"
         , classes: ["class_paladin"]
-        , casting_time: "Bonus Action, which you take immediately after hitting a creature with a Melee weapon or an Unarmed Strike"
+        , "casting time": "Bonus Action, which you take immediately after hitting a creature with a Melee weapon or an Unarmed Strike"
         , range: "Self"
         , components: "V"
         , duration: "1 minute"
@@ -2438,7 +2438,7 @@ data_spells.push(
         , level: 3
         , school: "Transmutation"
         , classes: ["class_sorcerer", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Self"
         , components: "V, S"
         , duration: "1 minute"
@@ -2452,7 +2452,7 @@ data_spells.push(
         , level: 3
         , school: "Conjuration"
         , classes: ["class_druid"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "120 feet"
         , components: "V, S"
         , duration: "Concentration, up to 10 minutes"
@@ -2469,7 +2469,7 @@ data_spells.push(
         , level: 3
         , school: "Divination"
         , classes: ["class_bard", "class_cleric", "class_sorcerer", "class_wizard"]
-        , casting_time: "10 minutes"
+        , "casting time": "10 minutes"
         , range: "1 mile"
         , components: "V, S, M (a focus worth 100+ GP, either a jeweled horn for hearing or a glass eye for seeing)"
         , duration: "Concentration, up to 10 minutes"
@@ -2484,7 +2484,7 @@ data_spells.push(
         , level: 3
         , school: "Conjuration"
         , classes: ["class_druid", "class_ranger"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "60 feet"
         , components: "V, S"
         , duration: "Concentration, up to 10 minutes"
@@ -2499,7 +2499,7 @@ data_spells.push(
         , level: 3
         , school: "Conjuration"
         , classes: ["class_ranger"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Self"
         , components: "V, S, M (a Melee or Ranged weapon worth at least 1 CP)"
         , duration: "Instantaneous"
@@ -2517,7 +2517,7 @@ data_spells.push(
         , level: 3
         , school: "Abjuration"
         , classes: ["class_sorcerer", "class_warlock", "class_wizard"]
-        , casting_time: "Reaction, which you take when you see a creature within 60 feet of yourself casting a spell with Verbal, Somatic, or Material components"
+        , "casting time": "Reaction, which you take when you see a creature within 60 feet of yourself casting a spell with Verbal, Somatic, or Material components"
         , range: "60 feet"
         , components: "S"
         , duration: "Instantaneous"
@@ -2530,7 +2530,7 @@ data_spells.push(
         , level: 3
         , school: "Conjuration"
         , classes: ["class_cleric", "class_paladin"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "30 feet"
         , components: "V, S"
         , duration: "Instantaneous"
@@ -2543,7 +2543,7 @@ data_spells.push(
         , level: 3
         , school: "Evocation"
         , classes: ["class_paladin"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Self"
         , components: "V"
         , duration: "Concentration, up to 1 minute"
@@ -2556,7 +2556,7 @@ data_spells.push(
         , level: 3
         , school: "Evocation"
         , classes: ["class_cleric", "class_druid", "class_paladin", "class_ranger", "class_sorcerer"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "60 feet"
         , components: "V, S"
         , duration: "1 hour"
@@ -2571,7 +2571,7 @@ data_spells.push(
         , level: 3
         , school: "Abjuration"
         , classes: ["class_bard", "class_cleric", "class_druid", "class_paladin", "class_ranger", "class_sorcerer", "class_warlock", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "120 feet"
         , components: "V, S"
         , duration: "Instantaneous"
@@ -2585,7 +2585,7 @@ data_spells.push(
         , level: 3
         , school: "Transmutation"
         , classes: ["class_druid", "class_paladin", "class_ranger"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Touch"
         , components: "V, S"
         , duration: "Concentration, up to 1 hour"
@@ -2599,7 +2599,7 @@ data_spells.push(
         , level: 3
         , school: "Illusion"
         , classes: ["class_bard", "class_sorcerer", "class_warlock", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Self"
         , components: "V, S, M (a white feather)"
         , duration: "Concentration, up to 1 minute"
@@ -2613,7 +2613,7 @@ data_spells.push(
         , level: 3
         , school: "Necromancy"
         , classes: ["class_bard", "class_cleric", "class_druid", "class_wizard"]
-        , casting_time: "Action or Ritual"
+        , "casting time": "Action or Ritual"
         , range: "Touch"
         , components: "V, S, M (a pinch of graveyard dirt)"
         , duration: "1 hour"
@@ -2628,7 +2628,7 @@ data_spells.push(
         , level: 3
         , school: "Evocation"
         , classes: ["class_sorcerer", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "150 feet"
         , components: "V, S, M (a ball of bat guano and sulfur)"
         , duration: "Instantaneous"
@@ -2643,7 +2643,7 @@ data_spells.push(
         , level: 3
         , school: "Transmutation"
         , classes: ["class_sorcerer", "class_warlock", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Touch"
         , components: "V, S, M (a feather)"
         , duration: "Concentration, up to 10 minutes"
@@ -2661,7 +2661,7 @@ data_spells.push(
         , level: 3
         , school: "Transmutation"
         , classes: ["class_sorcerer", "class_warlock", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Touch"
         , components: "V, S, M (a bit of gauze)"
         , duration: "Concentration, up to 1 hour"
@@ -2677,7 +2677,7 @@ data_spells.push(
         , level: 3
         , school: "Abjuration"
         , classes: ["class_bard", "class_cleric", "class_wizard"]
-        , casting_time: "1 hour"
+        , "casting time": "1 hour"
         , range: "Touch"
         , components: "V, S, M (powdered diamond worth 200+ GP, which the spell consumes)"
         , duration: "Until dispelled or triggered"
@@ -2698,7 +2698,7 @@ data_spells.push(
         , level: 3
         , school: "Transmutation"
         , classes: ["class_sorcerer", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "30 feet"
         , components: "V, S, M (a shaving of licorice root)"
         , duration: "Concentration, up to 1 minute"
@@ -2712,7 +2712,7 @@ data_spells.push(
         , level: 3
         , school: "Conjuration"
         , classes: ["class_warlock"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "150 feet"
         , components: "V, S, M (a pickled tentacle)"
         , duration: "Concentration, up to 1 minute"
@@ -2727,7 +2727,7 @@ data_spells.push(
         , level: 3
         , school: "Illusion"
         , classes: ["class_bard", "class_sorcerer", "class_warlock", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "120 feet"
         , components: "S, M (a pinch of confetti)"
         , duration: "Concentration, up to 1 minute"
@@ -2741,7 +2741,7 @@ data_spells.push(
         , level: 3
         , school: "Evocation"
         , classes: ["class_bard", "class_wizard"]
-        , casting_time: "1 minute or Ritual"
+        , "casting time": "1 minute or Ritual"
         , range: "Self"
         , components: "V, S, M (a crystal bead)"
         , duration: "8 hours"
@@ -2757,7 +2757,7 @@ data_spells.push(
         , level: 3
         , school: "Transmutation"
         , classes: ["class_ranger"]
-        , casting_time: "Bonus Action, which you can take immediately after hitting or missing a target with a ranged attack using a weapon"
+        , "casting time": "Bonus Action, which you can take immediately after hitting or missing a target with a ranged attack using a weapon"
         , range: "Self"
         , components: "V, S"
         , duration: "Instantaneous"
@@ -2772,7 +2772,7 @@ data_spells.push(
         , level: 3
         , school: "Evocation"
         , classes: ["class_sorcerer", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Self"
         , components: "V, S, M (a bit of fur and a crystal rod)"
         , duration: "Instantaneous"
@@ -2786,7 +2786,7 @@ data_spells.push(
         , level: 3
         , school: "Abjuration"
         , classes: ["class_cleric", "class_paladin", "class_warlock", "class_wizard"]
-        , casting_time: "1 minute"
+        , "casting time": "1 minute"
         , range: "10 feet"
         , components: "V, S, M (salt and powdered silver worth 100+ GP, which the spell consumes)"
         , duration: "1 hour"
@@ -2807,7 +2807,7 @@ data_spells.push(
         , level: 3
         , school: "Illusion"
         , classes: ["class_bard", "class_sorcerer", "class_warlock", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "120 feet"
         , components: "V, S, M (a bit of fleece)"
         , duration: "Concentration, up to 10 minutes"
@@ -2827,7 +2827,7 @@ data_spells.push(
         , level: 3
         , school: "Abjuration"
         , classes: ["class_bard", "class_cleric"]
-        , casting_time: "Bonus Action"
+        , "casting time": "Bonus Action"
         , range: "60 feet"
         , components: "V"
         , duration: "Instantaneous"
@@ -2841,7 +2841,7 @@ data_spells.push(
         , level: 3
         , school: "Transmutation"
         , classes: ["class_cleric", "class_druid", "class_ranger"]
-        , casting_time: "Action or Ritual"
+        , "casting time": "Action or Ritual"
         , range: "Touch"
         , components: "V, S"
         , duration: "8 hours"
@@ -2856,7 +2856,7 @@ data_spells.push(
         , level: 3
         , school: "Abjuration"
         , classes: ["class_bard", "class_ranger", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Touch"
         , components: "V, S, M (a pinch of diamond dust worth 25+ GP, which the spell consumes)"
         , duration: "8 hours"
@@ -2869,7 +2869,7 @@ data_spells.push(
         , level: 3
         , school: "Illusion"
         , classes: ["class_wizard"]
-        , casting_time: "1 minute or Ritual"
+        , "casting time": "1 minute or Ritual"
         , range: "30 feet"
         , components: "V, S"
         , duration: "1 hour"
@@ -2883,7 +2883,7 @@ data_spells.push(
         , level: 3
         , school: "Transmutation"
         , classes: ["class_bard", "class_druid", "class_ranger"]
-        , casting_time: "Action (Overgrowth) or 8 hours (Enrichment)"
+        , "casting time": "Action (Overgrowth) or 8 hours (Enrichment)"
         , range: "150 feet"
         , components: "V, S"
         , duration: "Instantaneous"
@@ -2898,7 +2898,7 @@ data_spells.push(
         , level: 3
         , school: "Abjuration"
         , classes: ["class_cleric", "class_druid", "class_ranger", "class_sorcerer", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Touch"
         , components: "V, S"
         , duration: "Concentration, up to 1 hour"
@@ -2911,7 +2911,7 @@ data_spells.push(
         , level: 3
         , school: "Abjuration"
         , classes: ["class_cleric", "class_paladin", "class_warlock", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Touch"
         , components: "V, S"
         , duration: "Instantaneous"
@@ -2924,7 +2924,7 @@ data_spells.push(
         , level: 3
         , school: "Necromancy"
         , classes: ["class_cleric", "class_druid", "class_paladin", "class_ranger"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Touch"
         , components: "V, S, M (a diamond worth 300+ GP, which the spell consumes)"
         , duration: "Instantaneous"
@@ -2937,7 +2937,7 @@ data_spells.push(
         , level: 3
         , school: "Divination"
         , classes: ["class_bard", "class_cleric", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Unlimited"
         , components: "V, S, M (a copper wire)"
         , duration: "Instantaneous"
@@ -2952,7 +2952,7 @@ data_spells.push(
         , level: 3
         , school: "Conjuration"
         , classes: ["class_druid", "class_sorcerer", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "150 feet"
         , components: "V, S, M (a miniature umbrella)"
         , duration: "Concentration, up to 1 minute"
@@ -2970,7 +2970,7 @@ data_spells.push(
         , level: 3
         , school: "Transmutation"
         , classes: ["class_bard", "class_sorcerer", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "120 feet"
         , components: "V, S, M (a drop of molasses)"
         , duration: "Concentration, up to 1 minute"
@@ -2985,7 +2985,7 @@ data_spells.push(
         , level: 3
         , school: "Necromancy"
         , classes: ["class_bard", "class_cleric", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "10 feet"
         , components: "V, S, M (burning incense)"
         , duration: "10 minutes"
@@ -2999,7 +2999,7 @@ data_spells.push(
         , level: 3
         , school: "Transmutation"
         , classes: ["class_bard", "class_druid", "class_ranger"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Self"
         , components: "V, S"
         , duration: "10 minutes"
@@ -3015,7 +3015,7 @@ data_spells.push(
         , level: 3
         , school: "Conjuration"
         , classes: ["class_cleric"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Self"
         , components: "V, S, M (a prayer scroll)"
         , duration: "Concentration, up to 10 minutes"
@@ -3030,7 +3030,7 @@ data_spells.push(
         , level: 3
         , school: "Conjuration"
         , classes: ["class_bard", "class_sorcerer", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "90 feet"
         , components: "V, S, M (a rotten egg)"
         , duration: "Concentration, up to 1 minute"
@@ -3044,7 +3044,7 @@ data_spells.push(
         , level: 3
         , school: "Conjuration"
         , classes: ["class_druid", "class_ranger", "class_warlock", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "90 feet"
         , components: "V, S, M (a gilded flower worth 300+ GP)"
         , duration: "Concentration, up to 1 hour"
@@ -3058,7 +3058,7 @@ data_spells.push(
         , level: 3
         , school: "Necromancy"
         , classes: ["class_warlock", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "90 feet"
         , components: "V, S, M (a gilded skull worth 300+ GP)"
         , duration: "Concentration, up to 1 hour"
@@ -3073,7 +3073,7 @@ data_spells.push(
         , level: 3
         , school: "Divination"
         , classes: ["class_bard", "class_cleric", "class_sorcerer", "class_warlock", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Touch"
         , components: "V, M (a miniature ziggurat)"
         , duration: "1 hour"
@@ -3086,7 +3086,7 @@ data_spells.push(
         , level: 3
         , school: "Necromancy"
         , classes: ["class_sorcerer", "class_warlock", "class_wizard"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "Self"
         , components: "V, S"
         , duration: "Concentration, up to 1 minute"
@@ -3101,7 +3101,7 @@ data_spells.push(
         , level: 3
         , school: "Transmutation"
         , classes: ["class_druid", "class_ranger", "class_sorcerer", "class_wizard"]
-        , casting_time: "Action or Ritual"
+        , "casting time": "Action or Ritual"
         , range: "30 feet"
         , components: "V, S, M (a short reed)"
         , duration: "24 hours"
@@ -3114,7 +3114,7 @@ data_spells.push(
         , level: 3
         , school: "Transmutation"
         , classes: ["class_cleric", "class_druid", "class_ranger", "class_sorcerer"]
-        , casting_time: "Action or Ritual"
+        , "casting time": "Action or Ritual"
         , range: "30 feet"
         , components: "V, S, M (a piece of cork)"
         , duration: "1 hour"
@@ -3128,7 +3128,7 @@ data_spells.push(
         , level: 3
         , school: "Evocation"
         , classes: ["class_druid", "class_ranger"]
-        , casting_time: "Action"
+        , "casting time": "Action"
         , range: "120 feet"
         , components: "V, S, M (a fan and a feather)"
         , duration: "Concentration, up to 1 minute"

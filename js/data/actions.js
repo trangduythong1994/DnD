@@ -6,21 +6,12 @@ const data_actions = [
         name: "Attack",
         description: {
             lang_en: `Attack with a weapon or an Unarmed Strike.
-            <p><b>Unarmed Strike.</b> Instead of using a weapon to make a melee attack, you can use a punch, kick, headbutt, or similar forceful blow. In game terms, this is an Unarmed Strike—a melee attack that involves you using your body to damage, grapple, or shove a target within 5 feet of you.
+            <p><b><i>Unarmed Strike.</i></b> Instead of using a weapon to make a melee attack, you can use a punch, kick, headbutt, or similar forceful blow.
             <p>Whenever you use your Unarmed Strike, choose one of the following options for its effect:
-            <ul>
-                <li><b>Damage.</b> You make an attack roll against the target. Your bonus to the roll equals your Strength modifier plus your Proficiency Bonus. On a hit, the target takes Bludgeoning damage equal to 1 plus your Strength modifier.</li>
-                <li><b>Grapple.</b> The target must succeed on a Strength or Dexterity saving throw (it chooses which), or it has the Grappled condition. The DC for the saving throw and any escape attempts equals 8 plus your Strength modifier and Proficiency Bonus. This grapple is possible only if the target is no more than one size larger than you and if you have a hand free to grab it.</li>
-                <li><b>Shove.</b> The target must succeed on a Strength or Dexterity saving throw (it chooses which), or you either push it 5 feet away or cause it to have the Prone condition. The DC for the saving throw equals 8 plus your Strength modifier and Proficiency Bonus. This shove is possible only if the target is no more than one size larger than you.</li>
-            </ul>`,
-            lang_vi: `Tấn công bằng một vũ khí hoặc một Unarmed Strike.
-            <p><b>Unarmed Strike.</b> Thay vì sử dụng vũ khí để thực hiện một melee attack, bạn có thể sử dụng một cú đấm, đá, húc đầu.
-            <p>Bất cứ khi nào bạn sử dụng Unarmed Strike, hãy chọn một trong các tùy chọn sau cho hiệu ứng của nó:
-            <ul>
-                <li><b>Damage.</b> Bạn thực hiện một attack roll nhắm vào mục tiêu. Bonus cho roll này bằng Strength modifier cộng với Proficiency Bonus của bạn. Nếu đánh trúng, mục tiêu sẽ phải chịu Bludgeoning damage bằng 1 cộng với Strength modifier của bạn.</li>
-                <li><b>Grapple.</b> Mục tiêu phải thành công một Strength hoặc Dexterity saving throw (do mục tiêu tự chọn), nếu trượt sẽ bị tình trạng Grappled (Túm giữ). DC cho saving throw này và bất kỳ nỗ lực trốn thoát (escape) nào đều bằng 8 + Strength modifier + Proficiency Bonus của bạn. Đòn grapple này chỉ có thể thực hiện nếu mục tiêu lớn hơn bạn không quá một bậc kích cỡ và bạn đang có một tay rảnh để tóm lấy nó.</li>
-                <li><b>Shove.</b> Mục tiêu phải thành công một Strength hoặc Dexterity saving throw (do mục tiêu tự chọn), nếu trượt bạn có thể đẩy nó lùi xa 5 feet hoặc khiến nó bị tình trạng Prone (Ngã sấp). DC cho saving throw này bằng 8 + Strength modifier + Proficiency Bonus của bạn. Đòn shove này chỉ có thể thực hiện nếu mục tiêu lớn hơn bạn không quá một bậc kích cỡ.</li>
-            </ul>`
+            <p-1><b>Damage.</b> You make an attack roll against the target. Your bonus to the roll equals your Strength modifier plus your Proficiency Bonus. On a hit, the target takes Bludgeoning damage equal to 1 plus your Strength modifier.</p-1>
+            <p-1><b>Grapple.</b> The target must succeed on a Strength or Dexterity saving throw (it chooses which), or it has the Grappled condition. The DC for the saving throw and any escape attempts equals 8 plus your Strength modifier and Proficiency Bonus. This grapple is possible only if the target is no more than one size larger than you and if you have a hand free to grab it.</p-1>
+            <p-1><b>Shove.</b> The target must succeed on a Strength or Dexterity saving throw (it chooses which), or you either push it 5 feet away or cause it to have the Prone condition. The DC for the saving throw equals 8 plus your Strength modifier and Proficiency Bonus. This shove is possible only if the target is no more than one size larger than you.</p-1>`,
+            lang_vi: ``
         }
     },
     {
@@ -59,7 +50,11 @@ const data_actions = [
         rarity: "Common",
         name: "Help",
         description: {
-            lang_en: `Help another creature's ability check or attack roll, or administer first aid.`,
+            lang_en: `Help another creature's ability check or attack roll, or administer first aid.
+            <p>When you take the Help action, you do one of the following.
+            <p><b><i>Assist an Ability Check.</i></b> Choose one of your skill or tool proficiencies and one ally who is near enough for you to assist verbally or physically. Before the start of your next turn, that ally has Advantage on the next ability check they make with the chosen skill or tool.
+            <p><b><i>Assist an Attack Roll.</i></b> You momentarily distract an enemy within 5 feet of you. Before the start of your next turn, giving Advantage to the next attack roll by one of your allies against that enemy.
+            <p><b><i>First Aid.</i></b> Try to stabilize a creature with 0 Hit Points, which requires a successful DC 10 Wisdom (Medicine) check. On a success, the creature becomes Stable. A Stable creature has 0 Hit Points but is no longer making Death Saving Throws, and it regains 1 Hit Point after Short Rest.`,
             lang_vi: `Hỗ trợ ability check hoặc attack roll của một sinh vật khác, hoặc tiến hành sơ cứu.`
         }
     },
@@ -69,7 +64,8 @@ const data_actions = [
         rarity: "Common",
         name: "Hide",
         description: {
-            lang_en: `Make a Dexterity (Stealth) check.`,
+            lang_en: `You try to conceal yourself. To do so, you must succeed on a DC 15 Dexterity (Stealth) check while you’re Heavily Obscured or behind Three-Quarters Cover or Total Cover, and you must be out of any enemy’s line of sight. On a successful check, you have the Invisible condition while hidden.
+            <p>Make note of your check’s total, which is the DC for a creature to find you with a Wisdom (Perception) check. You stop being hidden immediately after any of the following occurs: you make a sound louder than a whisper, an enemy finds you, you make an attack roll, or you cast a spell with a Verbal component.`,
             lang_vi: `Thực hiện một Dexterity (Stealth) check.`
         }
     },
@@ -79,7 +75,18 @@ const data_actions = [
         rarity: "Common",
         name: "Influence",
         description: {
-            lang_en: `Make a Charisma (Deception, Intimidation, Performance, or Persuasion) or Wisdom (Animal Handling) check to alter a creature's attitude.`,
+            lang_en: `You urge a creature to do something. Describe or roleplay how you’re communicating with it. 
+            <p>The DM then determines whether the creature feels due to your interaction.
+                <p-1><b>Willing.</b> If your urging aligns with the creature's desires, no ability check is necessary; the creature fulfills your request in a way it prefers.</p-1>
+                <p-1><b>Unwilling.</b> If your urging is repugnant to the creature or counter to its alignment, no ability check is necessary; it doesn’t comply.</p-1>
+                <p-1><b>Hesitant.</b> If you urge the creature to do something that it is hesitant to do, you must make an ability check, which is affected by the creature's attitude: Indifferent, Friendly (have Advantage), or Hostile (have Disadvantage).
+                    <p-2><b>Charisma (Deception).</b> Deceiving a monster that understands you</p-2>
+                    <p-2><b>Charisma (Intimidation).</b> Intimidating a monster</p-2>
+                    <p-2><b>Charisma (Performance).</b> Amusing a monster</p-2>
+                    <p-2><b>Charisma (Persuasion).</b> Persuading a monster that understands you</p-2>
+                    <p-2><b>Wisdom (Animal Handling).</b> Gently coaxing a Beast or Monstrosity</p-2>
+            <p>On a successful check, the monster does as urged. 
+            <p>On a failed check, you must wait 24 hours (or a duration set by the DM) before urging it in the same way again.</p-1>`,
             lang_vi: `Thực hiện một Charisma (Deception, Intimidation, Performance, hoặc Persuasion) check hoặc Wisdom (Animal Handling) check để thay đổi thái độ của một sinh vật.`
         }
     },
@@ -89,7 +96,7 @@ const data_actions = [
         rarity: "Common",
         name: "Magic",
         description: {
-            lang_en: `Cast a spell, use a magic item, or use a magical feature.`,
+            lang_en: `You cast a spell that has a casting time of an action or use a feature or magic item that requires a Magic action to be activated.`,
             lang_vi: `Niệm một phép thuật (spell), sử dụng một vật phẩm ma thuật (magic item), hoặc sử dụng một đặc điểm ma thuật (magical feature).`
         }
     },
@@ -99,7 +106,8 @@ const data_actions = [
         rarity: "Common",
         name: "Ready",
         description: {
-            lang_en: `Prepare to take an action in response to a trigger you define.`,
+            lang_en: `You take the Ready action to wait for a particular circumstance before you act. To do so, you take this action on your turn, which lets you act by taking a Reaction before the start of your next turn.
+            <p>First, you decide what perceivable circumstance will trigger your Reaction. Then, you choose the action you will take in response to that trigger, or you choose to move up to your Speed in response to it.`,
             lang_vi: `Chuẩn bị thực hiện một hành động để phản hồi lại một điều kiện kích hoạt (trigger) do bạn định ra.`
         }
     },
@@ -109,7 +117,12 @@ const data_actions = [
         rarity: "Common",
         name: "Search",
         description: {
-            lang_en: `Make a Wisdom (Insight, Medicine, Perception, or Survival) check.`,
+            lang_en: `You make a Wisdom check to discern something that isn’t obvious.
+            <p>
+            <p-2><b>Insight.</b> Creature’s state of mind</p-2>
+            <p-2><b>Medicine.</b> Creature’s ailment or cause of death</p-2>
+            <p-2><b>Perception.</b> Concealed creature or object</p-2>
+            <p-2><b>Survival.</b> Tracks or food</p-2>`,
             lang_vi: `Thực hiện một Wisdom (Insight, Medicine, Perception, hoặc Survival) check.`
         }
     },
@@ -119,7 +132,13 @@ const data_actions = [
         rarity: "Common",
         name: "Study",
         description: {
-            lang_en: `Make an Intelligence (Arcana, History, Investigation, Nature, or Religion) check.`,
+            lang_en: `You make an Intelligence check to study your memory, a book, a clue, or another source of knowledge and call to mind an important piece of information about it.
+            <p>
+            <p-2><b>Arcana.</b> Spells, magic items, eldritch symbols, magical traditions, planes of existence, and certain creatures (Aberrations, Constructs, Elementals, Fey, and Monstrosities)</p-2>
+            <p-2><b>History.</b> Historic events and people, ancient civilizations, wars, and certain creatures (Giants and Humanoids)</p-2>
+            <p-2><b>Investigation.</b> Traps, ciphers, riddles, and gadgetry</p-2>
+            <p-2><b>Nature.</b> Terrain, flora, weather, and certain creatures (Beasts, Dragons, Oozes, and Plants)</p-2>
+            <p-2><b>Religion.</b> Deities, religious hierarchies and rites, holy symbols, cults, and certain creatures (Celestials, Fiends, and Undead)</p-2>`,
             lang_vi: `Thực hiện một Intelligence (Arcana, History, Investigation, Nature, hoặc Religion) check.`
         }
     },
